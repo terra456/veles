@@ -35,6 +35,7 @@
     "stylelint-config-standard-scss": "^16.0.0",
     "stylelint-order": "^7.0.0",
     "stylelint-scss": "^6.12.1",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vite-plugin-html-inject": "^1.1.2"
   }
 }
