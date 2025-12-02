@@ -6,10 +6,35 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "format": "biome format --write . && prettier --write \"**/*.{scss,sass}\"",
+    "lint": "biome lint . && stylelint \"**/*.{scss,sass}\"",
+    "fix": "biome check --fix . && stylelint --fix \"**/*.{scss,sass}\" && prettier --write \"**/*.{scss,sass}\"",
+    "ci": "biome ci ."
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "biome check --fix"
+    ],
+    "*.{json,md,html,css}": [
+      "biome format --write"
+    ],
+    "*.{scss,sass}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
   },
   "devDependencies": {
+    "@biomejs/biome": "2.3.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.3",
     "sass": "^1.94.2",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "stylelint-order": "^7.0.0",
+    "stylelint-scss": "^6.12.1",
     "vite": "^7.2.4"
   }
 }
