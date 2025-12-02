@@ -1,0 +1,37 @@
+:root {
+  // Цветовая палитра
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-secondary: #7c3aed;
+  --color-text: #1f2937;
+  --color-text-light: #6b7280;
+  --color-background: #fff;
+  --color-background-alt: #f9fafb;
+  --color-border: #e5e7eb;
+
+  // Типографика
+  --font-family-base: "Inter", -apple-system, sans-serif;
+  --font-family-heading: var(--font-family-base);
+  --font-size-base: 16px;
+  --font-size-sm: 0.875rem; // 14px
+  --font-size-lg: 1.125rem; // 18px
+  --font-size-xl: 1.25rem; // 20px
+  --font-size-2xl: 1.5rem; // 24px
+  --font-size-3xl: 2rem; // 32px
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  // Транзиции
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  // Z-index слои
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal: 1040;
+  --z-popover: 1050;
+  --z-tooltip: 1060;
+}
