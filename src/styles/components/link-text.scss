@@ -1,0 +1,9 @@
+.link-text {
+  color: gray;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: blue;
+  }
+}

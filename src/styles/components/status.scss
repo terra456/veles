@@ -1,0 +1,19 @@
+.status {
+  color: gray;
+
+  &::before {
+    content: "";
+  }
+
+  &--problem {
+    color: red;
+  }
+
+  &--decision {
+    color: red;
+  }
+
+  &--result {
+    color: red;
+  }
+}

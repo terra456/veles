@@ -1,0 +1,17 @@
+.checkbox {
+  color: gray;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: black;
+  }
+
+  &:checked {
+    color: blue;
+  }
+
+  &:disabled {
+    color: blue;
+  }
+}
