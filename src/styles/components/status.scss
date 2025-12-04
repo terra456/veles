@@ -5,15 +5,15 @@
     content: "";
   }
 
-  &--problem {
+  &.problem {
     color: red;
   }
 
-  &--decision {
+  &.decision {
     color: red;
   }
 
-  &--result {
+  &.result {
     color: red;
   }
 }

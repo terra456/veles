@@ -10,10 +10,199 @@
     <load src="partials/header.html"/>
 
     <main>
+      <section class="section first">
+        <div class="section_wrapper">
+          <div class="first_info">
+            <h1 class="first_title">Поддержка 1С, которая работает как часы</h1>
+            <p class="first_desc">
+              Гибкая команда экспертов по 1С. Мы решаем задачи бизнеса быстро, точно и без
+              бюрократии
+            </p>
+            <div class="first_btn-conteiner">
+              <a class="link-text" href="tg">Написать в телеграм</a>
+              <a class="link-text" href="#request">Написать в телеграм</a>
+            </div>
+            <p class="first_cost">
+              Стоимость часа услуг <span class="first_price">4 256 ₽</span>
+            </p>
+          </div>
+          <div class="first_cards">
+            <ul class="first_list">
+              <li class="first_item">Онлайн — команда готова помочь</li>
+              <li class="first_item">Помогли решить проблемы с регистрами</li>
+              <li class="first_item">Закрыли квартал успешно</li>
+              <li class="first_item">Успешно обновили 1С</li>
+              <li class="first_item">Исправили 500+ ошибок</li>
+              <li class="first_item">Проанализировали 1000+ операций</li>
+              <li class="first_item">Отчётность успешно сдана в банк</li>
+              <li class="first_item">Автоматизировали сложный процесс</li>
+              <li class="first_item">Упростили работу бухгалтерии</li>
+              <li class="first_item">Автоматизировали рутину</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="section about">
+        <div class="section_wrapper">
+          <h2 class="section_title">Что мы делаем и кто мы</h2>
+          <p class="section_subtitle">
+            Предоставляем полный спектр услуг по 1С — от поддержки до сложных доработок
+          </p>
+          <div class="about_cards">
+            <div class="about_card revision">
+              <h3 class="about_title">Доработка под бизнес</h3>
+              <p class="about_desc">
+                Разработка уникальных модулей, отчетов и автоматизация рутинных операций для ваших
+                задач. Выполняем интеграцию с другими системами
+              </p>
+            </div>
+            <div class="about_card support">
+              <h3 class="about_title">Поддержка 1С</h3>
+              <p class="about_desc">
+                От оперативного устранения ошибок и консультаций пользователей до безопасного
+                обновления доработанных конфигураций с сохранением всех ваших доработок
+              </p>
+            </div>
+            <div class="about_card troubleshooting">
+              <h3 class="about_title">Быстрое устранение проблем</h3>
+              <p class="about_desc">
+                Мы оперативно реагируем на сбои, чтобы они не мешали работе вашего бизнеса,
+                минимизируя риски и простои
+              </p>
+            </div>
+            <div class="about_card">
+              <h3 class="about_title partner">Надёжный партнёр</h3>
+              <p class="about_desc">
+                Эффективная и честная модель сотрудничества: Мы — небольшая команда без лишней
+                бюрократии, которой можно доверять. Вы платите только за реально потраченное время,
+                получая персональное обслуживание и экономию ресурсов
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="reviews" class="section reviews">
+        <div class="section_wrapper">
+          <h2 class="section_title">Отзывы</h2>
+          <p class="section_subtitle">Как мы помогли нашим клиентам</p>
+          <div class="reviews_conteiner slider">
+            <div class="slider_conteiner">
+              <div class="reviews_slide">
+                <img class="reviews_logo">
+                <h3 class="reviews_title"></h3>
+                <p class="reviews_desc"></p>
+                <p class="reviews_name"></p>
+                <p class="reviews_profession"></p>
+              </div>
+              <div class="reviews_slide">
+                <img class="reviews_logo">
+                <h3 class="reviews_title"></h3>
+                <p class="reviews_desc"></p>
+                <p class="reviews_name"></p>
+                <p class="reviews_profession"></p>
+              </div>
+            </div>
+            <div class="slider_pagination"></div>
+          </div>
+        </div>
+      </section>
+      <section id="chart" class="section chart">
+        <div class="section_wrapper">
+          <h2 class="section_title">Сэкономили нашим клиентам</h2>
+          <div class="chart_years">
+            <button id="salesBtn25" class="chart_year-btn active">2025</button>
+            <button id="salesBtn26" class="chart_year-btn">2026</button>
+          </div>
+          <div class="chart_wrapper">
+            <canvas id="salesChart" width="800" height="400"></canvas>
+          </div>
+        </div>
+      </section>
+      <section id="work" class="section work">
+        <div class="section_wrapper">
+          <h2 class="section_title">Как мы работаем</h2>
+          <p class="section_subtitle">Простой и прозрачный процесс решения ваших задач</p>
+          <div class="work_conteiner">
+            <div class="work_card">
+              <img class="work_img" src="" alt="">
+              <h3 class="work_title">Опишите проблему</h3>
+              <p class="work_desc">Свяжитесь с нами удобным способом и расскажите о задаче</p>
+            </div>
+            <div class="work_card">
+              <img class="work_img" src="" alt="">
+              <h3 class="work_title">Мы анализируем</h3>
+              <p class="work_desc">Изучаем ситуацию и предлагаем оптимальное решение</p>
+            </div>
+            <div class="work_card">
+              <img class="work_img" src="" alt="">
+              <h3 class="work_title">Исправляем</h3>
+              <p class="work_desc">Быстро устраняем проблему и тестируем результат</p>
+            </div>
+            <div class="work_card">
+              <img class="work_img" src="" alt="">
+              <h3 class="work_title">Поддерживаем</h3>
+              <p class="work_desc">Следим за стабильностью и готовы помочь в любой момент</p>
+            </div>
+            <p class="work_desc">Просто, быстро и без бюрократии</p>
+            <p class="work_highlight">Просто, быстро и без бюрократии</p>
+          </div>
+        </div>
+      </section>
+      <section id="solution" class="section solution">
+        <div class="section_wrapper">
+          <h2 class="section_title">Решаем задачи, а не создаём их</h2>
+          <p class="section_subtitle">Реальные кейсы из нашей практики</p>
+          <div class="solution_conteiner slider">
+            <div class="slide_conteiner">
+              <div class="slide">
+                <div class="solution_item">
+                  <div class="status problem">Проблема</div>
+                  <p class="solution_desc">Система 1С зависала при загрузке отчётов</p>
+                </div>
+                <div class="solution_item">
+                  <div class="status decision">Решение</div>
+                  <p class="solution_desc">Оптимизировали запросы и настроили кэширование</p>
+                </div>
+                <div class="solution_item">
+                  <div class="status result">Результат</div>
+                  <p class="solution_desc">Скорость работы увеличилась в 5 раз</p>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="solution_item">
+                  <div class="status problem">Проблема</div>
+                  <p class="solution_desc">После обновления перестали работать интеграции</p>
+                </div>
+                <div class="solution_item">
+                  <div class="status decision">Решение</div>
+                  <p class="solution_desc">Адаптировали API под новую версию за 4 часа</p>
+                </div>
+                <div class="solution_item">
+                  <div class="status result">Результат</div>
+                  <p class="solution_desc">Восстановили все связи без потери данных</p>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="solution_item">
+                  <div class="status problem">Проблема</div>
+                  <p class="solution_desc">Ошибки при проведении документов в конце месяца</p>
+                </div>
+                <div class="solution_item">
+                  <div class="status decision">Решение</div>
+                  <p class="solution_desc">Исправили конфликт конфигураций и добавили мониторинг</p>
+                </div>
+                <div class="solution_item">
+                  <div class="status result">Результат</div>
+                  <p class="solution_desc">Закрытие месяца проходит стабильно</p>
+                </div>
+              </div>
+            </div>
+            <div class="pagination"></div>
+          </div>
+        </div>
+      </section>
+
       <button class="btn">'njr yetgew</button>
-      <div class="chart-wrapper">
-        <canvas id="salesChart" width="800" height="400"></canvas>
-      </div>
     </main>
 
     <load src="partials/footer.html"/>
