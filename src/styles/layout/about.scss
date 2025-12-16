@@ -37,7 +37,7 @@
         right: -33%;
         bottom: -2%;
         width: 124%;
-        background-image: url("/assets/puzzle-piece.png");
+        background-image: url("/puzzle-piece.png");
       }
     }
 
@@ -52,7 +52,7 @@
         right: -1%;
         bottom: -11%;
         width: 52%;
-        background-image: url("/assets/hand-with-square.png");
+        background-image: url("/hand-with-square.png");
         z-index: -1; /* Puts the pseudo-element behind the content */
 
         /* Apply the rotation */
@@ -68,7 +68,7 @@
       grid-column: 3/4;
 
       &::before {
-        background-image: url("/assets/bolt-comb.png");
+        background-image: url("/bolt-comb.png");
         right: -18%;
         bottom: -15%;
         width: 55%;
@@ -82,7 +82,7 @@
       grid-column: 2/4;
 
       &::before {
-        background-image: url("/assets/two-translucent-hands.png");
+        background-image: url("/two-translucent-hands.png");
         right: -4%;
         bottom: -10%;
         width: 45%;

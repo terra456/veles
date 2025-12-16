@@ -44,17 +44,17 @@
 
     &.check {
       background-color: var(--green-100, #dcfce7);
-      background-image: url("/assets/icon/check-round.svg");
+      background-image: url("/icon/check-round.svg");
     }
 
     &.gear {
       background-color: var(--blue-100, #eaf1ff);
-      background-image: url("/assets/icon/gear.svg");
+      background-image: url("/icon/gear.svg");
     }
 
     &.refresh {
       background-color: var(--green-100, #dcfce7);
-      background-image: url("/assets/icon/refresh.svg");
+      background-image: url("/icon/refresh.svg");
     }
   }
 }

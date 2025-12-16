@@ -20,9 +20,9 @@
 @use "layout/slider";
 @use "layout/stage";
 @use "layout/success";
-
-// Шрифты подключаются через <link> в `src/index.html` (served from /fonts/...)
-// Если вы предпочитаете подключать их из CSS, можно оставить @import url('/fonts/...') здесь.
+@use "fonts/IBMPlexSansCondensed/stylesheet" as IBMPlexSansCondensed;
+@use "fonts/IBMPlexSans/stylesheet" as IBMPlexSans;
+@use "fonts/inter/stylesheet" as inter;
 
 // Глобальные стили
 body {

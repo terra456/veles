@@ -67,7 +67,7 @@
   }
 
   &--tg::before {
-    mask-image: url("/assets/icon/tg.svg");
+    mask-image: url("/icon/tg.svg");
   }
 
   &--mail {
@@ -75,7 +75,7 @@
 
     &::before {
       left: 47px;
-      mask-image: url("/assets/icon/mail.svg");
+      mask-image: url("/icon/mail.svg");
     }
   }
 
