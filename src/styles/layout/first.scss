@@ -1,3 +1,186 @@
+@use "../mixins/typography" as *;
+
 .first {
-  display: flex;
+  margin-top: 57px;
+  margin-bottom: 104px;
+  height: 782px;
+
+  & > .section_wrapper {
+    padding-bottom: 0;
+    background-image: url("/assets/first-bg-desk.png");
+    background-repeat: no-repeat;
+    background-position: right 7px center;
+  }
+
+  &_conteiner {
+    height: 782px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    gap: 20px;
+  }
+
+  &_info {
+    width: 710px;
+    flex-shrink: 0;
+    margin-top: -20px;
+  }
+
+  &_title {
+    @include h1-56-extra-bold;
+
+    padding-bottom: 16px;
+  }
+
+  &_desc {
+    @include body-24-regular;
+
+    padding-bottom: 60px;
+  }
+
+  &_btn-conteiner {
+    padding-bottom: 24px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  &_cost {
+    @include body-18-regular;
+
+    color: var(--body-text-100, #6b7280);
+    letter-spacing: 2%;
+  }
+
+  &_price {
+    color: var(--blue-500, #2e6ce6);
+    font-family: "IBM Plex Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 2%;
+    margin-bottom: 1px;
+  }
+
+  &_cards {
+    width: 100%;
+  }
+
+  &_list {
+    position: relative;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+
+    /* Параметры зоны: показываем примерно 5 карточек одновременно */
+    --animation-time: 25s;
+    --items: 10; /* общее количество карточек для расчёта шага */
+    --step: calc(var(--animation-time) / var(--items)); /* шаг задержки между элементами */
+
+    height: 782px;
+    overflow: hidden; /* прячем всё, что выходит за блок */
+
+    /* Сделаем поток в одной колонке: расположим элементы абсолютно и анимируем трансформацией Y */
+    .first_item {
+      position: absolute;
+      left: 30px;
+      will-change: transform, opacity;
+      animation-name: first-item-fall;
+      animation-duration: var(--animation-time);
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      opacity: 0;
+    }
+
+    /* Ключевые кадры: карточка появляется сверху, плавно проходит зону и уходит вниз */
+    @keyframes first-item-fall {
+      0% {
+        transform: translate(350px, -500%);
+        opacity: 0;
+      }
+
+      30% {
+        opacity: 0;
+      }
+
+      35% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 0;
+      }
+
+      100% {
+        transform: translate(-70px, 1200%);
+        opacity: 0;
+      }
+    }
+
+    /* Сдвиг по времени для равномерного потока. Количество и шаг можно корректировать */
+    .first_item:nth-child(1) {
+      animation-delay: calc(var(--step) * -0);
+    }
+
+    .first_item:nth-child(2) {
+      animation-delay: calc(var(--step) * -1);
+    }
+
+    .first_item:nth-child(3) {
+      animation-delay: calc(var(--step) * -2);
+    }
+
+    .first_item:nth-child(4) {
+      animation-delay: calc(var(--step) * -3);
+    }
+
+    .first_item:nth-child(5) {
+      animation-delay: calc(var(--step) * -4);
+    }
+
+    .first_item:nth-child(6) {
+      animation-delay: calc(var(--step) * -5);
+    }
+
+    .first_item:nth-child(7) {
+      animation-delay: calc(var(--step) * -6);
+    }
+
+    .first_item:nth-child(8) {
+      animation-delay: calc(var(--step) * -7);
+    }
+
+    .first_item:nth-child(9) {
+      animation-delay: calc(var(--step) * -8);
+    }
+
+    .first_item:nth-child(10) {
+      animation-delay: calc(var(--step) * -9);
+    }
+
+    /* Мобильные: чуть быстрее цикл */
+    @media (width <= 640px) {
+      --first-item-h: 48px;
+      --first-gap: 10px;
+
+      height: calc(var(--first-item-h) * 5 + var(--first-gap) * 4);
+
+      .first_item {
+        animation-duration: 6s;
+      }
+    }
+  }
 }

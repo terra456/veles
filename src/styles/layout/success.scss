@@ -1,3 +1,5 @@
+@use "../mixins/index" as *;
+
 .success {
-  @include flex;
+  @include flex-between;
 }

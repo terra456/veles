@@ -1,28 +1,81 @@
-@use "../mixins/breakpoints" as *;
+@use "../mixins/index" as *;
 
 .btn {
-  background-color: var(--color-primary);
-  color: white;
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium);
+  @include text-button-16-semibold;
 
-  // Псевдоклассы
-  &:hover {
-    background-color: var(--color-primary-hover);
+  display: block;
+  padding: 17px 32.5px;
+  min-width: 262px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #1a3c80 0%, #2e6ce6 100%);
+
+  // background-color: #1a3c80;
+  color: var(--white, #fff);
+  transition: all 500ms;
+
+  &::before {
+    background-color: var(--white, #fff);
+    transition: all 500ms;
   }
 
-  &:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+  &:hover {
+    background: linear-gradient(90deg, #397dff 0%, #2e6ce6 100%);
+
+    // background: #397dff;
+
+    &::before {
+      background-color: var(--white, #fff);
+    }
   }
 
   // Модификаторы
   &--secondary {
-    background-color: var(--color-secondary);
+    background: transparent;
+    color: var(--accent-orange, #fa6e32);
+    border: 1px solid var(--accent-orange, #fa6e32);
+
+    &::before {
+      background-color: var(--accent-orange, #fa6e32);
+    }
 
     &:hover {
-      background-color: color-mix(in srgb, var(--color-secondary) 90%, black);
+      color: var(--white, #fff);
+      background: var(--accent-orange, #fa6e32);
+
+      &::before {
+        background-color: var(--white, #fff);
+      }
+    }
+  }
+
+  &--tg,
+  &--mail {
+    position: relative;
+    padding-left: calc(20px + 8px + 32.5px);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 32.5px;
+      top: calc(50% - 17px / 2);
+      width: 20px;
+      height: 17px;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+    }
+  }
+
+  &--tg::before {
+    mask-image: url("/assets/icon/tg.svg");
+  }
+
+  &--mail {
+    padding-left: 80px;
+
+    &::before {
+      left: 47px;
+      mask-image: url("/assets/icon/mail.svg");
     }
   }
 

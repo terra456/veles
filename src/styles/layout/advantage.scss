@@ -1,3 +1,5 @@
+@use "../mixins/index" as *;
+
 .advantage {
-  @include flex;
+  @include flex-between;
 }

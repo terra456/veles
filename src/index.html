@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <link rel="preload" href="Outfit-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>veles-landing</title>
   </head>
@@ -12,33 +13,85 @@
     <main>
       <section class="section first">
         <div class="section_wrapper">
-          <div class="first_info">
-            <h1 class="first_title">Поддержка 1С, которая работает как часы</h1>
-            <p class="first_desc">
-              Гибкая команда экспертов по 1С. Мы решаем задачи бизнеса быстро, точно и без
-              бюрократии
-            </p>
-            <div class="first_btn-conteiner">
-              <a class="link-text" href="tg">Написать в телеграм</a>
-              <a class="link-text" href="#request">Написать в телеграм</a>
+          <div class="first_conteiner">
+            <div class="first_info">
+              <h1 class="first_title">Поддержка 1С, которая работает как часы</h1>
+              <p class="first_desc">
+                Гибкая команда экспертов по 1С. Мы решаем задачи бизнеса быстро, точно и без
+                бюрократии
+              </p>
+              <div class="first_btn-conteiner">
+                <a class="btn btn--tg" href="tg">Написать в телеграм</a>
+                <a class="btn btn--mail btn--secondary" href="#request">Оставить заявку</a>
+              </div>
+              <p class="first_cost">
+                Стоимость часа услуг <span class="first_price"> 4 256 ₽</span>
+              </p>
             </div>
-            <p class="first_cost">
-              Стоимость часа услуг <span class="first_price">4 256 ₽</span>
-            </p>
-          </div>
-          <div class="first_cards">
-            <ul class="first_list">
-              <li class="first_item">Онлайн — команда готова помочь</li>
-              <li class="first_item">Помогли решить проблемы с регистрами</li>
-              <li class="first_item">Закрыли квартал успешно</li>
-              <li class="first_item">Успешно обновили 1С</li>
-              <li class="first_item">Исправили 500+ ошибок</li>
-              <li class="first_item">Проанализировали 1000+ операций</li>
-              <li class="first_item">Отчётность успешно сдана в банк</li>
-              <li class="first_item">Автоматизировали сложный процесс</li>
-              <li class="first_item">Упростили работу бухгалтерии</li>
-              <li class="first_item">Автоматизировали рутину</li>
-            </ul>
+            <div class="first_cards">
+              <ul class="first_list">
+                <li class="first_item card">
+                  <div class="card_icon base"></div>
+                  <div>
+                    <strong>Онлайн — </strong>команда готова помочь
+                  </div>
+                </li>
+                <li class="first_item card">
+                  <div class="card_icon check"></div>
+                  <div>
+                    Помогли <strong>решить </strong>проблемы с регистрами
+                  </div>
+                </li>
+                <li class="first_item card">
+                  <div class="card_icon check"></div>
+                  <div>
+                    Закрыли квартал <strong>успешно </strong>
+                  </div>
+                </li>
+                <li class="first_item card">
+                  <div class="card_icon refresh"></div>
+                  <div>
+                    <strong>Успешно </strong>обновили 1С
+                  </div>
+                </li>
+                <li class="first_item card">
+                  <div class="card_icon check"></div>
+                  <div>
+                    <strong>Исправили 500+ </strong>ошибок
+                  </div>
+                </li>
+                <li class="first_item card">
+                  <div class="card_icon check"></div>
+                  <div>
+                    <strong>Проанализировали 1000+ </strong>операций
+                  </div>
+                </li>
+                <li class="first_item card">
+                  <div class="card_icon check"></div>
+                  <div>
+                    Отчётность <strong>успешно </strong>сдана в банк
+                  </div>
+                </li>
+                <li class="first_item card">
+                  <div class="card_icon gear"></div>
+                  <div>
+                    <strong>Автоматизировали </strong>сложный процесс
+                  </div>
+                </li>
+                <li class="first_item card">
+                  <div class="card_icon gear"></div>
+                  <div>
+                    <strong>Упростили</strong>работу бухгалтерии
+                  </div>
+                </li>
+                <li class="first_item card">
+                  <div class="card_icon gear"></div>
+                  <div>
+                    <strong>Автоматизировали</strong>рутину
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -70,8 +123,8 @@
                 минимизируя риски и простои
               </p>
             </div>
-            <div class="about_card">
-              <h3 class="about_title partner">Надёжный партнёр</h3>
+            <div class="about_card partner">
+              <h3 class="about_title">Надёжный партнёр</h3>
               <p class="about_desc">
                 Эффективная и честная модель сотрудничества: Мы — небольшая команда без лишней
                 бюрократии, которой можно доверять. Вы платите только за реально потраченное время,
@@ -201,8 +254,55 @@
           </div>
         </div>
       </section>
-
-      <button class="btn">'njr yetgew</button>
+      <section id="request" class="section request">
+        <div class="section_wrapper">
+          <h2 class="section_title">Мы рядом, когда 1С подводит</h2>
+          <h3 class="section_title--addition">Напишите нам — решим задачу вместе</h3>
+          <p class="section_subtitle">
+            Оставьте заявку и мы свяжемся с вами в течении дня и предложим решение
+          </p>
+        </div>
+        <div class="request_form-conteiner">
+          <form class="request_form">
+            <div class="input_conteiner">
+              <label class="input_label" for="name">Контактное лицо</label>
+              <input id="name" class="input" placeholder="Введите имя">
+              <p class="input_error"></p>
+            </div>
+            <div class="input_conteiner">
+              <label class="input_label" for="email">Электронный адрес</label>
+              <input id="email" class="input" placeholder="1Сexample@mail.ru">
+              <p class="input_error"></p>
+            </div>
+            <div class="input_conteiner">
+              <label class="input_label" for="phone">Контактный телефон</label>
+              <input id="phone" class="input" placeholder="+ 7 (999) 999-99-99">
+              <p class="input_error"></p>
+            </div>
+            <div class="input_conteiner textarea_conteiner">
+              <label class="input_label" for="text">Подробное описание</label>
+              <textarea
+                id="text"
+                class="input"
+                placeholder="Опишите проблему, последовательность действий, которая к ней приводит, текст ошибки (если есть). Для доработки — опишите задачу и требуемый результат."
+              ></textarea>
+              <p class="input_error"></p>
+            </div>
+            <div class="input_conteiner textarea_conteiner">
+              <input id="consent" type="checkbox" class="checkbox">
+              <label class="input_label" for="consern">
+                Я согласен на обработку персональных данных и принимаю условия
+                <a class="text-link" href="/consern">Политики конфиденциальности</a>
+              </label>
+              <p class="input_error"></p>
+            </div>
+            <div class="form_btn-conteiner">
+              <button type="submit" class="btn">Оставить заявку</button>
+              <a href="#tg">Написать в телеграм</a>
+            </div>
+          </form>
+        </div>
+      </section>
     </main>
 
     <load src="partials/footer.html"/>

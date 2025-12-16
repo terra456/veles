@@ -1,3 +1,29 @@
+@use "../mixins/index" as *;
+
 .header {
-  display: flex;
+  @include flex-between;
+
+  padding: 32px 24px 24px;
+  margin: 0 auto;
+  max-width: calc(var(--desctop-width));
+  border-radius: 10px;
+  background: var(--white, #fff);
+
+  /* for card */
+  box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+
+  &_list {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    list-style: none;
+  }
+
+  &_link {
+    @include body-18-semi-bold;
+
+    letter-spacing: 4%;
+  }
 }

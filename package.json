@@ -9,8 +9,8 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "format": "biome format --write . && prettier --write \"**/*.{scss,sass}\"",
-    "lint": "biome lint . && stylelint \"**/*.{scss,sass}\"",
-    "fix": "biome check --fix . && stylelint --fix \"**/*.{scss,sass}\" && prettier --write \"**/*.{scss,sass}\"",
+    "lint": "biome lint . && stylelint --ignore-pattern 'public/**' \"**/*.{scss,sass}\"",
+    "fix": "biome check --fix . && stylelint --fix --ignore-pattern 'public/**' \"**/*.{scss,sass}\" && prettier --write \"**/*.{scss,sass}\"",
     "ci": "biome ci ."
   },
   "lint-staged": {
@@ -21,7 +21,7 @@
       "biome format --write"
     ],
     "*.{scss,sass}": [
-      "stylelint --fix",
+      "stylelint --fix --ignore-pattern 'public/**'",
       "prettier --write"
     ]
   },
@@ -34,7 +34,7 @@
     "stylelint": "^16.26.1",
     "stylelint-config-standard-scss": "^16.0.0",
     "stylelint-order": "^7.0.0",
-    "stylelint-scss": "^6.12.1",
+    "stylelint-scss": "^6.13.0",
     "vite": "^7.2.4",
     "vite-plugin-html-inject": "^1.1.2"
   },

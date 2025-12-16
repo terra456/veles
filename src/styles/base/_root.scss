@@ -1,26 +1,28 @@
 :root {
-  // Цветовая палитра
-  --color-primary: #2563eb;
-  --color-primary-hover: #1d4ed8;
-  --color-secondary: #7c3aed;
-  --color-text: #1f2937;
-  --color-text-light: #6b7280;
+  // Цветовая палитра (из макета)
+  --blue-500: #2e6ce6;
+  --blue-100: #eaf1ff;
+  --green-600: #11813a;
+  --green-100: #dcfce7;
+  --green-500: #18cc73;
+  --accent-orange: #fa6e32;
+  --accent-orange-2: #ff4e1d;
+  --red-500: #ff383c;
+  --red-100: #fee2e2;
+  --bg-page: #fcfcfc;
+  --text-dark-500: #111827;
+  --body-text-200: #374151;
+  --body-text-100: #6b7280;
+  --border-default: #e5e7eb;
   --color-background: #fff;
-  --color-background-alt: #f9fafb;
-  --color-border: #e5e7eb;
-
-  // Типографика
-  --font-family-base: "Inter", -apple-system, sans-serif;
-  --font-family-heading: var(--font-family-base);
-  --font-size-base: 16px;
-  --font-size-sm: 0.875rem; // 14px
-  --font-size-lg: 1.125rem; // 18px
-  --font-size-xl: 1.25rem; // 20px
-  --font-size-2xl: 1.5rem; // 24px
-  --font-size-3xl: 2rem; // 32px
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
+  --liner-button: linear-gradient(90deg, #1a3c80 0%, #2e6ce6 100%);
+  --liner-grafic: linear-gradient(180deg, rgb(25 86 205 / 50%) 0%, rgb(133 167 235 / 30%) 100%);
+  --liner-orange: linear-gradient(90deg, #fae715 0%, #fa6e32 33.17%);
+  --bg-card: linear-gradient(180deg, rgb(47 128 237 / 6%) 26.45%, rgb(27 73 135 / 1%) 100%);
+  --desctop-width: 1360px;
+  --desctop-padding: 40px;
+  --tablet-padding: 40px;
+  --mobile-padding: 16px;
 
   // Транзиции
   --transition-fast: 150ms ease;

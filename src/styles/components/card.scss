@@ -1,0 +1,60 @@
+@use "../mixins/index" as *;
+
+.card {
+  @include body-14-regular;
+
+  width: fit-content;
+  padding: 16px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  border-radius: 10px;
+  background: var(--white, #fff);
+  box-shadow: 0 4px 24px 0 rgb(13 29 61 / 30%);
+
+  &_icon {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: center;
+    box-shadow: 1px 1px 5px 0 rgb(13 29 61 / 30%);
+
+    &.base {
+      width: 12px;
+      height: 12px;
+      padding: 0;
+      margin: calc((36px - 12px) / 2);
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background-image: none;
+      background-color: #18cc73;
+      stroke-width: 1px;
+      stroke: #18cc73;
+      filter: blur(1px);
+      box-shadow: none;
+    }
+
+    &.check {
+      background-color: var(--green-100, #dcfce7);
+      background-image: url("/assets/icon/check-round.svg");
+    }
+
+    &.gear {
+      background-color: var(--blue-100, #eaf1ff);
+      background-image: url("/assets/icon/gear.svg");
+    }
+
+    &.refresh {
+      background-color: var(--green-100, #dcfce7);
+      background-image: url("/assets/icon/refresh.svg");
+    }
+  }
+}

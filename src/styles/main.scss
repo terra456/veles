@@ -7,14 +7,30 @@
 
 // Импорт компонентов
 @use "components/index";
+@use "layout/about";
+@use "layout/advantage";
+@use "layout/case";
 @use "layout/chart";
+@use "layout/first";
+@use "layout/form";
+@use "layout/header";
+@use "layout/news";
+@use "layout/review";
+@use "layout/section";
+@use "layout/slider";
+@use "layout/stage";
+@use "layout/success";
+
+// импорт шрифтов
+@import "/assets/fonts/IBMPlexSansCondensed/stylesheet.css";
+@import "/assets/fonts/IBMPlexSans/stylesheet.css";
+@import "/assets/fonts/inter/stylesheet.css";
 
 // Глобальные стили
 body {
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-base);
-  line-height: 1.5;
-  color: var(--color-text);
-  background-color: var(--color-background);
+  font-family: "IBM Plex Sans", Inter, sans-serif;
+  font-size: 18px;
+  line-height: normal;
+  color: var(--body-text-200);
   min-height: 100vh;
 }

@@ -1,0 +1,95 @@
+// импорт шрифтов
+@import "/assets/fonts/IBMPlexSansCondensed/stylesheet.css";
+@import "/assets/fonts/IBMPlexSans/stylesheet.css";
+@import "/assets/fonts/inter/stylesheet.css";
+
+@mixin h1-56-extra-bold {
+  color: var(--text-dark-500, #162035);
+
+  /* Desktop/h1 56 extra Bold */
+  font-family: Inter;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@mixin h2-40-semibold {
+  color: var(--text-dark-500, #162035);
+  text-align: center;
+
+  /* Desktop/h2 40 semiBold */
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin body-24-regular {
+  color: var(--body-text-200, #374151);
+
+  /* Desktop/body 24 regular */
+  font-family: "IBM Plex Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2%;
+}
+
+@mixin accent-body-24-bold {
+  color: var(--text-dark-500, #162035);
+
+  /* Desktop/ */
+  font-family: "IBM Plex Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2%;
+}
+
+@mixin body-18-regular {
+  color: var(--body-text-200, #374151);
+
+  /* Desktop/ */
+  font-family: "IBM Plex Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2%;
+}
+
+@mixin body-18-semi-bold {
+  color: var(--body-text-200, #374151);
+
+  /* Desktop/body 18 semibold */
+  font-family: "IBM Plex Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2%;
+}
+
+@mixin text-button-16-semibold {
+  /* Desktop/ */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2%;
+}
+
+@mixin body-14-regular {
+  color: var(--body-text-200, #374151);
+  font-family: "IBM Plex Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2%;
+}

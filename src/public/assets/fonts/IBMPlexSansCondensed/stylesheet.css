@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-ExtraLight.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-BoldItalic.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-Bold.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-MediumItalic.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-Thin.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-SemiBoldItalic.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-SemiBoldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-ExtraLightItalic.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-ExtraLightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-ThinItalic.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-Italic.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-Regular.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-Light.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-Medium.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-SemiBold.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Condensed";
+  src:
+    url("IBMPlexSansCondensed-LightItalic.woff2") format("woff2"),
+    url("IBMPlexSansCondensed-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}

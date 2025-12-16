@@ -1,3 +1,24 @@
+@use "../mixins/typography" as *;
+
 .section {
-  padding: 0 auto;
+  &_wrapper {
+    max-width: calc(var(--desctop-width) + 2 * var(--desctop-padding));
+    padding: 0 var(--desctop-padding);
+    padding-bottom: 120px;
+    margin: 0 auto;
+  }
+
+  &_title {
+    @include h2-40-semibold;
+
+    padding-bottom: 24px;
+    text-align: center;
+  }
+
+  &_subtitle {
+    @include body-18-regular;
+
+    padding-bottom: 80px;
+    text-align: center;
+  }
 }
