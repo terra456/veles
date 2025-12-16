@@ -1,7 +1,6 @@
-// импорт шрифтов
-@import "/assets/fonts/IBMPlexSansCondensed/stylesheet.css";
-@import "/assets/fonts/IBMPlexSans/stylesheet.css";
-@import "/assets/fonts/inter/stylesheet.css";
+// Шрифты подключаются через <link> в `src/index.html` (served from /fonts/...)
+// Если нужно — можно импортировать CSS-файлы шрифтов здесь через:
+// @import url('/fonts/IBMPlexSans/stylesheet.css');
 
 @mixin h1-56-extra-bold {
   color: var(--text-dark-500, #162035);

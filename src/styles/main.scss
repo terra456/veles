@@ -21,10 +21,8 @@
 @use "layout/stage";
 @use "layout/success";
 
-// импорт шрифтов
-@import "/assets/fonts/IBMPlexSansCondensed/stylesheet.css";
-@import "/assets/fonts/IBMPlexSans/stylesheet.css";
-@import "/assets/fonts/inter/stylesheet.css";
+// Шрифты подключаются через <link> в `src/index.html` (served from /fonts/...)
+// Если вы предпочитаете подключать их из CSS, можно оставить @import url('/fonts/...') здесь.
 
 // Глобальные стили
 body {
