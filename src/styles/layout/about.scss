@@ -39,7 +39,7 @@
         bottom: -2%;
         width: 124%;
         max-width: 545px;
-        background-image: url("/puzzle-piece.png");
+        background-image: url("/assets/puzzle-piece.png");
       }
     }
 
@@ -55,7 +55,7 @@
         bottom: -11%;
         width: 52%;
         max-width: 246px;
-        background-image: url("/hand-with-square.png");
+        background-image: url("/assets/hand-with-square.png");
 
         /* Apply the rotation */
         transform: rotate(-60.2deg); /* Rotate the background image by 15 degrees clockwise */
@@ -70,7 +70,7 @@
       grid-column: 3/4;
 
       &::before {
-        background-image: url("/bolt-comb.png");
+        background-image: url("/assets/bolt-comb.png");
         right: -18%;
         bottom: -15%;
         width: 55%;
@@ -85,7 +85,7 @@
       grid-column: 2/4;
 
       &::before {
-        background-image: url("/two-translucent-hands.png");
+        background-image: url("/assets/two-translucent-hands.png");
         right: -4%;
         bottom: -10%;
         width: 45%;
