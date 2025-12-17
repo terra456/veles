@@ -2,7 +2,7 @@
 
 .section {
   &_wrapper {
-    // max-width: calc(var(--desctop-width) + 2 * var(--desctop-padding));
+    max-width: calc(var(--desctop-width) + 2 * var(--desctop-padding));
     padding: 0 var(--desctop-padding);
     padding-bottom: 120px;
     margin: 0 auto;
