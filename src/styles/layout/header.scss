@@ -4,8 +4,7 @@
   @include flex-between;
 
   padding: 32px 24px 24px;
-  margin: 0 auto;
-  max-width: calc(var(--desctop-width));
+  margin: 0 var(--desctop-padding);
   border-radius: 10px;
   background: var(--white, #fff);
 
