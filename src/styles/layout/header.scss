@@ -1,4 +1,5 @@
 @use "../mixins/index" as *;
+@use "../base/variables" as *;
 
 .header {
   @include flex-between;
@@ -6,11 +7,25 @@
   padding: 32px 24px 24px;
   margin: 0 auto;
   max-width: calc(var(--desctop-width));
+  width: calc(100% - 2 * var(--desctop-padding));
   border-radius: 10px;
   background: var(--white, #fff);
 
   /* for card */
   box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+
+  @media (width < $to-tablet-width) {
+    padding: 24px 24px 16px;
+  }
+
+  @media (width < $to-mobile-width) {
+    margin: 0;
+    width: 100%;
+  }
+
+  &_nav {
+    position: relative;
+  }
 
   &_list {
     display: flex;
@@ -19,11 +34,181 @@
     justify-content: flex-end;
     gap: 24px;
     list-style: none;
+
+    @media (width < $to-tablet-width) {
+      padding: 24px;
+      z-index: 10;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 8px;
+      border-radius: 10px;
+      background: var(--white, #fff);
+      box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+    }
+
+    @media (width >= $to-mobile-width) and (width < $to-tablet-width) {
+      position: absolute;
+      top: -500px;
+
+      &.open {
+        top: 0;
+        animation: slide-down;
+        animation-duration: 500ms;
+        animation-timing-function: ease-out;
+      }
+
+      &.close {
+        top: -500px;
+        animation: slide-up;
+        animation-duration: 500ms;
+        animation-timing-function: ease-in;
+      }
+    }
+
+    @media (width < $to-mobile-width) {
+      position: fixed;
+      top: 65px;
+      right: -110vw;
+      width: 100vw;
+
+      &.open {
+        right: 0;
+        animation: slide-from-right;
+        animation-duration: 500ms;
+        animation-timing-function: ease-out;
+      }
+
+      &.close {
+        right: -110vw;
+        animation: slide-to-right;
+        animation-duration: 500ms;
+        animation-timing-function: ease-in;
+      }
+    }
+  }
+
+  &_item {
+    @media (width < $to-tablet-width) {
+      width: 180px;
+      border-bottom: 1px solid var(--body-text-30, rgb(107 114 128 / 30%));
+      padding: 8px 0;
+    }
   }
 
   &_link {
     @include body-18-semi-bold;
 
-    letter-spacing: 4%;
+    @media (width < $to-tablet-width) {
+      color: var(--text-dark-500, #162035);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 130%; /* 20.8px */
+    }
+  }
+}
+
+.toggle_btn {
+  position: relative;
+  display: none;
+  width: 28px;
+  height: 28px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    right: 0;
+    width: 20px;
+    height: 2px;
+    z-index: 10;
+    background-color: var(--blue-500);
+    border-radius: 2px;
+    transition: all 500ms;
+  }
+
+  &::before {
+    top: 6px;
+    transform-origin: top left;
+  }
+
+  &.open::before {
+    transform: scale(1.2) rotate(45deg);
+  }
+
+  &::after {
+    top: calc(6px + 2px + 5px);
+    transform-origin: center center;
+  }
+
+  &.open::after {
+    top: 14px;
+    transform: scale(1.2) rotate(-45deg);
+  }
+
+  @media (width < $to-tablet-width) {
+    display: block;
+  }
+
+  & > .line {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: calc(6px + (2px + 5px) * 2);
+    width: 14px;
+    height: 2px;
+    z-index: 10;
+    background-color: var(--blue-500);
+    border-radius: 2px;
+    transition: width 500ms;
+  }
+
+  &.open > .line {
+    width: 0;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+@keyframes slide-down {
+  from {
+    top: -500px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -500px;
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    right: -500px;
+  }
+
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slide-to-right {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: -500px;
   }
 }

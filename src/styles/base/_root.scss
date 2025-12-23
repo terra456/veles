@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 :root {
   // Цветовая палитра (из макета)
   --blue-500: #2e6ce6;
@@ -10,7 +12,7 @@
   --red-500: #ff383c;
   --red-100: #fee2e2;
   --bg-page: #fcfcfc;
-  --text-dark-500: #111827;
+  --text-dark-500: #162035;
   --body-text-200: #374151;
   --body-text-100: #6b7280;
   --border-default: #e5e7eb;
@@ -19,7 +21,9 @@
   --liner-grafic: linear-gradient(180deg, rgb(25 86 205 / 50%) 0%, rgb(133 167 235 / 30%) 100%);
   --liner-orange: linear-gradient(90deg, #fae715 0%, #fa6e32 33.17%);
   --bg-card: linear-gradient(180deg, rgb(47 128 237 / 6%) 26.45%, rgb(27 73 135 / 1%) 100%);
-  --desctop-width: 1360px;
+  --desctop-width: #{$desctop-width};
+  --tablet-width: #{$tablet-width};
+  --mobile-width: #{$mobile-width};
   --desctop-padding: 40px;
   --tablet-padding: 40px;
   --mobile-padding: 16px;

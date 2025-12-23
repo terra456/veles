@@ -1,0 +1,8 @@
+// Source-of-truth layout widths used across SCSS and exported to CSS custom properties
+// Define sizes here (Sass variables) — `_root.scss` will export them as `--*` CSS vars.
+$desctop-width: 1440px;
+$minidesc-width: 1360px;
+$to-tablet-width: 1030px;
+$tablet-width: 834px;
+$to-mobile-width: 748px;
+$mobile-width: 375px;

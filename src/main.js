@@ -1,4 +1,5 @@
 import "./styles/main.scss";
+import "./scripts/header-menu.js";
 import { createSalesChart } from "./scripts/chart-component.js";
 
 console.log("is started");

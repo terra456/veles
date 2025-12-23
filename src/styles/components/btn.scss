@@ -1,13 +1,31 @@
 @use "../mixins/index" as *;
+@use "../base/variables" as *;
 
 .btn {
   @include text-button-16-semibold;
 
-  display: block;
   padding: 17px 32.5px;
   min-width: 262px;
+  display: flex;
+  width: 238px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   border-radius: 10px;
   background: linear-gradient(90deg, #1a3c80 0%, #2e6ce6 100%);
+  white-space: nowrap;
+
+  @media (width < $to-tablet-width) {
+    padding: 16px 20px;
+    min-width: 240px;
+  }
+
+  @media (width < $to-mobile-width) {
+    padding: 16px 20px;
+    min-width: auto;
+    width: 100%;
+  }
 
   // background-color: #1a3c80;
   color: var(--white, #fff);
@@ -21,14 +39,11 @@
   &:hover {
     background: linear-gradient(90deg, #397dff 0%, #2e6ce6 100%);
 
-    // background: #397dff;
-
     &::before {
       background-color: var(--white, #fff);
     }
   }
 
-  // Модификаторы
   &--secondary {
     background: transparent;
     color: var(--accent-orange, #fa6e32);
@@ -53,29 +68,41 @@
     position: relative;
     padding-left: calc(20px + 8px + 32.5px);
 
+    @media (width < $to-tablet-width) {
+      padding-left: calc(18px + 8px + 20px);
+    }
+
     &::before {
       content: "";
       position: absolute;
-      left: 32.5px;
+      left: 17px;
       top: calc(50% - 17px / 2);
       width: 20px;
       height: 17px;
       mask-repeat: no-repeat;
       mask-size: contain;
       mask-position: center;
+
+      @media (width < $to-tablet-width) {
+        left: 18px;
+      }
     }
   }
 
   &--tg::before {
     mask-image: url("/assets/icon/tg.svg");
+
+    @media (width < $to-mobile-width) {
+      left: calc(50% - 90px);
+    }
   }
 
-  &--mail {
-    padding-left: 80px;
+  &--mail::before {
+    left: 36px;
+    mask-image: url("/assets/icon/mail.svg");
 
-    &::before {
-      left: 47px;
-      mask-image: url("/assets/icon/mail.svg");
+    @media (width < $to-mobile-width) {
+      left: calc(50% - 75px);
     }
   }
 
@@ -99,11 +126,5 @@
   &--large {
     padding: var(--spacing-lg) var(--spacing-xl);
     font-size: var(--font-size-lg);
-  }
-
-  // Используем SASS миксин для адаптивности
-  @include tablet {
-    width: 100%;
-    max-width: 300px;
   }
 }

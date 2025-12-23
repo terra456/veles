@@ -1,94 +1,146 @@
 // Шрифты подключаются через <link> в `src/index.html` (served from /fonts/...)
 // Если нужно — можно импортировать CSS-файлы шрифтов здесь через:
 // @import url('/fonts/IBMPlexSans/stylesheet.css');
+@use "../base/variables" as *;
 
 @mixin h1-56-extra-bold {
   color: var(--text-dark-500, #162035);
 
   /* Desktop/h1 56 extra Bold */
-  font-family: Inter;
+  font-family: Tektur;
   font-size: 56px;
-  font-style: normal;
   font-weight: 700;
+  font-style: normal;
   line-height: normal;
+
+  @media (width < $to-tablet-width) {
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  @media (width < $to-mobile-width) {
+    /* Tablet/h3 tablet 32 semibold */
+    font-family: Tektur;
+    font-size: 32px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: normal;
+    color: var(--text-dark-500, #162035);
+  }
 }
 
 @mixin h2-40-semibold {
   color: var(--text-dark-500, #162035);
-  text-align: center;
 
   /* Desktop/h2 40 semiBold */
-  font-family: Inter;
+  font-family: Tektur;
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  text-align: center;
+
+  @media (width < $to-tablet-width) {
+    font-size: 32px;
+  }
+
+  @media (width < $to-mobile-width) {
+    font-size: 24px;
+    font-weight: 700;
+  }
 }
 
 @mixin body-24-regular {
   color: var(--body-text-200, #374151);
 
   /* Desktop/body 24 regular */
-  font-family: "IBM Plex Sans";
+  font-family: Inter;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 2%;
+
+  @media (width < $to-tablet-width) {
+    font-size: 20px;
+    font-weight: 400;
+  }
 }
 
 @mixin accent-body-24-bold {
   color: var(--text-dark-500, #162035);
 
   /* Desktop/ */
-  font-family: "IBM Plex Sans";
+  font-family: Inter;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: 2%;
 }
 
 @mixin body-18-regular {
   color: var(--body-text-200, #374151);
 
   /* Desktop/ */
-  font-family: "IBM Plex Sans";
+  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 2%;
+}
+
+@mixin body-regular {
+  color: var(--body-text-200, #374151);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @media (width < $to-mobile-width) {
+    font-size: 16px;
+  }
 }
 
 @mixin body-18-semi-bold {
   color: var(--body-text-200, #374151);
 
   /* Desktop/body 18 semibold */
-  font-family: "IBM Plex Sans";
+  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  letter-spacing: 2%;
 }
 
 @mixin text-button-16-semibold {
   /* Desktop/ */
-  font-family: Inter;
+  font-family: Tektur;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  letter-spacing: 2%;
+
+  @media (width < $to-mobile-width) {
+    font-size: 14px;
+  }
+}
+
+@mixin body-16-regular {
+  color: var(--body-text-100, #6b7280);
+
+  /* Desktop/body 16 regular */
+  font-family: "IBM Plex Sans Condensed";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 20.8px */
 }
 
 @mixin body-14-regular {
   color: var(--body-text-200, #374151);
-  font-family: "IBM Plex Sans";
+  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 2%;
 }

@@ -7,6 +7,7 @@
 
 // Импорт компонентов
 @use "components/index";
+@use "layout/section";
 @use "layout/about";
 @use "layout/advantage";
 @use "layout/case";
@@ -16,19 +17,24 @@
 @use "layout/header";
 @use "layout/news";
 @use "layout/review";
-@use "layout/section";
 @use "layout/slider";
 @use "layout/stage";
 @use "layout/success";
 @use "fonts/IBMPlexSansCondensed/stylesheet" as IBMPlexSansCondensed;
 @use "fonts/IBMPlexSans/stylesheet" as IBMPlexSans;
-@use "fonts/inter/stylesheet" as inter;
+@use "fonts/tektur" as tektur;
+@use "fonts/inter" as inter;
 
 // Глобальные стили
 body {
-  font-family: "IBM Plex Sans", Inter, sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 18px;
   line-height: normal;
   color: var(--body-text-200);
   min-height: 100vh;
+  overflow-y: scroll;
+}
+
+html {
+  scroll-behavior: smooth;
 }

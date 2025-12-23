@@ -1,4 +1,6 @@
 @use "../mixins/typography" as *;
+@use "../mixins/utils" as *;
+@use "../base/variables" as *;
 
 .first {
   --first-height: 782px;
@@ -8,33 +10,111 @@
   height: var(--first-height);
   overflow: hidden;
 
+  @media (width < $minidesc-width) {
+    --first-height: 567px;
+  }
+
+  @media (width < $to-tablet-width) {
+    --first-height: 567px;
+
+    margin-top: 20px;
+    margin-bottom: 70px;
+  }
+
+  @media (width < $to-mobile-width) {
+    --first-height: 700px;
+  }
+
+  &_bg {
+    padding-bottom: 0;
+    background-repeat: no-repeat;
+    background-image: url("/assets/first-bg-desk.png");
+    background-position: right 10px top;
+
+    @media (width < $minidesc-width) {
+      background-size: contain;
+      background-position: left 95% top;
+    }
+
+    @media (width < 1150px) {
+      background-size: contain;
+      background-position: right -15% top;
+    }
+
+    @media (width < $to-tablet-width) {
+      background-image: url("/assets/first-bg-tablet.png");
+      background-size: contain;
+      background-position: right 5% top;
+    }
+
+    @media (width < 946px) {
+      background-position: left 510px top;
+    }
+
+    @media (width < $to-mobile-width) {
+      background-image: url("/assets/first-bg-mobile.png");
+      background-size: 340px;
+      background-position: right 0 top 15px;
+    }
+
+    @media (width < 520px) {
+      background-position: left 190px top 15px;
+    }
+  }
+
   &_conteiner {
     height: var(--first-height);
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    background-image: url("/assets/first-bg-desk.png");
-    background-repeat: no-repeat;
-    background-position: right center;
+
+    @media (width < $to-mobile-width) {
+      flex-direction: column;
+    }
   }
 
   &_info {
-    width: 60%;
+    width: 700px;
     flex-shrink: 0;
     margin-top: -20px;
+
+    @media (width < $to-tablet-width) {
+      width: 500px;
+      margin-top: 30px;
+    }
+
+    @media (width < $to-mobile-width) {
+      width: 100%;
+      margin-top: 225px;
+    }
   }
 
   &_title {
     @include h1-56-extra-bold;
 
     padding-bottom: 16px;
+
+    @media (width < $to-mobile-width) {
+      max-width: 340px;
+      padding-bottom: 24px;
+    }
   }
 
   &_desc {
     @include body-24-regular;
 
     padding-bottom: 60px;
+
+    @media (width < $to-tablet-width) {
+      padding-bottom: 40px;
+    }
+
+    @media (width < $to-mobile-width) {
+      @include body-18-regular;
+
+      padding-bottom: 32px;
+    }
   }
 
   &_btn-conteiner {
@@ -44,24 +124,44 @@
     align-items: center;
     justify-content: flex-start;
     gap: 16px;
+
+    @media (width < $to-tablet-width) {
+      padding-bottom: 16px;
+      gap: 8px;
+    }
+
+    @media (width < $to-mobile-width) {
+      flex-direction: column;
+    }
   }
 
   &_cost {
-    @include body-18-regular;
+    @include body-regular;
 
     color: var(--body-text-100, #6b7280);
-    letter-spacing: 2%;
+
+    @media (width < $to-tablet-width) {
+      padding-bottom: 16px;
+      gap: 8px;
+    }
   }
 
   &_price {
     color: var(--blue-500, #2e6ce6);
-    font-family: "IBM Plex Sans";
+    font-family: Tektur;
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    letter-spacing: 2%;
     margin-bottom: 1px;
+
+    @media (width < $to-tablet-width) {
+      font-size: 24px;
+    }
+
+    @media (width < $to-mobile-width) {
+      font-weight: 700;
+    }
   }
 
   &_cards {
@@ -69,6 +169,10 @@
     flex-shrink: 0;
     display: flex;
     justify-content: center;
+
+    @media (width < $tablet-width) {
+      @include visually-hidden;
+    }
   }
 
   &_list {
@@ -76,33 +180,106 @@
     width: 600px;
     list-style-type: none;
     margin: 0;
+    height: var(--first-height);
 
-    /* Параметры зоны: показываем примерно 5 карточек одновременно */
+    // /* Мобильные: чуть быстрее цикл */
+    // @media (width <= 640px) {
+    //   --first-item-h: 48px;
+    //   --first-gap: 10px;
+
+    //   height: calc(var(--first-item-h) * 5 + var(--first-gap) * 4);
+
+    //   .first_item {
+    //     animation-duration: 6s;
+    //   }
+    // }
+    &:hover > .first_item {
+      animation-play-state: paused;
+    }
+  }
+
+  @media (width >= $minidesc-width) {
     --animation-time: 25s;
+    --x-begin: 350px;
+    --x-end: -70px;
+    --big-opacity: 1;
+  }
+
+  @media (width < $minidesc-width) {
+    --animation-time: 25s;
+    --x-begin: 200px;
+    --x-end: -225px;
+    --big-opacity: 0;
+  }
+
+  @media (width < $to-tablet-width) {
+    --animation-time: 20s;
+    --x-begin: 130px;
+    --x-end: -30px;
+    --big-opacity: 1;
+  }
+
+  // animatiion only on max screens
+  @media (width >= $tablet-width) {
     --items: 10; /* общее количество карточек для расчёта шага */
     --step: calc(var(--animation-time) / var(--items)); /* шаг задержки между элементами */
 
-    height: var(--first-height);
-
-    // overflow: hidden; /* прячем всё, что выходит за блок */
-
     /* Сделаем поток в одной колонке: расположим элементы абсолютно и анимируем трансформацией Y */
-    .first_item {
+    &_item {
       position: absolute;
-
-      // left: 30px;
       will-change: transform, opacity;
       animation-name: first-item-fall;
       animation-duration: var(--animation-time);
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       opacity: 0;
+
+      /* Сдвиг по времени для равномерного потока. Количество и шаг можно корректировать */
+      &:nth-child(1) {
+        animation-delay: calc(var(--step) * -0);
+      }
+
+      &:nth-child(2) {
+        animation-delay: calc(var(--step) * -1);
+      }
+
+      &:nth-child(3) {
+        animation-delay: calc(var(--step) * -2);
+      }
+
+      &:nth-child(4) {
+        animation-delay: calc(var(--step) * -3);
+      }
+
+      &:nth-child(5) {
+        animation-delay: calc(var(--step) * -4);
+      }
+
+      &:nth-child(6) {
+        animation-delay: calc(var(--step) * -5);
+      }
+
+      &:nth-child(7) {
+        animation-delay: calc(var(--step) * -6);
+      }
+
+      &:nth-child(8) {
+        animation-delay: calc(var(--step) * -7);
+      }
+
+      &:nth-child(9) {
+        animation-delay: calc(var(--step) * -8);
+      }
+
+      &:nth-child(10) {
+        animation-delay: calc(var(--step) * -9);
+      }
     }
 
     /* Ключевые кадры: карточка появляется сверху, плавно проходит зону и уходит вниз */
     @keyframes first-item-fall {
       0% {
-        transform: translate(350px, -500%);
+        transform: translate(var(--x-begin), -500%);
         opacity: 0;
       }
 
@@ -118,8 +295,20 @@
         opacity: 1;
       }
 
-      80% {
+      70% {
         opacity: 1;
+      }
+
+      75% {
+        opacity: var(--big-opacity);
+      }
+
+      80% {
+        opacity: var(--big-opacity);
+      }
+
+      85% {
+        opacity: 0;
       }
 
       90% {
@@ -127,61 +316,8 @@
       }
 
       100% {
-        transform: translate(-70px, 1200%);
+        transform: translate(var(--x-end), 1200%);
         opacity: 0;
-      }
-    }
-
-    /* Сдвиг по времени для равномерного потока. Количество и шаг можно корректировать */
-    .first_item:nth-child(1) {
-      animation-delay: calc(var(--step) * -0);
-    }
-
-    .first_item:nth-child(2) {
-      animation-delay: calc(var(--step) * -1);
-    }
-
-    .first_item:nth-child(3) {
-      animation-delay: calc(var(--step) * -2);
-    }
-
-    .first_item:nth-child(4) {
-      animation-delay: calc(var(--step) * -3);
-    }
-
-    .first_item:nth-child(5) {
-      animation-delay: calc(var(--step) * -4);
-    }
-
-    .first_item:nth-child(6) {
-      animation-delay: calc(var(--step) * -5);
-    }
-
-    .first_item:nth-child(7) {
-      animation-delay: calc(var(--step) * -6);
-    }
-
-    .first_item:nth-child(8) {
-      animation-delay: calc(var(--step) * -7);
-    }
-
-    .first_item:nth-child(9) {
-      animation-delay: calc(var(--step) * -8);
-    }
-
-    .first_item:nth-child(10) {
-      animation-delay: calc(var(--step) * -9);
-    }
-
-    /* Мобильные: чуть быстрее цикл */
-    @media (width <= 640px) {
-      --first-item-h: 48px;
-      --first-gap: 10px;
-
-      height: calc(var(--first-item-h) * 5 + var(--first-gap) * 4);
-
-      .first_item {
-        animation-duration: 6s;
       }
     }
   }
