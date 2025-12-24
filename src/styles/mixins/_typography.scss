@@ -66,6 +66,17 @@
   }
 }
 
+@mixin body-accent-20-semibold {
+  color: var(--text-dark-500, #162035);
+
+  /* Desktop/ */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
 @mixin accent-body-24-bold {
   color: var(--text-dark-500, #162035);
 
@@ -85,6 +96,14 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
+  line-height: normal;
+}
+
+@mixin body-18-semibold {
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
   line-height: normal;
 }
 

@@ -1,11 +1,75 @@
-.chart-section {
-  padding: 5px 0;
-  background: green;
+@use "../mixins/typography" as *;
+@use "../mixins/utils" as *;
+@use "../base/variables" as *;
 
-  &__title {
-    text-align: center;
-    margin-bottom: 0;
-    color: black;
+.chart {
+  position: relative;
+
+  &_years {
+    padding-right: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  &_year-btn {
+    @include body-accent-20-semibold;
+
+    position: relative;
+    display: flex;
+    padding: 4px 8px 4px calc(8px + 16px + 8px);
+    place-content: center center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid transparent;
+
+    &.active,
+    &:hover,
+    &:active {
+      border: 1px solid var(--blue-500, #2e6ce6);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: calc(50% - 1px);
+        width: 16px;
+        height: 2px;
+        background: var(--blue-500, #2e6ce6);
+      }
+    }
+  }
+
+  &_tooltip {
+    @include body-18-regular;
+
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    display: none;
+    width: 670px;
+    padding: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 10px;
+    background: var(--white, #fff);
+
+    /* for card */
+    box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+  }
+
+  &_accent {
+    @include body-18-semibold;
+
+    color: var(--blue-500, #2e6ce6);
+    white-space: nowrap;
+  }
+
+  &_wrapper:hover .chart_tooltip {
+    display: flex;
   }
 }
 
