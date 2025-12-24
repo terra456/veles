@@ -21,6 +21,7 @@
   --liner-grafic: linear-gradient(180deg, rgb(25 86 205 / 50%) 0%, rgb(133 167 235 / 30%) 100%);
   --liner-orange: linear-gradient(90deg, #fae715 0%, #fa6e32 33.17%);
   --bg-card: linear-gradient(180deg, rgb(47 128 237 / 6%) 26.45%, rgb(27 73 135 / 1%) 100%);
+  --liner: linear-gradient(90deg, #85a7eb 0%, #1956cd 100%);
   --desctop-width: #{$desctop-width};
   --tablet-width: #{$tablet-width};
   --mobile-width: #{$mobile-width};
@@ -32,12 +33,4 @@
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
   --transition-slow: 350ms ease;
-
-  // Z-index слои
-  --z-dropdown: 1000;
-  --z-sticky: 1020;
-  --z-fixed: 1030;
-  --z-modal: 1040;
-  --z-popover: 1050;
-  --z-tooltip: 1060;
 }
