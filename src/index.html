@@ -224,9 +224,9 @@
             </div>
           </div>
           <div class="swiper-navigation">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
+            <div id="swiper-prev" class="swiper-button-prev"></div>
+            <div id="swiper-pagination" class="swiper-pagination"></div>
+            <div id="swiper-next" class="swiper-button-next"></div>
           </div>
         </div>
       </section>
@@ -268,84 +268,100 @@
           <p class="section_subtitle">Простой и прозрачный процесс решения ваших задач</p>
           <div class="work_conteiner">
             <div class="work_card">
-              <img class="work_img" src="" alt="">
+              <img class="work_img" src="/assets/headset.png" alt="">
               <h3 class="work_title">Опишите проблему</h3>
               <p class="work_desc">
                 Свяжитесь с&nbsp;нами удобным способом и&nbsp;расскажите о&nbsp;задаче
               </p>
             </div>
             <div class="work_card">
-              <img class="work_img" src="" alt="">
+              <img class="work_img" src="/assets/glass.png" alt="">
               <h3 class="work_title">Мы анализируем</h3>
               <p class="work_desc">Изучаем ситуацию и&nbsp;предлагаем оптимальное решение</p>
             </div>
             <div class="work_card">
-              <img class="work_img" src="" alt="">
+              <img class="work_img" src="/assets/wrench-crossed-with.png" alt="">
               <h3 class="work_title">Исправляем</h3>
               <p class="work_desc">Быстро устраняем проблему и&nbsp;тестируем результат</p>
             </div>
             <div class="work_card">
-              <img class="work_img" src="" alt="">
+              <img class="work_img" src="/assets/key-smooth.png" alt="">
               <h3 class="work_title">Поддерживаем</h3>
               <p class="work_desc">
                 Следим за&nbsp;стабильностью и&nbsp;готовы помочь в&nbsp;любой момент
               </p>
             </div>
-            <p class="work_desc">Просто, быстро и без бюрократии</p>
-            <p class="work_highlight">Просто, быстро и без бюрократии</p>
           </div>
+          <p class="work_desc">Просто, быстро и без бюрократии</p>
+          <p class="work_highlight">Главное — чтобы система работала</p>
         </div>
       </section>
       <section id="solution" class="section solution">
         <div class="section_wrapper">
           <h2 class="section_title">Решаем задачи, а не создаём их</h2>
           <p class="section_subtitle">Реальные кейсы из нашей практики</p>
-          <div class="solution_conteiner slider">
-            <div class="slide_conteiner">
-              <div class="slide">
-                <div class="solution_item">
-                  <div class="status problem">Проблема</div>
-                  <p class="solution_desc">Система 1С зависала при загрузке отчётов</p>
+          <div class="solution_conteiner">
+            <div id="swiper2" class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="solution_slide">
+                    <div class="solution_item">
+                      <div class="status problem">Проблема</div>
+                      <p class="solution_desc">Система 1С зависала при загрузке отчётов</p>
+                    </div>
+                    <div class="solution_item">
+                      <div class="status decision">Решение</div>
+                      <p class="solution_desc">
+                        Оптимизировали запросы и&nbsp;настроили кэширование
+                      </p>
+                    </div>
+                    <div class="solution_item">
+                      <div class="status result">Результат</div>
+                      <p class="solution_desc">Скорость работы увеличилась в&nbsp;5 раз</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="solution_item">
-                  <div class="status decision">Решение</div>
-                  <p class="solution_desc">Оптимизировали запросы и&nbsp;настроили кэширование</p>
+                <div class="swiper-slide">
+                  <div class="solution_slide">
+                    <div class="solution_item">
+                      <div class="status problem">Проблема</div>
+                      <p class="solution_desc">После обновления перестали работать интеграции</p>
+                    </div>
+                    <div class="solution_item">
+                      <div class="status decision">Решение</div>
+                      <p class="solution_desc">Адаптировали API под новую версию за 4 часа</p>
+                    </div>
+                    <div class="solution_item">
+                      <div class="status result">Результат</div>
+                      <p class="solution_desc">Восстановили все связи без потери данных</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="solution_item">
-                  <div class="status result">Результат</div>
-                  <p class="solution_desc">Скорость работы увеличилась в&nbsp;5 раз</p>
-                </div>
-              </div>
-              <div class="slide">
-                <div class="solution_item">
-                  <div class="status problem">Проблема</div>
-                  <p class="solution_desc">После обновления перестали работать интеграции</p>
-                </div>
-                <div class="solution_item">
-                  <div class="status decision">Решение</div>
-                  <p class="solution_desc">Адаптировали API под новую версию за 4 часа</p>
-                </div>
-                <div class="solution_item">
-                  <div class="status result">Результат</div>
-                  <p class="solution_desc">Восстановили все связи без потери данных</p>
-                </div>
-              </div>
-              <div class="slide">
-                <div class="solution_item">
-                  <div class="status problem">Проблема</div>
-                  <p class="solution_desc">Ошибки при проведении документов в конце месяца</p>
-                </div>
-                <div class="solution_item">
-                  <div class="status decision">Решение</div>
-                  <p class="solution_desc">Исправили конфликт конфигураций и добавили мониторинг</p>
-                </div>
-                <div class="solution_item">
-                  <div class="status result">Результат</div>
-                  <p class="solution_desc">Закрытие месяца проходит стабильно</p>
+                <div class="swiper-slide">
+                  <div class="solution_slide">
+                    <div class="solution_item">
+                      <div class="status problem">Проблема</div>
+                      <p class="solution_desc">Ошибки при проведении документов в конце месяца</p>
+                    </div>
+                    <div class="solution_item">
+                      <div class="status decision">Решение</div>
+                      <p class="solution_desc">
+                        Исправили конфликт конфигураций и добавили мониторинг
+                      </p>
+                    </div>
+                    <div class="solution_item">
+                      <div class="status result">Результат</div>
+                      <p class="solution_desc">Закрытие месяца проходит стабильно</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="pagination"></div>
+            <div class="swiper-navigation">
+              <div id="swiper2-prev" class="swiper-button-prev"></div>
+              <div id="swiper2-pagination" class="swiper-pagination"></div>
+              <div id="swiper2-next" class="swiper-button-next"></div>
+            </div>
           </div>
         </div>
       </section>

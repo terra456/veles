@@ -1,19 +1,47 @@
+@use "../mixins/typography" as *;
+@use "../mixins/utils" as *;
+@use "../base/variables" as *;
+
 .status {
-  color: gray;
+  @include body-regular;
+
+  color: var(--status-color);
+  position: relative;
+  width: 140px;
+  padding: 8px;
+  border-radius: 10px;
+  padding-left: calc(8px + 24px + 8px);
 
   &::before {
     content: "";
+    position: absolute;
+    left: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--status-color);
+    box-shadow: 0 0 3px 1px var(--status-color);
+  }
+
+  &:hover::before {
+    box-shadow: 0 0 5px 2px var(--status-color);
   }
 
   &.problem {
-    color: red;
+    --status-color: var(--red-500, #ff383c);
+
+    background: var(--red-100, #fee2e2);
   }
 
   &.decision {
-    color: red;
+    --status-color: var(--blue-500, #2e6ce6);
+
+    background: var(--blue-100, #eaf1ff);
   }
 
   &.result {
-    color: red;
+    --status-color: var(--green-600, #11813a);
+
+    background: var(--green-100, #dcfce7);
   }
 }

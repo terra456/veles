@@ -45,7 +45,6 @@ export function createSalesChart(canvasId, data) {
           borderWidth: 2,
           fill: true,
           tension: 0.4,
-          //pointBackgroundColor: '#2563eb',
           pointStyle: false,
         },
       ],
@@ -55,6 +54,44 @@ export function createSalesChart(canvasId, data) {
       plugins: {
         legend: {
           display: false,
+        },
+        tooltip: {
+          enabled: false, // Устанавливаем в false для отключения
+        },
+      },
+      scales: {
+        x: {
+          grid: {
+            display: true, // Показывать сетку по оси X
+            color: "rgba(0, 0, 26, 0.15)", // Светло-серый цвет
+            lineWidth: 1, // Толщина линии
+            borderDash: [15, 15], // Пунктирная линия
+          },
+          ticks: {
+            color: "#374151",
+            font: {
+              size: 14,
+              family: "Inter",
+            },
+          },
+        },
+        y: {
+          grid: {
+            display: true, // Показывать сетку по оси X
+            color: "rgba(0, 0, 26, 0.15)", // Светло-серый цвет
+            lineWidth: 1, // Толщина линии
+            borderDash: [15, 15], // Пунктирная линия
+          },
+          ticks: {
+            color: "#374151",
+            font: {
+              size: 14,
+              family: "Inter",
+            },
+            callback: (value) => {
+              return `${value} ₽`;
+            },
+          },
         },
       },
     },
