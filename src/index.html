@@ -19,7 +19,7 @@
                 Гибкая команда экспертов по 1С. Мы&nbsp;решаем задачи бизнеса&nbsp;быстро, точно и
                 без бюрократии
               </p>
-              <div class="first_btn-conteiner">
+              <div class="btn-conteiner">
                 <a class="btn btn--tg" href="tg">Написать в телеграм</a>
                 <a class="btn btn--mail btn--secondary" href="#request">Оставить заявку</a>
               </div>
@@ -268,24 +268,32 @@
           <p class="section_subtitle">Простой и прозрачный процесс решения ваших задач</p>
           <div class="work_conteiner">
             <div class="work_card">
-              <img class="work_img" src="/assets/headset.png" alt="">
+              <div class="work_img-conteiner">
+                <img class="work_img" src="/assets/headset.png" alt="">
+              </div>
               <h3 class="work_title">Опишите проблему</h3>
               <p class="work_desc">
                 Свяжитесь с&nbsp;нами удобным способом и&nbsp;расскажите о&nbsp;задаче
               </p>
             </div>
             <div class="work_card">
-              <img class="work_img" src="/assets/glass.png" alt="">
+              <div class="work_img-conteiner">
+                <img class="work_img" src="/assets/glass.png" alt="">
+              </div>
               <h3 class="work_title">Мы анализируем</h3>
               <p class="work_desc">Изучаем ситуацию и&nbsp;предлагаем оптимальное решение</p>
             </div>
             <div class="work_card">
-              <img class="work_img" src="/assets/wrench-crossed-with.png" alt="">
+              <div class="work_img-conteiner">
+                <img class="work_img" src="/assets/wrench-crossed-with.png" alt="">
+              </div>
               <h3 class="work_title">Исправляем</h3>
               <p class="work_desc">Быстро устраняем проблему и&nbsp;тестируем результат</p>
             </div>
             <div class="work_card">
-              <img class="work_img" src="/assets/key-smooth.png" alt="">
+              <div class="work_img-conteiner">
+                <img class="work_img" src="/assets/key-smooth.png" alt="">
+              </div>
               <h3 class="work_title">Поддерживаем</h3>
               <p class="work_desc">
                 Следим за&nbsp;стабильностью и&nbsp;готовы помочь в&nbsp;любой момент
@@ -366,52 +374,52 @@
         </div>
       </section>
       <section id="request" class="section request">
-        <div class="section_wrapper">
-          <h2 class="section_title">Мы рядом, когда 1С подводит</h2>
-          <h3 class="section_title--addition">Напишите нам — решим задачу вместе</h3>
-          <p class="section_subtitle">
+        <div class="section_wrapper request_wrapper">
+          <h2 class="request_title">Мы рядом, когда 1С подводит</h2>
+          <h3 class="request_subtitle">Напишите нам — решим задачу вместе</h3>
+          <p class="request_desc">
             Оставьте заявку и мы свяжемся с вами в течении дня и предложим решение
           </p>
-        </div>
-        <div class="request_form-conteiner">
-          <form class="request_form">
-            <div class="input_conteiner">
-              <label class="input_label" for="name">Контактное лицо</label>
-              <input id="name" class="input" placeholder="Введите имя">
-              <p class="input_error"></p>
-            </div>
-            <div class="input_conteiner">
-              <label class="input_label" for="email">Электронный адрес</label>
-              <input id="email" class="input" placeholder="1Сexample@mail.ru">
-              <p class="input_error"></p>
-            </div>
-            <div class="input_conteiner">
-              <label class="input_label" for="phone">Контактный телефон</label>
-              <input id="phone" class="input" placeholder="+ 7 (999) 999-99-99">
-              <p class="input_error"></p>
-            </div>
-            <div class="input_conteiner textarea_conteiner">
-              <label class="input_label" for="text">Подробное описание</label>
-              <textarea
-                id="text"
-                class="input"
-                placeholder="Опишите проблему, последовательность действий, которая к ней приводит, текст ошибки (если есть). Для доработки — опишите задачу и требуемый результат."
-              ></textarea>
-              <p class="input_error"></p>
-            </div>
-            <div class="input_conteiner textarea_conteiner">
-              <input id="consent" type="checkbox" class="checkbox">
-              <label class="input_label" for="consern">
-                Я согласен на обработку персональных данных и принимаю условия
-                <a class="text-link" href="/consern">Политики конфиденциальности</a>
-              </label>
-              <p class="input_error"></p>
-            </div>
-            <div class="form_btn-conteiner">
-              <button type="submit" class="btn">Оставить заявку</button>
-              <a href="#tg">Написать в телеграм</a>
-            </div>
-          </form>
+          <div class="request_conteiner">
+            <form class="request_form form">
+              <div class="form_conteiner">
+                <label class="form_label" for="name">Контактное лицо</label>
+                <input id="name" class="form_input" placeholder="Введите имя">
+                <p class="form_error">erewr</p>
+              </div>
+              <div class="form_conteiner">
+                <label class="form_label" for="email">Электронный адрес</label>
+                <input id="email" class="form_input" placeholder="1Сexample@mail.ru">
+                <p class="form_error"></p>
+              </div>
+              <div class="form_conteiner">
+                <label class="form_label" for="phone">Контактный телефон</label>
+                <input id="phone" class="form_input" placeholder="+ 7 (999) 999-99-99">
+                <p class="form_error"></p>
+              </div>
+              <div class="form_conteiner form_conteiner--textarea">
+                <label class="form_label" for="text">Подробное описание</label>
+                <textarea
+                  id="text"
+                  class="form_input form_textarea"
+                  placeholder="Опишите проблему, последовательность действий, которая к ней приводит, текст ошибки (если есть). Для доработки — опишите задачу и требуемый результат."
+                ></textarea>
+                <p class="form_error"></p>
+              </div>
+              <div class="form_conteiner form_conteiner--consent">
+                <label class="form_label" for="consent">
+                  <input id="consent" type="checkbox" class="form_checkbox">Я согласен на обработку
+                  персональных данных и принимаю условия
+                  <a class="text-link" href="/consent">Политики конфиденциальности</a>
+                </label>
+                <p class="form_error"></p>
+              </div>
+              <div class="btn-conteiner">
+                <button type="submit" class="btn">Оставить заявку</button>
+                <a class="btn" href="#tg">Написать в телеграм</a>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </main>

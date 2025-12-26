@@ -1,0 +1,38 @@
+@use "../mixins/typography" as *;
+@use "../mixins/utils" as *;
+@use "../base/variables" as *;
+
+.request {
+  &_title {
+    @include h2-40-semibold;
+
+    font-size: 48px;
+    padding-bottom: 24px;
+  }
+
+  &_subtitle {
+    @include h2-40-semibold;
+
+    padding-bottom: 24px;
+  }
+
+  &_desc {
+    @include body-24-regular;
+
+    text-align: center;
+    padding-bottom: 80px;
+  }
+
+  &_conteiner {
+    padding: 65px 172px;
+    border-radius: 10px;
+    background: var(--bg-card), url("/assets/rounded-chat.png"), url("/assets/paper.png");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position:
+      center,
+      bottom left,
+      bottom right;
+    background-size: cover, 20%, 20%;
+    box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+  }
+}

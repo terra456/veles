@@ -42,5 +42,3 @@ const swiper2 = new Swiper("#swiper2", {
     prevEl: "#swiper2-prev",
   },
 });
-
-swiper.update();

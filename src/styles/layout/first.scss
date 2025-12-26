@@ -117,24 +117,6 @@
     }
   }
 
-  &_btn-conteiner {
-    padding-bottom: 24px;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 16px;
-
-    @media (width < $to-tablet-width) {
-      padding-bottom: 16px;
-      gap: 8px;
-    }
-
-    @media (width < $to-mobile-width) {
-      flex-direction: column;
-    }
-  }
-
   &_cost {
     @include body-regular;
 

@@ -13,10 +13,12 @@
 @use "layout/case";
 @use "layout/chart";
 @use "layout/first";
+@use "layout/footer";
 @use "layout/form";
 @use "layout/header";
 @use "layout/news";
 @use "layout/review";
+@use "layout/request";
 @use "layout/solution";
 @use "layout/stage";
 @use "layout/success";
@@ -39,4 +41,8 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+main {
+  overflow: hidden;
 }

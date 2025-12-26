@@ -3,6 +3,14 @@
 @use "../base/variables" as *;
 
 .solution {
+  &_conteiner {
+    margin: 0 115px;
+  }
+
+  & .swiper {
+    overflow: visible;
+  }
+
   &_slide {
     height: 100%;
     padding: 32px;

@@ -1,3 +1,89 @@
+@use "../mixins/typography" as *;
+@use "../mixins/utils" as *;
+@use "../base/variables" as *;
+
 .form {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  row-gap: 8px;
+
+  &_conteiner {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+
+    &--textarea,
+    &--consent {
+      width: 100%;
+    }
+  }
+
+  &_label {
+    @include body-regular;
+  }
+
+  &_input {
+    @include body-regular;
+
+    display: flex;
+    height: 48px;
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--body-text-100);
+    outline: none;
+
+    &::placeholder {
+      color: var(--body-text-100);
+    }
+
+    &:invalid {
+      border: 1px solid var(--red-500);
+    }
+
+    &:focus {
+      border: 1px solid var(--text-dark-500);
+    }
+  }
+
+  &_error {
+    @include body-14-regular;
+
+    position: relative;
+    height: 18px;
+    padding-left: 22px;
+    color: var(--red-500);
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 0;
+      background-image: url("/assets/icon/danger.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &_textarea {
+    height: 120px;
+  }
+
+  &_btn-conteiner {
+    width: 100%;
+  }
+
+  &_checkbox {
+    /* Change the checkmark and border color when checked */
+    accent-color: #2196f3; /* A nice blue color */
+
+    /* You can also change the size */
+    width: 20px;
+    height: 20px;
+  }
 }

@@ -4,6 +4,7 @@
 
 .work {
   &_conteiner {
+    padding-bottom: 60px;
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -11,8 +12,32 @@
     gap: 20px;
   }
 
+  &_img-conteiner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 24px;
+    background: radial-gradient(
+      54.93% 44.57% at 49.85% 30.16%,
+      #ff383c 0%,
+      rgb(255 255 255 / 0%) 48.78%
+    );
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 500ms;
+  }
+
+  &_img {
+    width: 130px;
+    height: 130px;
+  }
+
   &_card {
-    padding: 24px;
+    padding-top: 24px;
     display: flex;
     width: calc((100% - 60px) / 4);
     flex-direction: column;
@@ -20,32 +45,15 @@
     align-self: stretch;
     border-radius: 10px;
 
-    &_img {
-      width: 180px;
-      height: 180px;
-      padding-bottom: 24px;
-      background: radial-gradient(
-        54.93% 44.57% at 49.85% 30.16%,
-        #ff383c 0%,
-        rgb(255 255 255 / 0%) 48.78%
-      );
-      background-size: 260px 260px;
-      background-position: center;
-    }
-
-    &:hover > .work_img {
-      background: radial-gradient(
-        54.93% 44.57% at 49.85% 30.16%,
-        #ff383c 0%,
-        rgb(255 255 255 / 0%) 48.78%
-      );
-      background-size: 180px 180px;
+    &:hover > .work_img-conteiner {
+      background: none;
     }
   }
 
   &_title {
     @include accent-body-24-bold;
 
+    text-align: center;
     padding-bottom: 16px;
   }
 
@@ -59,6 +67,7 @@
   &_highlight {
     @include accent-body-24-bold;
 
+    text-align: center;
     color: var(--blue-500, #2e6ce6);
   }
 }
