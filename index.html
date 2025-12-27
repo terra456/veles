@@ -5,13 +5,19 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>veles-landing</title>
-    <script type="module" crossorigin src="/veles/assets/main-Bl0EYHXg.js"></script>
-    <link rel="stylesheet" crossorigin href="/veles/assets/main-C1U5YaVk.css">
+    <script type="module" crossorigin src="/veles/assets/main-DihhFiVR.js"></script>
+    <link rel="stylesheet" crossorigin href="/veles/assets/main-B20rqrRS.css">
   </head>
   <body>
     <header class="header">
   <a href="/">
-    <img class="header_logo" src="/veles/assets/logo-mini.png">
+    <img
+      class="header_logo"
+      src="/veles/assets/logo-gradient.svg"
+      alt="Логотип Велес-тех"
+      width="227px"
+      height="23px"
+    >
   </a>
   <nav class="header_nav">
     <ul id="menu" class="header_list">
@@ -51,8 +57,8 @@
                 Гибкая команда экспертов по 1С. Мы&nbsp;решаем задачи бизнеса&nbsp;быстро, точно и
                 без бюрократии
               </p>
-              <div class="first_btn-conteiner">
-                <a class="btn btn--tg" href="tg">Написать в телеграм</a>
+              <div class="btn-conteiner">
+                <a class="btn btn--tg btn--primary" href="tg">Написать в телеграм</a>
                 <a class="btn btn--mail btn--secondary" href="#request">Оставить заявку</a>
               </div>
               <p class="first_cost">
@@ -167,10 +173,346 @@
           </div>
         </div>
       </section>
+      <section id="reviews" class="section reviews">
+        <div class="section_wrapper">
+          <h2 class="section_title">Отзывы</h2>
+          <p class="section_subtitle">Как мы помогли нашим клиентам</p>
+          <div class="reviews_conteiner">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="reviews_slide">
+                    <img class="reviews_logo" src="/veles/assets/indushkin.png" alt="Логотип Индюшкин">
+                    <h3 class="reviews_title">ООО СОЮЗПРОМПТИЦА</h3>
+                    <p class="reviews_desc">
+                      Мы обратились к&nbsp;ребятам после серии неудачных попыток решить проблему
+                      с&nbsp;закрытием месяца. Предыдущий подрядчик только разводил руками.
+                      Здесь&nbsp;же&nbsp;всё сделали быстро, спокойно и&nbsp;без лишних разговоров.
+                      Особенно понравилось, что объясняют простым языком и&nbsp;честно говорят, что
+                      действительно нужно, а&nbsp;что&nbsp;— нет. Сейчас работаем с&nbsp;ними
+                      на&nbsp;постоянной основе, и&nbsp;вопросов к&nbsp;1С&nbsp;стало в&nbsp;разы
+                      меньше
+                    </p>
+                    <p class="reviews_name">Ратмир Ремирович Абдрашитов</p>
+                    <p class="reviews_profession">Операционный директор</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="reviews_slide">
+                    <img class="reviews_logo" src="/veles/assets/indeal.png" alt="Логотип Индеаль">
+                    <h3 class="reviews_title">ООО АГРО-ПЛЮС</h3>
+                    <p class="reviews_desc">
+                      Для нас важна стабильность: любой простой в&nbsp;1С&nbsp;сразу отражается
+                      на&nbsp;работе отдела. Команда показала себя очень надёжной&nbsp;— реагируют
+                      быстро, всегда на&nbsp;связи, и&nbsp;действительно доводят задачу
+                      до&nbsp;результата. Отдельно ценю прозрачную оплату: видишь, за&nbsp;что
+                      платишь, никакого «дополнительно выставим счёт». Это редкость.
+                      Мы&nbsp;наконец-то&nbsp;перестали переживать за&nbsp;обновления
+                      и&nbsp;доработки.
+                    </p>
+                    <p class="reviews_name">Пивченко Евгений Игоревич</p>
+                    <p class="reviews_profession">Операционный директор</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="reviews_slide">
+                    <img class="reviews_logo" src="/veles/assets/indushkin.png" alt="Логотип Индюшкин">
+                    <h3 class="reviews_title">Это короткий отзыв</h3>
+                    <p class="reviews_desc">
+                      Мы обратились к&nbsp;ребятам после серии неудачных попыток решить проблему
+                      с&nbsp;закрытием месяца. Предыдущий подрядчик только разводил руками.
+                      Здесь&nbsp;же&nbsp;всё сделали быстро.
+                    </p>
+                    <p class="reviews_name">Ратмир Ремирович Абдрашитов</p>
+                    <p class="reviews_profession">Операционный директор</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-navigation">
+            <div id="swiper-prev" class="swiper-button-prev"></div>
+            <div id="swiper-pagination" class="swiper-pagination"></div>
+            <div id="swiper-next" class="swiper-button-next"></div>
+          </div>
+        </div>
+      </section>
+      <section id="chart" class="section chart">
+        <div class="section_wrapper">
+          <h2 class="section_title">Сэкономили нашим клиентам</h2>
+          <div class="chart_years">
+            <button id="chart-25" class="chart_year-btn active">2025</button>
+            <button id="chart-26" class="chart_year-btn">2026</button>
+          </div>
+          <div class="chart_wrapper">
+            <canvas id="salesChart" width="800" height="400"></canvas>
+            <div class="chart_tooltip">
+              <p>
+                Компания платит штатному специалисту полную стоимость в&nbsp;среднем
+                <span class="chart_accent">1 887 600 </span>рублей за&nbsp;3 месяца. Однако
+                из&nbsp;480 рабочих часов* (60 дней × 8 часов) непосредственно разработке посвящено
+                только около 50% времени&nbsp;— примерно 240 часов.
+              </p>
+              <p>
+                Таким образом, компания платит ~ <span class="chart_accent"></span>7 865 рублей
+                за&nbsp;каждый час реальной разработки (<span class="chart_accent"
+                  >1 887 600&nbsp;</span
+                >руб. / 240&nbsp;ч).
+              </p>
+              <p>
+                Мы&nbsp;же&nbsp;берем <span class="chart_accent">4 256&nbsp;</span>руб./час
+                и&nbsp;тратим время исключительно на&nbsp;продуктивную работу. Вы&nbsp;платите
+                за&nbsp;100% полезного времени, а&nbsp;не&nbsp;за&nbsp;совещания
+                и&nbsp;административные задачи.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="work" class="section work">
+        <div class="section_wrapper">
+          <h2 class="section_title">Как мы работаем</h2>
+          <p class="section_subtitle">Простой и прозрачный процесс решения ваших задач</p>
+          <div class="work_conteiner">
+            <div class="work_card">
+              <div class="work_img-conteiner">
+                <img class="work_img" src="/veles/assets/headset.png" alt="">
+              </div>
+              <h3 class="work_title">Опишите проблему</h3>
+              <p class="work_desc">
+                Свяжитесь с&nbsp;нами удобным способом и&nbsp;расскажите о&nbsp;задаче
+              </p>
+            </div>
+            <div class="work_card">
+              <div class="work_img-conteiner">
+                <img class="work_img" src="/veles/assets/glass.png" alt="">
+              </div>
+              <h3 class="work_title">Мы анализируем</h3>
+              <p class="work_desc">Изучаем ситуацию и&nbsp;предлагаем оптимальное решение</p>
+            </div>
+            <div class="work_card">
+              <div class="work_img-conteiner">
+                <img class="work_img" src="/veles/assets/wrench-crossed-with.png" alt="">
+              </div>
+              <h3 class="work_title">Исправляем</h3>
+              <p class="work_desc">Быстро устраняем проблему и&nbsp;тестируем результат</p>
+            </div>
+            <div class="work_card">
+              <div class="work_img-conteiner">
+                <img class="work_img" src="/veles/assets/key-smooth.png" alt="">
+              </div>
+              <h3 class="work_title">Поддерживаем</h3>
+              <p class="work_desc">
+                Следим за&nbsp;стабильностью и&nbsp;готовы помочь в&nbsp;любой момент
+              </p>
+            </div>
+          </div>
+          <p class="work_description">Просто, быстро и без бюрократии</p>
+          <p class="work_highlight">Главное — чтобы система работала</p>
+        </div>
+      </section>
+      <section id="solution" class="section solution">
+        <div class="section_wrapper">
+          <h2 class="section_title">Решаем задачи, а&nbsp;не&nbsp;создаём их</h2>
+          <p class="section_subtitle">Реальные кейсы из нашей практики</p>
+          <div class="solution_conteiner">
+            <div id="swiper2" class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="solution_slide">
+                    <div class="solution_item">
+                      <div class="status problem">Проблема</div>
+                      <p class="solution_desc">Система 1С зависала при загрузке отчётов</p>
+                    </div>
+                    <div class="solution_item">
+                      <div class="status decision">Решение</div>
+                      <p class="solution_desc">
+                        Оптимизировали запросы и&nbsp;настроили кэширование
+                      </p>
+                    </div>
+                    <div class="solution_item">
+                      <div class="status result">Результат</div>
+                      <p class="solution_desc">Скорость работы увеличилась в&nbsp;5 раз</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="solution_slide">
+                    <div class="solution_item">
+                      <div class="status problem">Проблема</div>
+                      <p class="solution_desc">После обновления перестали работать интеграции</p>
+                    </div>
+                    <div class="solution_item">
+                      <div class="status decision">Решение</div>
+                      <p class="solution_desc">Адаптировали API под новую версию за 4 часа</p>
+                    </div>
+                    <div class="solution_item">
+                      <div class="status result">Результат</div>
+                      <p class="solution_desc">Восстановили все связи без потери данных</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="solution_slide">
+                    <div class="solution_item">
+                      <div class="status problem">Проблема</div>
+                      <p class="solution_desc">Ошибки при проведении документов в конце месяца</p>
+                    </div>
+                    <div class="solution_item">
+                      <div class="status decision">Решение</div>
+                      <p class="solution_desc">
+                        Исправили конфликт конфигураций и добавили мониторинг
+                      </p>
+                    </div>
+                    <div class="solution_item">
+                      <div class="status result">Результат</div>
+                      <p class="solution_desc">Закрытие месяца проходит стабильно</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-navigation">
+              <div id="swiper2-prev" class="swiper-button-prev"></div>
+              <div id="swiper2-pagination" class="swiper-pagination"></div>
+              <div id="swiper2-next" class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="request" class="section request">
+        <div class="section_wrapper request_wrapper">
+          <h2 class="request_title">Мы рядом, когда 1С подводит</h2>
+          <h3 class="request_subtitle">Напишите нам — решим задачу вместе</h3>
+          <p class="request_desc">
+            Оставьте заявку и мы свяжемся с вами в течении дня и предложим решение
+          </p>
+          <div class="request_conteiner">
+            <form class="request_form form">
+              <div class="form_conteiner">
+                <label class="form_label" for="name">Контактное лицо</label>
+                <input id="name" class="form_input" placeholder="Введите имя" required>
+                <p class="form_error">erewr</p>
+              </div>
+              <div class="form_conteiner">
+                <label class="form_label" for="email">Электронный адрес</label>
+                <input id="email" class="form_input" placeholder="1Сexample@mail.ru" required>
+                <p class="form_error"></p>
+              </div>
+              <div class="form_conteiner">
+                <label class="form_label" for="phone">Контактный телефон</label>
+                <input id="phone" class="form_input" placeholder="+ 7 (999) 999-99-99" required>
+                <p class="form_error"></p>
+              </div>
+              <div class="form_conteiner form_conteiner--textarea">
+                <label class="form_label" for="text">Подробное описание</label>
+                <textarea
+                  id="text"
+                  class="form_input form_textarea"
+                  placeholder="Опишите проблему, последовательность действий, которая к ней приводит, текст ошибки (если есть). Для доработки — опишите задачу и требуемый результат."
+                  required
+                ></textarea>
+                <p class="form_error"></p>
+              </div>
+              <div class="form_conteiner form_conteiner--consent">
+                <label class="form_label" for="consent">
+                  <input id="consent" type="checkbox" class="form_checkbox" required>
+                  <span class="form_checkbox_checkmark"></span>
+                  <p>
+                    Я согласен на обработку персональных данных и принимаю условия
+                    <a class="form_link text-link" href="/consent">Политики конфиденциальности</a>
+                  </p>
+                </label>
+                <p class="form_error"></p>
+              </div>
+              <div class="form_btn-conteiner">
+                <button type="submit" class="btn btn--mail btn--primary">Оставить заявку</button>
+                <a class="btn btn--tg btn--secondary" href="#tg">Написать в телеграм</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
-<footer class="footer">
-  
+    <footer class="footer">
+  <div class="section_wrapper footer_wrapper">
+    <div class="footer_logo-conteiner">
+      <a href="/">
+        <img
+          class="footer_logo"
+          src="/veles/assets/logo-gradient.svg"
+          alt="Велес-тех 1С"
+          width="227px"
+          height="23px"
+        >
+      </a>
+      <p class="footer_desc">
+        Гибкая команда экспертов по&nbsp;технической поддержке, обновлению и&nbsp;доработке
+        систем&nbsp;1С
+      </p>
+    </div>
+    <nav class="footer_nav footer_navigation">
+      <h3 class="footer_title">Навигация</h3>
+      <ul class="footer_list">
+        <li class="footer_item">
+          <a class="footer_link link-text" href="/#home">Главная</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-text" href="/#about">Кто мы</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-text" href="/#work">Процесс</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-text" href="/#solution">Кейсы</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-text" href="/#">Команда</a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="footer_nav footer_more">
+      <h3 class="footer_title">Узнать больше</h3>
+      <ul class="footer_list">
+        <li class="footer_item">
+          <a class="footer_link link-text" href="/#reviews">Отзывы</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-text" href="/#">Статьи</a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="footer_nav footer_pravo">
+      <h3 class="footer_title">Правовая информация</h3>
+      <ul class="footer_list">
+        <li class="footer_item">
+          <a class="footer_link link-text" href="/politic">Политика конфиденциальности</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-text" href="/consent"
+            >Согласие на обработку персональных данных</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="footer_projects">
+      <h3 class="footer_title">Другие наши проекты</h3>
+      <a href="http://nasbot.ru">
+        <img
+          class="logo_nasobes"
+          src="/veles/assets/nasobes.svg"
+          alt="Насобес.рф"
+          width="120px"
+          height="23px"
+        >
+      </a>
+    </div>
+    <div class="footer_copyright copyright">
+      <p class="copyright_rules">Все права защищены</p>
+      <p class="copyright_title">© Велес-тех.РФ/1С</p>
+    </div>
+  </div>
 </footer>
 
     <div id="app"></div>
