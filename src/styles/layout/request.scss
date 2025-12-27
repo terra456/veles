@@ -3,17 +3,43 @@
 @use "../base/variables" as *;
 
 .request {
+  &_wrapper {
+    @media (width < $to-tablet-width) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
   &_title {
     @include h2-40-semibold;
 
     font-size: 48px;
     padding-bottom: 24px;
+
+    @media (width < $to-tablet-width) {
+      margin: 0 32px;
+    }
+
+    @media (width < $to-mobile-width) {
+      font-size: 32px;
+      padding-bottom: 8px;
+    }
   }
 
   &_subtitle {
     @include h2-40-semibold;
 
     padding-bottom: 24px;
+
+    @media (width < $to-tablet-width) {
+      margin: 0 32px;
+    }
+
+    @media (width < $to-mobile-width) {
+      font-size: 18px;
+      padding-bottom: 16px;
+      margin: 0 16px;
+    }
   }
 
   &_desc {
@@ -21,18 +47,64 @@
 
     text-align: center;
     padding-bottom: 80px;
+
+    @media (width < $to-tablet-width) {
+      padding-bottom: 40px;
+      margin: 0 32px;
+    }
+
+    @media (width < $to-mobile-width) {
+      font-size: 16px;
+      padding-bottom: 40px;
+      margin: 0 16px;
+      line-height: 130%;
+    }
   }
 
   &_conteiner {
     padding: 65px 172px;
     border-radius: 10px;
-    background: var(--bg-card), url("/assets/rounded-chat.png"), url("/assets/paper.png");
+    background:
+      linear-gradient(0deg, rgb(47 128 237 / 6%) 26.45%, rgb(27 73 135 / 1%) 100%),
+      url("/assets/rounded-chat.png"), url("/assets/paper.png");
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position:
       center,
-      bottom left,
-      bottom right;
-    background-size: cover, 20%, 20%;
+      bottom -120px left -85px,
+      bottom -67px right -60px;
+    background-size:
+      cover,
+      360px 360px,
+      315px 315px;
     box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+
+    @media (width < $to-tablet-width) {
+      padding: 65px 32px;
+      background-position:
+        center,
+        bottom -55px left -55px,
+        bottom -35px right -60px;
+      background-size:
+        cover,
+        220px 220px,
+        235px 235px;
+    }
+
+    @media (width < $to-mobile-width) {
+      padding: 40px 16px;
+      background:
+        linear-gradient(0deg, rgb(47 128 237 / 6%) 26.45%, rgb(27 73 135 / 1%) 100%),
+        url("/assets/rounded-chat-mob.png"), url("/assets/paper-mob.png");
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-position:
+        center,
+        bottom left,
+        bottom right;
+
+      // background-size:
+      //   cover,
+      //   360px 360px,
+      //   315px 315px;
+    }
   }
 }

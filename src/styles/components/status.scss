@@ -3,7 +3,7 @@
 @use "../base/variables" as *;
 
 .status {
-  @include body-regular;
+  @include body-18-regular;
 
   color: var(--status-color);
   position: relative;

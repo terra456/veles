@@ -1,10 +1,8 @@
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
 
-const swiper = new Swiper(".swiper", {
+const _swiper = new Swiper(".swiper", {
   modules: [Navigation, Pagination],
   direction: "horizontal",
   slidesPerView: 1,
@@ -12,7 +10,7 @@ const swiper = new Swiper(".swiper", {
   height: "auto",
   // loop: true,
   breakpoints: {
-    748: {
+    1030: {
       slidesPerView: 2,
       spaceBetween: 20,
     },

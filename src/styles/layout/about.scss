@@ -9,6 +9,19 @@
     grid-auto-rows: minmax(363px, auto);
     grid-template-columns: repeat(3, 1fr);
 
+    @media (width >= $to-tablet-width) {
+      opacity: 0;
+      transform: translateY(20px); /* Начальное смещение */
+      transition:
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+
+      &.is-visible {
+        opacity: 1;
+        transform: translateY(0); /* Конечная позиция */
+      }
+    }
+
     @media (width < $to-tablet-width) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -23,6 +36,16 @@
     }
   }
 
+  &_title {
+    @include accent-body-24-bold;
+
+    padding-bottom: 24px;
+
+    @media (width < $to-tablet-width) {
+      padding-bottom: 16px;
+    }
+  }
+
   &_card {
     position: relative;
     padding: 32px;
@@ -34,9 +57,15 @@
 
     @media (width < $to-mobile-width) {
       padding: 24px 16px 250px;
-
-      // padding-bottom: 230px;
       height: fit-content;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 24px 12px rgb(13 29 61 / 10%);
+
+      & .about_title {
+        color: var(--blue-500);
+      }
     }
 
     &::before {
@@ -209,16 +238,6 @@
           bottom: -65px;
         }
       }
-    }
-  }
-
-  &_title {
-    @include accent-body-24-bold;
-
-    padding-bottom: 24px;
-
-    @media (width < $to-tablet-width) {
-      padding-bottom: 16px;
     }
   }
 

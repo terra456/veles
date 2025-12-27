@@ -6,7 +6,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  row-gap: 8px;
+  row-gap: 12px;
 
   &_conteiner {
     width: 32%;
@@ -15,6 +15,11 @@
     align-items: flex-start;
     justify-content: flex-start;
     gap: 8px;
+
+    @media (width < $to-mobile-width) {
+      width: 100%;
+      gap: 6px;
+    }
 
     &--textarea,
     &--consent {
@@ -35,18 +40,32 @@
     padding: 12px 16px;
     border-radius: 10px;
     border: 1px solid var(--body-text-100);
+    background-color: transparent;
     outline: none;
+
+    @media (width < $to-mobile-width) {
+      font-size: 14px;
+    }
 
     &::placeholder {
       color: var(--body-text-100);
     }
 
-    &:invalid {
-      border: 1px solid var(--red-500);
+    &:focus {
+      border: 1px solid var(--blue-500);
+      outline: none;
+      color: var(--text-dark-500);
     }
 
-    &:focus {
-      border: 1px solid var(--text-dark-500);
+    &:valid {
+      border: 1px solid var(--dark-blue-90060, rgb(3 15 37 / 60%));
+      outline: 1px solid var(--dark-blue-90060, rgb(3 15 37 / 60%));
+      color: var(--text-dark-500, #162035);
+    }
+
+    &.error {
+      border: 1px solid var(--red-500);
+      outline: none;
     }
   }
 
@@ -57,6 +76,7 @@
     height: 18px;
     padding-left: 22px;
     color: var(--red-500);
+    opacity: 0;
 
     &::before {
       content: "";
@@ -67,15 +87,52 @@
       background-image: url("/assets/icon/danger.svg");
       background-size: cover;
       background-repeat: no-repeat;
+
+      @media (width < $to-mobile-width) {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    @media (width < $to-mobile-width) {
+      font-size: 12px;
     }
   }
 
   &_textarea {
-    height: 120px;
+    height: 136px;
+
+    @media (width < $to-mobile-width) {
+      height: 110px;
+    }
   }
 
   &_btn-conteiner {
     width: 100%;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    @media (width < $to-tablet-width) {
+      margin-bottom: 16px;
+    }
+
+    @media (width < $to-mobile-width) {
+      flex-direction: column;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  & .btn {
+    height: 56px;
+
+    @media (width < $to-tablet-width) {
+      height: 48px;
+    }
   }
 
   &_checkbox {
@@ -83,7 +140,83 @@
     accent-color: #2196f3; /* A nice blue color */
 
     /* You can also change the size */
-    width: 20px;
-    height: 20px;
+
+    /* Скрываем нативный чекбокс */
+    position: absolute;
+    width: 0;
+    height: 0;
+    appearance: none;
+    appearance: none;
+    appearance: none;
+    opacity: 0;
+
+    /* Кастомный чекбокс */
+    &_checkmark {
+      position: relative;
+      display: block;
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      border: 2px solid var(--body-text-100, #6b7280);
+      transition: all 0.1s ease;
+    }
+
+    /* Состояние checked */
+    &:checked + &_checkmark {
+      /* background: #3b82f6; */
+      border-color: var(--blue-500);
+
+      /* Галочка */
+      &::after {
+        position: absolute;
+        top: 3px;
+        left: 6px;
+        width: 6px;
+        height: 10px;
+        content: "";
+        border: solid var(--blue-500);
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    /* Focus состояние */
+    &:focus + &_checkmark {
+      border-color: var(--blue-500);
+    }
+
+    /* Disabled состояние */
+    &:disabled + &_checkmark {
+      cursor: not-allowed;
+      border-color: var(--light-blue);
+    }
+
+    &:disabled:checked + &_checkmark {
+      border-color: var(--light-blue);
+    }
+  }
+
+  &_label[for="consent"] {
+    position: relative;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    @media (width < $to-mobile-width) {
+      margin-top: 0;
+      font-size: 14px;
+    }
+
+    /* Hover состояние */
+    &:hover .form_checkbox_checkmark {
+      cursor: pointer;
+      border-color: var(--blue-500);
+    }
+  }
+
+  &_link {
+    color: var(--blue-500);
   }
 }

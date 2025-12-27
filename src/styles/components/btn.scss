@@ -31,7 +31,6 @@
   align-items: center;
   gap: 8px;
   border-radius: 10px;
-  background: linear-gradient(90deg, #1a3c80 0%, #2e6ce6 100%);
   white-space: nowrap;
 
   @media (width < $to-tablet-width) {
@@ -54,11 +53,19 @@
     transition: all 500ms;
   }
 
-  &:hover {
-    background: linear-gradient(90deg, #397dff 0%, #2e6ce6 100%);
+  &--primary {
+    background: linear-gradient(90deg, #1a3c80 0%, #2e6ce6 100%);
 
-    &::before {
-      background-color: var(--white, #fff);
+    &:hover {
+      animation-name: gradient-change;
+      animation-duration: 300ms;
+      animation-timing-function: ease-in;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+      &::before {
+        background-color: var(--white, #fff);
+      }
     }
   }
 
@@ -108,6 +115,7 @@
   }
 
   &--tg::before {
+    left: calc(50% - 100px);
     mask-image: url("/assets/icon/tg.svg");
 
     @media (width < $to-mobile-width) {
@@ -116,7 +124,7 @@
   }
 
   &--mail::before {
-    left: 36px;
+    left: calc(50% - 84px);
     mask-image: url("/assets/icon/mail.svg");
 
     @media (width < $to-mobile-width) {
@@ -134,15 +142,34 @@
       color: white;
     }
   }
+}
 
-  // Размеры
-  &--small {
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: var(--font-size-sm);
+@keyframes gradient-change {
+  0% {
+    background: linear-gradient(90deg, #1a3c80 0%, #2e6ce6 100%);
   }
 
-  &--large {
-    padding: var(--spacing-lg) var(--spacing-xl);
-    font-size: var(--font-size-lg);
+  13.22% {
+    background: linear-gradient(90deg, #1a3c80 -20%, #2e6ce6 90%, #397dff 20%);
+  }
+
+  34.8% {
+    background: linear-gradient(90deg, #1a3c80 -40%, #2e6ce6 70%, #397dff 40%);
+  }
+
+  51.98% {
+    background: linear-gradient(90deg, #1a3c80 -60%, #2e6ce6 60%, #397dff 60%);
+  }
+
+  72.25% {
+    background: linear-gradient(90deg, #1a3c80 -80%, #2e6ce6 50%, #397dff 80%);
+  }
+
+  85.9% {
+    background: linear-gradient(90deg, #1a3c80 -100%, #2e6ce6 40%, #397dff 90%);
+  }
+
+  100% {
+    background: linear-gradient(90deg, #1a3c80 -100%, #2e6ce6 30%, #397dff 100%);
   }
 }

@@ -5,6 +5,10 @@
 .solution {
   &_conteiner {
     margin: 0 115px;
+
+    @media (width < $to-tablet-width) {
+      margin: 0;
+    }
   }
 
   & .swiper {
@@ -21,6 +25,11 @@
     border-radius: 10px;
     background: var(--white, #fff);
     box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+
+    @media (width < $to-mobile-width) {
+      padding: 24px 16px;
+      flex-direction: column;
+    }
   }
 
   &_item {
@@ -31,6 +40,12 @@
     align-items: flex-start;
     justify-content: flex-start;
     gap: 24px;
+
+    @media (width < $to-mobile-width) {
+      max-width: none;
+      width: 100%;
+      gap: 16px;
+    }
   }
 
   &_desc {

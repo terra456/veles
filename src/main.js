@@ -5,6 +5,21 @@ import { createSalesChart } from "./scripts/chart-component.js";
 
 console.log("is started");
 
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        // Опционально: отписаться, если анимация нужна только один раз
+        // observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 },
+); // 10% секции должно быть видно
+
+observer.observe(document.querySelector(".about_cards"));
+
 document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("chart");
   const btn25 = document.getElementById("chart-25");

@@ -1,7 +1,13 @@
+@use "../base/variables" as *;
+
 .swiper {
   &-slide {
     height: auto !important;
     margin-bottom: 60px;
+
+    @media (width < $to-tablet-width) {
+      margin-bottom: 22px;
+    }
   }
 
   &-navigation {
@@ -13,6 +19,10 @@
 
     &:has(.swiper-pagination-bullet:only-child) {
       display: none;
+    }
+
+    @media (width < $to-mobile-width) {
+      gap: 16px;
     }
   }
 
@@ -52,7 +62,11 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 15px;
+
+    @media (width < $to-mobile-width) {
+      gap: 8px;
+    }
 
     &-bullet {
       width: 12px;

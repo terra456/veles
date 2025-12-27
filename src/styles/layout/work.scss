@@ -10,6 +10,16 @@
     align-items: stretch;
     justify-content: space-between;
     gap: 20px;
+
+    @media (width < $to-tablet-width) {
+      flex-wrap: wrap;
+      row-gap: 45px;
+    }
+
+    @media (width < $to-mobile-width) {
+      row-gap: 16px;
+      padding-bottom: 40px;
+    }
   }
 
   &_img-conteiner {
@@ -29,6 +39,10 @@
     background-position: center;
     background-repeat: no-repeat;
     transition: all 500ms;
+
+    @media (width < $to-mobile-width) {
+      margin-bottom: 16px;
+    }
   }
 
   &_img {
@@ -45,6 +59,15 @@
     align-self: stretch;
     border-radius: 10px;
 
+    @media (width < $to-tablet-width) {
+      width: calc((100% - 20px) / 2);
+    }
+
+    @media (width < $to-mobile-width) {
+      width: 100%;
+      padding-top: 8px;
+    }
+
     &:hover > .work_img-conteiner {
       background: none;
     }
@@ -55,6 +78,11 @@
 
     text-align: center;
     padding-bottom: 16px;
+
+    @media (width < $to-mobile-width) {
+      font-size: 20px;
+      font-weight: 600;
+    }
   }
 
   &_desc {
@@ -62,6 +90,23 @@
 
     text-align: center;
     padding-bottom: 24px;
+
+    @media (width < $to-mobile-width) {
+      font-size: 18px;
+      padding-bottom: 8px;
+    }
+  }
+
+  &_description {
+    @include body-regular;
+
+    text-align: center;
+    padding-bottom: 24px;
+
+    @media (width < $to-mobile-width) {
+      font-size: 16px;
+      padding-bottom: 16px;
+    }
   }
 
   &_highlight {
@@ -69,5 +114,10 @@
 
     text-align: center;
     color: var(--blue-500, #2e6ce6);
+
+    @media (width < $to-tablet-width) {
+      font-size: 20px;
+      font-weight: 600;
+    }
   }
 }

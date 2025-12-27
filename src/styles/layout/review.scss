@@ -1,6 +1,27 @@
 @use "../mixins/index" as *;
+@use "../base/variables" as *;
 
 .reviews {
+  & .swiper {
+    @media (width < $to-tablet-width) {
+      overflow: visible;
+    }
+
+    @media (width < $to-mobile-width) {
+      padding-bottom: 16px;
+    }
+  }
+
+  &_conteiner {
+    @media (width < $to-tablet-width) {
+      width: 90%;
+    }
+
+    @media (width < $to-mobile-width) {
+      width: 100%;
+    }
+  }
+
   &_slide {
     height: 100%;
     padding: 32px 32px 48px;
@@ -11,6 +32,10 @@
     border-radius: 10px;
     background: transparent;
     box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+
+    @media (width < $to-mobile-width) {
+      padding: 24px 16px 32px;
+    }
 
     &::before {
       content: "";
@@ -28,8 +53,14 @@
       mask-repeat: no-repeat;
     }
 
-    &:hover::before {
-      background: var(--liner);
+    &:hover {
+      border-radius: 10px;
+      background: var(--bg, #fcfcfc);
+      box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+
+      &::before {
+        background: var(--liner);
+      }
     }
   }
 
@@ -46,6 +77,11 @@
     @include text-button-16-semibold;
 
     padding-bottom: 24px;
+
+    @media (width < $to-mobile-width) {
+      font-size: 16px;
+      padding-bottom: 16px;
+    }
   }
 
   &_desc {
@@ -57,6 +93,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: 28px;
+
+    @media (width < $to-mobile-width) {
+      font-size: 16px;
+      line-height: 130%;
+    }
   }
 
   &_name {
@@ -66,6 +107,10 @@
     @include text-button-16-semibold;
 
     padding-bottom: 8px;
+
+    @media (width < $to-mobile-width) {
+      font-size: 16px;
+    }
   }
 
   &_profession {
@@ -74,5 +119,9 @@
     @include body-16-regular;
 
     color: var(--body-text-200, #374151);
+
+    @media (width < $to-mobile-width) {
+      font-size: 14px;
+    }
   }
 }
