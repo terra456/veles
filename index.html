@@ -5,8 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>veles-landing</title>
-    <script type="module" crossorigin src="/veles/assets/main-DihhFiVR.js"></script>
-    <link rel="stylesheet" crossorigin href="/veles/assets/main-B20rqrRS.css">
+    <script type="module" crossorigin src="/veles/assets/main-BbqhKAR2.js"></script>
+    <link rel="stylesheet" crossorigin href="/veles/assets/main-CoLzJDIF.css">
   </head>
   <body>
     <header class="header">
@@ -231,9 +231,9 @@
             </div>
           </div>
           <div class="swiper-navigation">
-            <div id="swiper-prev" class="swiper-button-prev"></div>
-            <div id="swiper-pagination" class="swiper-pagination"></div>
-            <div id="swiper-next" class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
           </div>
         </div>
       </section>
@@ -246,7 +246,7 @@
           </div>
           <div class="chart_wrapper">
             <canvas id="salesChart" width="800" height="400"></canvas>
-            <div class="chart_tooltip">
+            <div id="chartTooltip" class="chart_tooltip">
               <p>
                 Компания платит штатному специалисту полную стоимость в&nbsp;среднем
                 <span class="chart_accent">1 887 600 </span>рублей за&nbsp;3 месяца. Однако
@@ -373,9 +373,9 @@
               </div>
             </div>
             <div class="swiper-navigation">
-              <div id="swiper2-prev" class="swiper-button-prev"></div>
-              <div id="swiper2-pagination" class="swiper-pagination"></div>
-              <div id="swiper2-next" class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
             </div>
           </div>
         </div>
@@ -391,17 +391,17 @@
             <form class="request_form form">
               <div class="form_conteiner">
                 <label class="form_label" for="name">Контактное лицо</label>
-                <input id="name" class="form_input" placeholder="Введите имя" required>
+                <input id="name" class="form_input" placeholder="Введите имя">
                 <p class="form_error">erewr</p>
               </div>
               <div class="form_conteiner">
                 <label class="form_label" for="email">Электронный адрес</label>
-                <input id="email" class="form_input" placeholder="1Сexample@mail.ru" required>
+                <input id="email" class="form_input" placeholder="1Сexample@mail.ru">
                 <p class="form_error"></p>
               </div>
               <div class="form_conteiner">
                 <label class="form_label" for="phone">Контактный телефон</label>
-                <input id="phone" class="form_input" placeholder="+ 7 (999) 999-99-99" required>
+                <input id="phone" class="form_input" type="tel" placeholder="+7 (___) ___-__-__">
                 <p class="form_error"></p>
               </div>
               <div class="form_conteiner form_conteiner--textarea">
@@ -410,13 +410,12 @@
                   id="text"
                   class="form_input form_textarea"
                   placeholder="Опишите проблему, последовательность действий, которая к ней приводит, текст ошибки (если есть). Для доработки — опишите задачу и требуемый результат."
-                  required
                 ></textarea>
                 <p class="form_error"></p>
               </div>
               <div class="form_conteiner form_conteiner--consent">
                 <label class="form_label" for="consent">
-                  <input id="consent" type="checkbox" class="form_checkbox" required>
+                  <input id="consent" type="checkbox" class="form_checkbox">
                   <span class="form_checkbox_checkmark"></span>
                   <p>
                     Я согласен на обработку персональных данных и принимаю условия
@@ -436,6 +435,7 @@
     </main>
 
     <footer class="footer">
+  <a class="home_btn" href="#"></a>
   <div class="section_wrapper footer_wrapper">
     <div class="footer_logo-conteiner">
       <a href="/">
@@ -515,6 +515,28 @@
   </div>
 </footer>
 
-    <div id="app"></div>
+    <div class="modal_overlay">
+  <div class="modal">
+    <button class="modal_close-btn" type="button"></button>
+    <div class="modal_img-conteiner">
+      <picture>
+        <source media="(min-width:1024px)" srcset="/veles/assets/hand-holding-a-star.png">
+        <source media="(min-width:748px)" srcset="/veles/assets/hand-holding-a-star-tablet.png">
+        <img
+          class="modal_img"
+          src="/veles/assets/hand-holding-a-star-mob.png"
+          alt="success image"
+          loading="lazy"
+        >
+      </picture>
+    </div>
+    <h2 class="modal_title">Ваша заявка успешно оформлена!</h2>
+    <p class="modal_desc">
+      В течении дня с вами свяжется наш специалист для уточнения деталей и согласования плана работ
+    </p>
+    <button class="btn btn--primary" type="button">Понятно</button>
+  </div>
+</div>
+
   </body>
 </html>
