@@ -3,6 +3,7 @@
 .vscode
 .idea
 .dist
+dist
 
 # dependencies
 /node_modules
