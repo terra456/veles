@@ -40,6 +40,7 @@
     padding: 12px 16px;
     border-radius: 10px;
     border: 1px solid var(--body-text-100);
+    background: transparent;
     background-color: transparent;
     outline: none;
 
@@ -63,9 +64,10 @@
       color: var(--text-dark-500, #162035);
     }
 
-    &.error {
+    &[aria-invalid="true"] {
       border: 1px solid var(--red-500);
       outline: none;
+      color: var(--red-500);
     }
   }
 
@@ -77,6 +79,10 @@
     padding-left: 22px;
     color: var(--red-500);
     opacity: 0;
+
+    &.show {
+      opacity: 1;
+    }
 
     &::before {
       content: "";
@@ -136,17 +142,10 @@
   }
 
   &_checkbox {
-    /* Change the checkmark and border color when checked */
-    accent-color: #2196f3; /* A nice blue color */
-
-    /* You can also change the size */
-
     /* Скрываем нативный чекбокс */
     position: absolute;
     width: 0;
     height: 0;
-    appearance: none;
-    appearance: none;
     appearance: none;
     opacity: 0;
 
@@ -159,6 +158,8 @@
       height: 22px;
       border-radius: 4px;
       border: 2px solid var(--body-text-100, #6b7280);
+      background: transparent;
+      background-color: transparent;
       transition: all 0.1s ease;
     }
 

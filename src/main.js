@@ -1,6 +1,7 @@
 import "./styles/main.scss";
 import "./scripts/header-menu.js";
 import "./scripts/slider.js";
+import "./scripts/form.js";
 import { createSalesChart } from "./scripts/chart-component.js";
 
 console.log("is started");
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("chart");
   const btn25 = document.getElementById("chart-25");
   const btn26 = document.getElementById("chart-26");
+  const tooltip = document.getElementById("chartTooltip");
 
   const labels = [
     "январь",
@@ -39,13 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
     "ноябрь",
     "декабрь",
   ];
-  const values25 = [0, 0, 0, 0, 0, 0, 10000, 15000, 12000, 18000, 16000, 20000];
-  const values26 = [10000, 15000, 12000, 18000, 16000, 20000, 0, 0, 0, 0, 0, 0];
+  const values25 = [0, 0, 0, 0, 0, 0, 0, 0, 273040, 241320, 247440, 247440];
+  const values26 = [247440, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+  const isMobile = window.innerWidth < 768;
 
   if (canvas) {
-    let chart = createSalesChart("salesChart", {
-      labels,
-      values: values25,
+    chart = createSalesChart("salesChart", {
+      labels: isMobile ? labels.slice(6, 12) : labels,
+      values: isMobile ? values25.slice(6, 12) : values25,
     });
     console.log("Chart created:", chart);
 
@@ -54,8 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
       btn25.classList.add("active");
       chart.destroy();
       chart = createSalesChart("salesChart", {
-        labels,
-        values: values25,
+        labels: isMobile ? labels.slice(6, 12) : labels,
+        values: isMobile ? values25.slice(6, 12) : values25,
       });
     });
     btn26.addEventListener("click", () => {
@@ -63,10 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
       btn26.classList.add("active");
       chart.destroy();
       chart = createSalesChart("salesChart", {
-        labels,
-        values: values26,
+        labels: isMobile ? labels.slice(0, 6) : labels,
+        values: isMobile ? values26.slice(0, 6) : values26,
       });
     });
+    if (isMobile) {
+      canvas.addEventListener("click", () => {
+        tooltip.classList.toggle("open");
+      });
+    }
   } else {
     console.warn("Canvas element #salesChart not found");
   }

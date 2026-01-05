@@ -25,7 +25,19 @@ Chart.register(
 
 // Создаем и экспортируем функцию для создания графика
 export function createSalesChart(canvasId, data) {
-  const ctx = document.getElementById(canvasId).getContext("2d");
+  const canvas = document.getElementById(canvasId);
+  const ctx = canvas.getContext("2d");
+
+  // Устанавливаем фиксированные размеры canvas для мобильных устройств
+  const isMobile = window.innerWidth < 768;
+
+  if (isMobile) {
+    // Для мобильных: фиксированная высота, ширина 100%
+    canvas.style.height = "370px"; // Фиксированная высота
+    canvas.style.width = "100%"; // Ширина на всю доступную ширину
+    canvas.width = canvas.offsetWidth; // Устанавливаем реальную ширину
+    canvas.height = 370; // Фиксированная высота в пикселях
+  }
 
   // Создаем градиент
   const gradient = ctx.createLinearGradient(0, 0, 0, 400);
@@ -46,11 +58,13 @@ export function createSalesChart(canvasId, data) {
           fill: true,
           tension: 0.4,
           pointStyle: false,
+          pointRadius: 0, // Убираем точки на мобильных
         },
       ],
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false, // Важно: отключаем сохранение пропорций
       plugins: {
         legend: {
           display: false,
@@ -65,14 +79,15 @@ export function createSalesChart(canvasId, data) {
             display: true, // Показывать сетку по оси X
             color: "rgba(0, 0, 26, 0.15)", // Светло-серый цвет
             lineWidth: 1, // Толщина линии
-            borderDash: [15, 15], // Пунктирная линия
+            borderDash: isMobile ? [5, 5] : [15, 15], // Пунктирная линия
           },
           ticks: {
             color: "#374151",
             font: {
-              size: 14,
+              size: isMobile ? 12 : 14,
               family: "Inter",
             },
+            maxRotation: isMobile ? 45 : 0,
           },
         },
         y: {
@@ -80,15 +95,21 @@ export function createSalesChart(canvasId, data) {
             display: true, // Показывать сетку по оси X
             color: "rgba(0, 0, 26, 0.15)", // Светло-серый цвет
             lineWidth: 1, // Толщина линии
-            borderDash: [15, 15], // Пунктирная линия
+            borderDash: isMobile ? [5, 5] : [15, 15], // Пунктирная линия
           },
           ticks: {
             color: "#374151",
             font: {
-              size: 14,
+              size: isMobile ? 12 : 14,
               family: "Inter",
             },
             callback: (value) => {
+              // Форматирование для мобильных - сокращаем числа
+              if (isMobile && value >= 1000000) {
+                return `${(value / 1000000).toFixed(1)}M ₽`;
+              } else if (isMobile && value >= 1000) {
+                return `${(value / 1000).toFixed(0)}K ₽`;
+              }
               return `${value} ₽`;
             },
           },

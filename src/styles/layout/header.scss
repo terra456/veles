@@ -75,6 +75,7 @@
       top: 65px;
       right: -110vw;
       width: 100vw;
+      max-width: 375px;
 
       &.open {
         right: 0;
@@ -97,6 +98,10 @@
       width: 180px;
       border-bottom: 1px solid var(--body-text-30, rgb(107 114 128 / 30%));
       padding: 8px 0;
+    }
+
+    @media (width < $to-mobile-width) {
+      width: 100%;
     }
   }
 
@@ -129,26 +134,25 @@
     z-index: 10;
     background-color: var(--blue-500);
     border-radius: 2px;
-    transition: all 500ms;
+    transition: all 500ms ease;
   }
 
   &::before {
-    top: 6px;
-    transform-origin: top left;
+    top: 9px;
   }
 
   &.open::before {
-    transform: scale(1.2) rotate(45deg);
+    top: 13px; /* Центр кнопки */
+    transform: rotate(45deg);
   }
 
   &::after {
-    top: calc(6px + 2px + 5px);
-    transform-origin: center center;
+    top: 17px; /* Средняя полоса */
   }
 
   &.open::after {
-    top: 14px;
-    transform: scale(1.2) rotate(-45deg);
+    top: 13px; /* Центр кнопки */
+    transform: rotate(-45deg);
   }
 
   @media (width < $to-tablet-width) {
@@ -159,13 +163,13 @@
     display: block;
     position: absolute;
     right: 0;
-    top: calc(6px + (2px + 5px) * 2);
+    top: 25px; /* Нижняя полоса */
     width: 14px;
     height: 2px;
     z-index: 10;
     background-color: var(--blue-500);
     border-radius: 2px;
-    transition: width 500ms;
+    transition: all 300ms ease;
   }
 
   &.open > .line {

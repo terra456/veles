@@ -183,3 +183,24 @@
     color: var(--text-dark-500);
   }
 }
+
+.home_btn {
+  position: fixed;
+  right: 16px;
+  bottom: 32px;
+  z-index: 10000;
+  width: 48px;
+  height: 64px;
+  border-radius: 10px;
+  background:
+    url("/assets/icon/top.svg"),
+    var(--liner-button, linear-gradient(0deg, #1a3c80 0%, #2e6ce6 100%));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:
+    14px 14px,
+    contain;
+
+  /* for icon  main page */
+  box-shadow: 1px 1px 5px 0 rgb(13 29 61 / 30%);
+}

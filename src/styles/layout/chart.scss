@@ -75,10 +75,18 @@
       width: 534px;
       font-size: 16px;
     }
+
+    @media (width < $to-mobile-width) {
+      top: 140px;
+      left: 8%;
+      width: 100%;
+      max-width: 343px;
+      font-size: 14px;
+    }
   }
 
   &_accent {
-    @include body-18-semibold;
+    @include text-button-16-semibold;
 
     color: var(--blue-500, #2e6ce6);
     white-space: nowrap;
@@ -88,7 +96,8 @@
     }
   }
 
-  &_wrapper:hover .chart_tooltip {
+  &_wrapper:hover .chart_tooltip,
+  &_tooltip.open {
     display: flex;
   }
 }

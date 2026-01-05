@@ -2,7 +2,7 @@ import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 
-const _swiper = new Swiper(".swiper", {
+const _reviewsSwiper = new Swiper("#reviews .swiper", {
   modules: [Navigation, Pagination],
   direction: "horizontal",
   slidesPerView: 1,
@@ -16,15 +16,16 @@ const _swiper = new Swiper(".swiper", {
     },
   },
   pagination: {
-    el: "#swiper-pagination",
+    el: "#reviews .swiper-pagination",
+    clickable: true,
   },
   navigation: {
-    nextEl: "#swiper-next",
-    prevEl: "#swiper-prev",
+    nextEl: "#reviews .swiper-button-next",
+    prevEl: "#reviews .swiper-button-prev",
   },
 });
 
-const swiper2 = new Swiper("#swiper2", {
+const _solutionSwiper = new Swiper("#solution .swiper", {
   modules: [Navigation, Pagination],
   direction: "horizontal",
   slidesPerView: 1,
@@ -33,10 +34,11 @@ const swiper2 = new Swiper("#swiper2", {
   // loop: true,
   speed: 1000,
   pagination: {
-    el: "#swiper2-pagination",
+    el: "#solution .swiper-pagination",
+    clickable: true,
   },
   navigation: {
-    nextEl: "#swiper2-next",
-    prevEl: "#swiper2-prev",
+    nextEl: "#solution .swiper-button-next",
+    prevEl: "#solution .swiper-button-prev",
   },
 });
