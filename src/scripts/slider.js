@@ -2,43 +2,43 @@ import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 
-const _reviewsSwiper = new Swiper("#reviews .swiper", {
-  modules: [Navigation, Pagination],
-  direction: "horizontal",
-  slidesPerView: 1,
-  spaceBetween: 20,
-  height: "auto",
-  // loop: true,
-  breakpoints: {
-    1030: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-  },
-  pagination: {
-    el: "#reviews .swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: "#reviews .swiper-button-next",
-    prevEl: "#reviews .swiper-button-prev",
-  },
-});
+// Инициализируем все слайдеры на странице
+document.querySelectorAll(".swiper").forEach((swiperEl) => {
+  const section = swiperEl.closest("section");
+  const sectionId = section?.id;
 
-const _solutionSwiper = new Swiper("#solution .swiper", {
-  modules: [Navigation, Pagination],
-  direction: "horizontal",
-  slidesPerView: 1,
-  spaceBetween: 20,
-  height: "auto",
-  // loop: true,
-  speed: 1000,
-  pagination: {
-    el: "#solution .swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: "#solution .swiper-button-next",
-    prevEl: "#solution .swiper-button-prev",
-  },
+  // Базовая конфигурация
+  const baseConfig = {
+    modules: [Navigation, Pagination],
+    direction: "horizontal",
+    slidesPerView: 1,
+    spaceBetween: 20,
+    height: "auto",
+    pagination: {
+      el: section?.querySelector(".swiper-pagination"),
+      clickable: true,
+    },
+    navigation: {
+      nextEl: section?.querySelector(".swiper-button-next"),
+      prevEl: section?.querySelector(".swiper-button-prev"),
+    },
+  };
+
+  // Специфичные настройки для разных секций
+  if (sectionId === "reviews") {
+    Object.assign(baseConfig, {
+      breakpoints: {
+        1030: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+      },
+    });
+  } else if (sectionId === "solution") {
+    Object.assign(baseConfig, {
+      speed: 1000,
+    });
+  }
+
+  new Swiper(swiperEl, baseConfig);
 });

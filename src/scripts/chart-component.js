@@ -2,14 +2,14 @@
 import {
   CategoryScale,
   Chart,
-  Filler, // Добавляем для градиентной заливки
+  Filler, // Для градиентной заливки
   LinearScale,
   LineController,
   LineElement,
-  PointElement,
+  PointElement, // Нужен для line-чарта, даже если точки визуально скрыты
 } from "chart.js";
 
-// Регистрируем компоненты
+// Регистрируем контроллер линии, шкалы, элементы линии и точки, а также заливку
 Chart.register(CategoryScale, LinearScale, LineController, LineElement, PointElement, Filler);
 
 // Создаем и экспортируем функцию для создания графика
@@ -22,10 +22,10 @@ export function createSalesChart(canvasId, data) {
 
   if (isMobile) {
     // Для мобильных: фиксированная высота, ширина 100%
-    canvas.style.height = "370px"; // Фиксированная высота
+    canvas.style.height = "450px"; // Фиксированная высота
     canvas.style.width = "100%"; // Ширина на всю доступную ширину
     canvas.width = canvas.offsetWidth; // Устанавливаем реальную ширину
-    canvas.height = 370; // Фиксированная высота в пикселях
+    canvas.height = 450; // Фиксированная высота в пикселях
   }
 
   // Создаем градиент
@@ -54,6 +54,13 @@ export function createSalesChart(canvasId, data) {
     options: {
       responsive: true,
       maintainAspectRatio: false, // Важно: отключаем сохранение пропорций
+      plugins: {
+        tooltip: { enabled: false }, // Тултипы отключены
+        legend: { display: false }, // Легенда отключена
+      },
+      hover: {
+        mode: null, // Полностью отключаем hover-обработку
+      },
       scales: {
         x: {
           grid: {

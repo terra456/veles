@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const element = document.getElementById("phone");
   const maskOptions = {
-    mask: "+{7}(000)000-00-00",
+    // Базовый номер + опциональное продолжение (доп. номер и т.п.)
+    mask: "+{7}(000)000-00-00[ 0000000]",
     lazy: false, // Маска применяется сразу, а не по фокусу
     placeholderChar: "_", // Символ плейсхолдера внутри маски
     definitions: {
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     required: "Это поле обязательно",
     name: "Введите корректное имя",
     email: "Проверьте формат email",
-    phone: "Проверьте количество символов",
+    phone: "Проверьте количество цифр в номере телефона",
     text: "Описание проблемы слишком короткое. Минимальная длина — 50 символов.",
     consent: "Необходимо согласие на обработку данных",
   };
@@ -41,16 +42,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showError(el, message) {
     const err = getErrorEl(el);
-    if (err) err.textContent = message;
+    if (!err) return;
+    err.textContent = message;
     err.classList.add("show");
+    err.setAttribute("role", "alert");
+    err.setAttribute("aria-live", "polite");
     el.setAttribute("aria-invalid", "true");
+    if (err.id) {
+      el.setAttribute("aria-describedby", err.id);
+    }
   }
 
   function clearError(el) {
     const err = getErrorEl(el);
-    if (err) err.textContent = "";
-    err.classList.remove("show");
+    if (err) {
+      err.textContent = "";
+      err.classList.remove("show");
+      err.removeAttribute("role");
+      err.removeAttribute("aria-live");
+    }
     el.removeAttribute("aria-invalid");
+    el.removeAttribute("aria-describedby");
   }
 
   function validateName() {
@@ -85,16 +97,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function validatePhone() {
     const v = fields.phone.value.trim();
-    if (!v) {
+    const digits = v.replace(/\D/g, "");
+    const minDigits = 11; // +7 и ещё 10 цифр
+    //const maxDigits = 15; // запас на добавочный номер
+
+    if (!digits.length) {
       showError(fields.phone, msgs.required);
       return false;
     }
-    // allow +7, digits, spaces, parentheses, dashes — require 10+ digits
-    const digits = v.replace(/\D/g, "");
-    if (digits.length < 11) {
-      showError(fields.phone, msgs.phone);
+
+    if (digits.length < minDigits) {
+      showError(fields.phone, `Номер слишком короткий.`);
       return false;
     }
+
+    if (digits.length > minDigits) {
+      showError(fields.phone, `Номер слишком длинный.`);
+      return false;
+    }
+
     clearError(fields.phone);
     return true;
   }
@@ -122,11 +143,13 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   }
 
-  // real-time clearing
+  // real-time clearing и отключение стандартного UI валидации браузера
   Object.values(fields).forEach((f) => {
     if (!f) return;
     const ev = f.type === "checkbox" ? "change" : "input";
     f.addEventListener(ev, () => clearError(f));
+    // подавляем стандартное всплывающее сообщение браузера
+    f.addEventListener("invalid", (e) => e.preventDefault());
   });
 
   form.addEventListener("submit", (e) => {
@@ -156,17 +179,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const overlay = document.querySelector(".modal_overlay");
-    const openModal = () => {
-      if (overlay) {
-        overlay.classList.add("modal_open");
-        overlay.setAttribute("aria-hidden", "false");
-      }
-    };
+    let keydownHandler;
 
     const closeModal = () => {
       if (overlay) {
         overlay.classList.remove("modal_open");
         overlay.setAttribute("aria-hidden", "true");
+      }
+      if (keydownHandler) {
+        document.removeEventListener("keydown", keydownHandler);
+        keydownHandler = null;
+      }
+    };
+
+    const openModal = () => {
+      if (overlay) {
+        overlay.classList.add("modal_open");
+        overlay.setAttribute("aria-hidden", "false");
+
+        // Закрытие по Enter / Escape
+        keydownHandler = (event) => {
+          if (event.key === "Escape" || event.key === "Enter") {
+            event.preventDefault();
+            closeModal();
+          }
+        };
+        document.addEventListener("keydown", keydownHandler);
       }
     };
 
@@ -214,7 +252,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       } catch (err) {
         console.error("Submit error", err);
-        alert("Произошла ошибка при отправке. Попробуйте ещё раз.");
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
