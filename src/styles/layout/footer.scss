@@ -192,9 +192,7 @@
   width: 48px;
   height: 64px;
   border-radius: 10px;
-  background:
-    url("/assets/icon/top.svg"),
-    var(--liner-button, linear-gradient(0deg, #1a3c80 0%, #2e6ce6 100%));
+  background: url("/assets/icon/top.svg"), linear-gradient(180deg, #1a3c80 0%, #2e6ce6 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size:
