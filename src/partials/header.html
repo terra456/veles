@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" role="banner">
   <a href="/">
     <img
       class="header_logo"
@@ -8,7 +8,7 @@
       height="23px"
     >
   </a>
-  <nav class="header_nav">
+  <nav class="header_nav" aria-label="Основная навигация сайта">
     <ul id="menu" class="header_list">
       <li class="header_item">
         <a class="header_link link-text" href="./#about">Кто мы</a>
@@ -30,7 +30,15 @@
       </li>
     </ul>
   </nav>
-  <button type="button" id="toggle" class="toggle_btn">
+  <button
+    type="button"
+    id="toggle"
+    class="toggle_btn"
+    aria-label="Открыть меню"
+    aria-controls="menu"
+    aria-expanded="false"
+    title="Меню"
+  >
     <span class="line"></span>
   </button>
 </header>

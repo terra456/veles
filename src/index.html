@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/vite.svg">
@@ -9,7 +9,7 @@
   <body>
     <load src="partials/header.html"/>
 
-    <main>
+    <main role="main">
       <section class="section first">
         <div class="section_wrapper first_bg">
           <div class="first_conteiner">
@@ -94,9 +94,9 @@
           </div>
         </div>
       </section>
-      <section id="about" class="section about">
+      <section id="about" class="section about" aria-labelledby="about-title">
         <div class="section_wrapper">
-          <h2 class="section_title">Что мы делаем и кто мы</h2>
+          <h2 id="about-title" class="section_title">Что мы делаем и кто мы</h2>
           <p class="section_subtitle">
             Предоставляем полный спектр услуг по 1С — от&nbsp;поддержки до сложных доработок
           </p>
@@ -135,16 +135,25 @@
           </div>
         </div>
       </section>
-      <section id="reviews" class="section reviews">
+      <section
+        id="reviews"
+        class="section reviews"
+        aria-labelledby="reviews-title"
+        aria-describedby="reviews-subtitle"
+      >
         <div class="section_wrapper">
-          <h2 class="section_title">Отзывы</h2>
-          <p class="section_subtitle">Как мы помогли нашим клиентам</p>
+          <h2 id="reviews-title" class="section_title">Отзывы</h2>
+          <p id="reviews-subtitle" class="section_subtitle">Как мы помогли нашим клиентам</p>
           <div class="reviews_conteiner">
-            <div class="swiper">
+            <div class="swiper" role="region" aria-label="Слайдер с отзывами клиентов">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="reviews_slide">
-                    <img class="reviews_logo" src="/assets/indushkin.png" alt="Логотип Индюшкин">
+                    <img
+                      class="reviews_logo"
+                      src="/assets/images/indushkin.webp"
+                      alt="Логотип Индюшкин"
+                    >
                     <h3 class="reviews_title">ООО СОЮЗПРОМПТИЦА</h3>
                     <p class="reviews_desc">
                       Мы обратились к&nbsp;ребятам после серии неудачных попыток решить проблему
@@ -161,7 +170,11 @@
                 </div>
                 <div class="swiper-slide">
                   <div class="reviews_slide">
-                    <img class="reviews_logo" src="/assets/indeal.png" alt="Логотип Индеаль">
+                    <img
+                      class="reviews_logo"
+                      src="/assets/images/indeal.webp"
+                      alt="Логотип Индеаль"
+                    >
                     <h3 class="reviews_title">ООО АГРО-ПЛЮС</h3>
                     <p class="reviews_desc">
                       Для нас важна стабильность: любой простой в&nbsp;1С&nbsp;сразу отражается
@@ -178,7 +191,11 @@
                 </div>
                 <div class="swiper-slide">
                   <div class="reviews_slide">
-                    <img class="reviews_logo" src="/assets/indushkin.png" alt="Логотип Индюшкин">
+                    <img
+                      class="reviews_logo"
+                      src="/assets/images/indushkin.webp"
+                      alt="Логотип Индюшкин"
+                    >
                     <h3 class="reviews_title">Это короткий отзыв</h3>
                     <p class="reviews_desc">
                       Мы обратились к&nbsp;ребятам после серии неудачных попыток решить проблему
@@ -192,22 +209,45 @@
               </div>
             </div>
           </div>
-          <div class="swiper-navigation">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
+          <div class="swiper-navigation" role="group" aria-label="Навигация по слайдам">
+            <button
+              type="button"
+              class="swiper-button-prev"
+              aria-label="Предыдущий слайд"
+              title="Предыдущий слайд"
+            ></button>
+            <div
+              class="swiper-pagination"
+              role="status"
+              aria-live="polite"
+              aria-label="Прогресс слайдера"
+            ></div>
+            <button
+              type="button"
+              class="swiper-button-next"
+              aria-label="Следующий слайд"
+              title="Следующий слайд"
+            ></button>
           </div>
         </div>
       </section>
-      <section id="chart" class="section chart">
+      <section id="chart" class="section chart" aria-labelledby="chart-title">
         <div class="section_wrapper">
-          <h2 class="section_title">Сэкономили нашим клиентам</h2>
+          <h2 id="chart-title" class="section_title">Сэкономили нашим клиентам</h2>
           <div class="chart_years">
-            <button id="chart-25" class="chart_year-btn active">2025</button>
-            <button id="chart-26" class="chart_year-btn">2026</button>
+            <button id="chart-25" class="chart_year-btn active" title="диаграмма 2025 год">
+              2025
+            </button>
+            <button id="chart-26" class="chart_year-btn" title="диаграмма 2026 год">2026</button>
           </div>
           <div class="chart_wrapper">
-            <canvas id="salesChart" width="800" height="400"></canvas>
+            <canvas
+              id="salesChart"
+              width="800"
+              height="400"
+              role="img"
+              aria-describedby="chartTooltip"
+            ></canvas>
             <div id="chartTooltip" class="chart_tooltip">
               <p>
                 Компания платит штатному специалисту полную стоимость в&nbsp;среднем
@@ -231,14 +271,19 @@
           </div>
         </div>
       </section>
-      <section id="work" class="section work">
+      <section id="work" class="section work" aria-labelledby="work-title">
         <div class="section_wrapper">
-          <h2 class="section_title">Как мы работаем</h2>
+          <h2 id="work-title" class="section_title">Как мы работаем</h2>
           <p class="section_subtitle">Простой и прозрачный процесс решения ваших задач</p>
           <div class="work_conteiner">
             <div class="work_card">
               <div class="work_img-conteiner">
-                <img class="work_img" src="/assets/headset.png" alt="">
+                <img
+                  class="work_img"
+                  src="/assets/images/headset.webp"
+                  alt="headset"
+                  loading="lazy"
+                >
               </div>
               <h3 class="work_title">Опишите проблему</h3>
               <p class="work_desc">
@@ -247,21 +292,31 @@
             </div>
             <div class="work_card">
               <div class="work_img-conteiner">
-                <img class="work_img" src="/assets/glass.png" alt="">
+                <img class="work_img" src="/assets/images/glass.webp" alt="glass" loading="lazy">
               </div>
               <h3 class="work_title">Мы анализируем</h3>
               <p class="work_desc">Изучаем ситуацию и&nbsp;предлагаем оптимальное решение</p>
             </div>
             <div class="work_card">
               <div class="work_img-conteiner">
-                <img class="work_img" src="/assets/wrench-crossed-with.png" alt="">
+                <img
+                  class="work_img"
+                  src="/assets/images/wrench-crossed.webp"
+                  alt="tool"
+                  loading="lazy"
+                >
               </div>
               <h3 class="work_title">Исправляем</h3>
               <p class="work_desc">Быстро устраняем проблему и&nbsp;тестируем результат</p>
             </div>
             <div class="work_card">
               <div class="work_img-conteiner">
-                <img class="work_img" src="/assets/key-smooth.png" alt="">
+                <img
+                  class="work_img"
+                  src="/assets/images/key-smooth.webp"
+                  alt="key lock"
+                  loading="lazy"
+                >
               </div>
               <h3 class="work_title">Поддерживаем</h3>
               <p class="work_desc">
@@ -273,9 +328,11 @@
           <p class="work_highlight">Главное — чтобы система работала</p>
         </div>
       </section>
-      <section id="solution" class="section solution">
+      <section id="solution" class="section solution" aria-labelledby="solution-title">
         <div class="section_wrapper">
-          <h2 class="section_title">Решаем задачи, а&nbsp;не&nbsp;создаём их</h2>
+          <h2 id="solution-title" class="section_title">
+            Решаем задачи, а&nbsp;не&nbsp;создаём их
+          </h2>
           <p class="section_subtitle">Реальные кейсы из нашей практики</p>
           <div class="solution_conteiner">
             <div id="swiper2" class="swiper">
@@ -334,23 +391,46 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-navigation">
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-pagination"></div>
-              <div class="swiper-button-next"></div>
+            <div class="swiper-navigation" role="group" aria-label="Навигация по слайдам">
+              <button
+                type="button"
+                class="swiper-button-prev"
+                aria-label="Предыдущий слайд"
+                title="Предыдущий слайд"
+              ></button>
+              <div
+                class="swiper-pagination"
+                role="status"
+                aria-live="polite"
+                aria-label="Прогресс слайдера"
+              ></div>
+              <button
+                type="button"
+                class="swiper-button-next"
+                aria-label="Следующий слайд"
+                title="Следующий слайд"
+              ></button>
             </div>
           </div>
         </div>
       </section>
-      <section id="request" class="section request">
+      <section
+        id="request"
+        class="section request"
+        aria-labelledby="request-title request-subtitle"
+      >
         <div class="section_wrapper request_wrapper">
-          <h2 class="request_title">Мы рядом, когда 1С подводит</h2>
-          <h3 class="request_subtitle">Напишите нам — решим задачу вместе</h3>
+          <h2 id="request-title" class="request_title">Мы рядом, когда 1С подводит</h2>
+          <h3 id="request-subtitle" class="request_subtitle">Напишите нам — решим задачу вместе</h3>
           <p class="request_desc">
             Оставьте заявку и мы свяжемся с вами в течении дня и предложим решение
           </p>
           <div class="request_conteiner">
-            <form class="request_form form">
+            <form
+              class="request_form form"
+              aria-labelledby="request-title request-subtitle"
+              aria-describedby="request-description"
+            >
               <div class="form_conteiner">
                 <label class="form_label" for="name">Контактное лицо</label>
                 <input id="name" class="form_input" placeholder="Введите имя">

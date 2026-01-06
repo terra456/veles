@@ -28,7 +28,7 @@
   &_bg {
     padding-bottom: 0;
     background-repeat: no-repeat;
-    background-image: url("/assets/first-bg-desk.png");
+    background-image: url("/assets/images/first-bg-desk.webp");
     background-position: right 10px top;
 
     @media (width < $minidesc-width) {
@@ -42,7 +42,7 @@
     }
 
     @media (width < $to-tablet-width) {
-      background-image: url("/assets/first-bg-tablet.png");
+      background-image: url("/assets/images/first-bg-tablet.webp");
       background-size: contain;
       background-position: right 5% top;
     }
@@ -52,7 +52,7 @@
     }
 
     @media (width < $to-mobile-width) {
-      background-image: url("/assets/first-bg-mobile.png");
+      background-image: url("/assets/images/first-bg-mobile.webp");
       background-size: 340px;
       background-position: right 0 top 15px;
     }
@@ -164,17 +164,6 @@
     margin: 0;
     height: var(--first-height);
 
-    // /* Мобильные: чуть быстрее цикл */
-    // @media (width <= 640px) {
-    //   --first-item-h: 48px;
-    //   --first-gap: 10px;
-
-    //   height: calc(var(--first-item-h) * 5 + var(--first-gap) * 4);
-
-    //   .first_item {
-    //     animation-duration: 6s;
-    //   }
-    // }
     &:hover > .first_item {
       animation-play-state: paused;
     }

@@ -1,13 +1,13 @@
 <div class="modal_overlay">
   <div class="modal">
-    <button class="modal_close-btn" type="button"></button>
+    <button class="modal_close-btn" type="button" aria-label="close"></button>
     <div class="modal_img-conteiner">
       <picture>
-        <source media="(min-width:1024px)" srcset="/assets/hand-holding-a-star.png">
-        <source media="(min-width:748px)" srcset="/assets/hand-holding-a-star-tablet.png">
+        <source media="(min-width:1024px)" srcset="/assets/images/hand-with-star.webp">
+        <source media="(min-width:748px)" srcset="/assets/images/hand-with-star-tablet.webp">
         <img
           class="modal_img"
-          src="/assets/hand-holding-a-star-mob.png"
+          src="/assets/images/hand-with-star-mob.webp"
           alt="success image"
           loading="lazy"
         >
@@ -17,6 +17,6 @@
     <p class="modal_desc">
       В течении дня с вами свяжется наш специалист для уточнения деталей и согласования плана работ
     </p>
-    <button class="btn btn--primary" type="button">Понятно</button>
+    <button id="okBtn" class="btn btn--primary" type="button" aria-label="ok">Понятно</button>
   </div>
 </div>

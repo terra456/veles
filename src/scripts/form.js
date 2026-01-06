@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // allow closing by close button
     if (overlay) {
       const closeBtn = overlay.querySelector(".modal_close-btn");
-      const okBtn = overlay.querySelector(".btn--primary");
+      const okBtn = overlay.querySelector("#okBtn");
       if (closeBtn) closeBtn.addEventListener("click", closeModal);
       if (okBtn) okBtn.addEventListener("click", closeModal);
       // close when clicking outside modal
