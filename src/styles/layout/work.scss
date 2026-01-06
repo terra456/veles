@@ -113,7 +113,7 @@
     @include accent-body-24-bold;
 
     text-align: center;
-    color: var(--blue-500, #2e6ce6);
+    color: var(--blue-500);
 
     @media (width < $to-tablet-width) {
       font-size: 20px;

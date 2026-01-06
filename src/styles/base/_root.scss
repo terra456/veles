@@ -12,6 +12,7 @@
   --red-500: #ff383c;
   --red-100: #fee2e2;
   --bg-page: #fcfcfc;
+  --white: #fff;
   --text-dark-500: #162035;
   --body-text-200: #374151;
   --body-text-100: #6b7280;
@@ -22,6 +23,8 @@
   --liner-orange: linear-gradient(90deg, #fae715 0%, #fa6e32 33.17%);
   --bg-card: linear-gradient(180deg, rgb(47 128 237 / 6%) 26.45%, rgb(27 73 135 / 1%) 100%);
   --liner: linear-gradient(90deg, #85a7eb 0%, #1956cd 100%);
+  --card-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+  --icon-shadow: 1px 1px 5px 0 rgb(13 29 61 / 30%);
   --desctop-width: #{$desctop-width};
   --tablet-width: #{$tablet-width};
   --mobile-width: #{$mobile-width};

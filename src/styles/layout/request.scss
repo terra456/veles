@@ -76,7 +76,7 @@
       cover,
       360px 360px,
       315px 315px;
-    box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+    box-shadow: var(--card-shadow);
 
     @media (width < $to-tablet-width) {
       padding: 65px 32px;

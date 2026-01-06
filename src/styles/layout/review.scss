@@ -31,7 +31,7 @@
     align-items: center;
     border-radius: 10px;
     background: transparent;
-    box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+    box-shadow: var(--card-shadow);
 
     @media (width < $to-mobile-width) {
       padding: 24px 16px 32px;
@@ -56,7 +56,7 @@
     &:hover {
       border-radius: 10px;
       background: var(--bg, #fcfcfc);
-      box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+      box-shadow: var(--card-shadow);
 
       &::before {
         background: var(--liner);
@@ -72,7 +72,7 @@
   }
 
   &_title {
-    color: var(--text-dark-500, #162035);
+    color: var(--text-dark-500);
 
     @include text-button-16-semibold;
 
@@ -87,7 +87,7 @@
   &_desc {
     padding-bottom: 40px;
     flex-grow: 1;
-    color: var(--body-text-100, #6b7280);
+    color: var(--body-text-100);
     font-family: Inter;
     font-size: 18px;
     font-style: normal;
@@ -118,7 +118,7 @@
 
     @include body-16-regular;
 
-    color: var(--body-text-200, #374151);
+    color: var(--body-text-200);
 
     @media (width < $to-mobile-width) {
       font-size: 14px;

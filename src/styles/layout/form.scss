@@ -55,7 +55,7 @@
     &:valid {
       border: 1px solid var(--dark-blue-90060, rgb(3 15 37 / 60%));
       outline: 1px solid var(--dark-blue-90060, rgb(3 15 37 / 60%));
-      color: var(--text-dark-500, #162035);
+      color: var(--text-dark-500);
     }
 
     &:focus,
@@ -159,7 +159,7 @@
       width: 22px;
       height: 22px;
       border-radius: 4px;
-      border: 2px solid var(--body-text-100, #6b7280);
+      border: 2px solid var(--body-text-100);
       background: transparent;
       background-color: transparent;
       transition: all 0.1s ease;

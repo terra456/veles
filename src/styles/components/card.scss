@@ -12,7 +12,7 @@
   justify-content: flex-start;
   gap: 12px;
   border-radius: 10px;
-  background: var(--white, #fff);
+  background: var(--white);
   box-shadow: 0 4px 24px 0 rgb(13 29 61 / 30%);
   white-space: nowrap;
 
@@ -32,7 +32,7 @@
     background-repeat: no-repeat;
     background-size: 18px 18px;
     background-position: center;
-    box-shadow: 1px 1px 5px 0 rgb(13 29 61 / 30%);
+    box-shadow: var(--icon-shadow);
 
     @media (width < $to-tablet-width) {
       width: 24px;
@@ -47,9 +47,9 @@
       aspect-ratio: 1/1;
       border-radius: 50%;
       background-image: none;
-      background-color: #18cc73;
+      background-color: var(--green-500);
       stroke-width: 1px;
-      stroke: #18cc73;
+      stroke: var(--green-500);
       filter: blur(1px);
       box-shadow: none;
 
@@ -59,17 +59,17 @@
     }
 
     &.check {
-      background-color: var(--green-100, #dcfce7);
+      background-color: var(--green-100);
       background-image: url("/assets/icon/check-round.svg");
     }
 
     &.gear {
-      background-color: var(--blue-100, #eaf1ff);
+      background-color: var(--blue-100);
       background-image: url("/assets/icon/gear.svg");
     }
 
     &.refresh {
-      background-color: var(--green-100, #dcfce7);
+      background-color: var(--green-100);
       background-image: url("/assets/icon/refresh.svg");
     }
   }

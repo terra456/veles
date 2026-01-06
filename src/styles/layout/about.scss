@@ -51,7 +51,7 @@
     padding: 32px;
     background: var(--bg-card);
     border-radius: 10px;
-    box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+    box-shadow: var(--card-shadow);
     background-repeat: no-repeat;
     overflow: hidden;
 
@@ -61,7 +61,7 @@
     }
 
     &:hover {
-      box-shadow: 0 4px 24px 12px rgb(13 29 61 / 10%);
+      box-shadow: var(--icon-shadow);
 
       & .about_title {
         color: var(--blue-500);

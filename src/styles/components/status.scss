@@ -28,20 +28,20 @@
   }
 
   &.problem {
-    --status-color: var(--red-500, #ff383c);
+    --status-color: var(--red-500);
 
-    background: var(--red-100, #fee2e2);
+    background: var(--red-100);
   }
 
   &.decision {
-    --status-color: var(--blue-500, #2e6ce6);
+    --status-color: var(--blue-500);
 
-    background: var(--blue-100, #eaf1ff);
+    background: var(--blue-100);
   }
 
   &.result {
-    --status-color: var(--green-600, #11813a);
+    --status-color: var(--green-600);
 
-    background: var(--green-100, #dcfce7);
+    background: var(--green-100);
   }
 }

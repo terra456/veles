@@ -120,7 +120,7 @@
   &_cost {
     @include body-regular;
 
-    color: var(--body-text-100, #6b7280);
+    color: var(--body-text-100);
 
     @media (width < $to-tablet-width) {
       padding-bottom: 16px;
@@ -129,7 +129,7 @@
   }
 
   &_price {
-    color: var(--blue-500, #2e6ce6);
+    color: var(--blue-500);
     font-family: Tektur;
     font-size: 32px;
     font-style: normal;

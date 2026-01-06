@@ -23,8 +23,8 @@
     align-items: flex-start;
     justify-content: space-between;
     border-radius: 10px;
-    background: var(--white, #fff);
-    box-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
+    background: var(--white);
+    box-shadow: var(--card-shadow);
 
     @media (width < $to-mobile-width) {
       padding: 24px 16px;

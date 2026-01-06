@@ -4,7 +4,7 @@
 @use "../base/variables" as *;
 
 @mixin h1-56-extra-bold {
-  color: var(--text-dark-500, #162035);
+  color: var(--text-dark-500);
 
   /* Desktop/h1 56 extra Bold */
   font-family: Tektur;
@@ -25,12 +25,12 @@
     font-weight: 600;
     font-style: normal;
     line-height: normal;
-    color: var(--text-dark-500, #162035);
+    color: var(--text-dark-500);
   }
 }
 
 @mixin h2-40-semibold {
-  color: var(--text-dark-500, #162035);
+  color: var(--text-dark-500);
 
   /* Desktop/h2 40 semiBold */
   font-family: Tektur;
@@ -51,7 +51,7 @@
 }
 
 @mixin body-24-regular {
-  color: var(--body-text-200, #374151);
+  color: var(--body-text-200);
 
   /* Desktop/body 24 regular */
   font-family: Inter;
@@ -67,7 +67,7 @@
 }
 
 @mixin body-accent-20-semibold {
-  color: var(--text-dark-500, #162035);
+  color: var(--text-dark-500);
 
   /* Desktop/ */
   font-family: Inter;
@@ -78,7 +78,7 @@
 }
 
 @mixin accent-body-24-bold {
-  color: var(--text-dark-500, #162035);
+  color: var(--text-dark-500);
 
   /* Desktop/ */
   font-family: Inter;
@@ -89,7 +89,7 @@
 }
 
 @mixin body-18-regular {
-  color: var(--body-text-200, #374151);
+  color: var(--body-text-200);
 
   /* Desktop/ */
   font-family: Inter;
@@ -108,7 +108,7 @@
 }
 
 @mixin body-regular {
-  color: var(--body-text-200, #374151);
+  color: var(--body-text-200);
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
@@ -121,7 +121,7 @@
 }
 
 @mixin body-18-semi-bold {
-  color: var(--body-text-200, #374151);
+  color: var(--body-text-200);
 
   /* Desktop/body 18 semibold */
   font-family: Inter;
@@ -145,7 +145,7 @@
 }
 
 @mixin body-16-regular {
-  color: var(--body-text-100, #6b7280);
+  color: var(--body-text-100);
 
   /* Desktop/body 16 regular */
   font-family: Inter;
@@ -156,7 +156,7 @@
 }
 
 @mixin body-14-regular {
-  color: var(--body-text-200, #374151);
+  color: var(--body-text-200);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -165,7 +165,7 @@
 }
 
 @mixin body-12-regular {
-  color: var(--body-text-100, #374151);
+  color: var(--body-text-200);
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
