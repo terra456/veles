@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/vite.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>veles-landing</title>
-    <script type="module" crossorigin src="/veles/assets/main-Brwe7kNm.js"></script>
-    <link rel="stylesheet" crossorigin href="/veles/assets/main-Dfi25Rj9.css">
+    <script type="module" crossorigin src="/veles/assets/main-BANGK-Wd.js"></script>
+    <link rel="stylesheet" crossorigin href="/veles/assets/main-DzwD48n7.css">
   </head>
   <body>
-    <header class="header">
+    <header class="header" role="banner">
   <a href="/">
     <img
       class="header_logo"
@@ -19,7 +19,7 @@
       height="23px"
     >
   </a>
-  <nav class="header_nav">
+  <nav class="header_nav" aria-label="Основная навигация сайта">
     <ul id="menu" class="header_list">
       <li class="header_item">
         <a class="header_link link-text" href="./#about">Кто мы</a>
@@ -41,13 +41,21 @@
       </li>
     </ul>
   </nav>
-  <button type="button" id="toggle" class="toggle_btn">
+  <button
+    type="button"
+    id="toggle"
+    class="toggle_btn"
+    aria-label="Открыть меню"
+    aria-controls="menu"
+    aria-expanded="false"
+    title="Меню"
+  >
     <span class="line"></span>
   </button>
 </header>
 
 
-    <main>
+    <main role="main">
       <section class="section first">
         <div class="section_wrapper first_bg">
           <div class="first_conteiner">
@@ -132,9 +140,9 @@
           </div>
         </div>
       </section>
-      <section id="about" class="section about">
+      <section id="about" class="section about" aria-labelledby="about-title">
         <div class="section_wrapper">
-          <h2 class="section_title">Что мы делаем и кто мы</h2>
+          <h2 id="about-title" class="section_title">Что мы делаем и кто мы</h2>
           <p class="section_subtitle">
             Предоставляем полный спектр услуг по 1С — от&nbsp;поддержки до сложных доработок
           </p>
@@ -173,16 +181,25 @@
           </div>
         </div>
       </section>
-      <section id="reviews" class="section reviews">
+      <section
+        id="reviews"
+        class="section reviews"
+        aria-labelledby="reviews-title"
+        aria-describedby="reviews-subtitle"
+      >
         <div class="section_wrapper">
-          <h2 class="section_title">Отзывы</h2>
-          <p class="section_subtitle">Как мы помогли нашим клиентам</p>
+          <h2 id="reviews-title" class="section_title">Отзывы</h2>
+          <p id="reviews-subtitle" class="section_subtitle">Как мы помогли нашим клиентам</p>
           <div class="reviews_conteiner">
-            <div class="swiper">
+            <div class="swiper" role="region" aria-label="Слайдер с отзывами клиентов">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="reviews_slide">
-                    <img class="reviews_logo" src="/veles/assets/indushkin.png" alt="Логотип Индюшкин">
+                    <img
+                      class="reviews_logo"
+                      src="/veles/assets/images/indushkin.webp"
+                      alt="Логотип Индюшкин"
+                    >
                     <h3 class="reviews_title">ООО СОЮЗПРОМПТИЦА</h3>
                     <p class="reviews_desc">
                       Мы обратились к&nbsp;ребятам после серии неудачных попыток решить проблему
@@ -199,7 +216,11 @@
                 </div>
                 <div class="swiper-slide">
                   <div class="reviews_slide">
-                    <img class="reviews_logo" src="/veles/assets/indeal.png" alt="Логотип Индеаль">
+                    <img
+                      class="reviews_logo"
+                      src="/veles/assets/images/indeal.webp"
+                      alt="Логотип Индеаль"
+                    >
                     <h3 class="reviews_title">ООО АГРО-ПЛЮС</h3>
                     <p class="reviews_desc">
                       Для нас важна стабильность: любой простой в&nbsp;1С&nbsp;сразу отражается
@@ -216,7 +237,11 @@
                 </div>
                 <div class="swiper-slide">
                   <div class="reviews_slide">
-                    <img class="reviews_logo" src="/veles/assets/indushkin.png" alt="Логотип Индюшкин">
+                    <img
+                      class="reviews_logo"
+                      src="/veles/assets/images/indushkin.webp"
+                      alt="Логотип Индюшкин"
+                    >
                     <h3 class="reviews_title">Это короткий отзыв</h3>
                     <p class="reviews_desc">
                       Мы обратились к&nbsp;ребятам после серии неудачных попыток решить проблему
@@ -230,22 +255,45 @@
               </div>
             </div>
           </div>
-          <div class="swiper-navigation">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
+          <div class="swiper-navigation" role="group" aria-label="Навигация по слайдам">
+            <button
+              type="button"
+              class="swiper-button-prev"
+              aria-label="Предыдущий слайд"
+              title="Предыдущий слайд"
+            ></button>
+            <div
+              class="swiper-pagination"
+              role="status"
+              aria-live="polite"
+              aria-label="Прогресс слайдера"
+            ></div>
+            <button
+              type="button"
+              class="swiper-button-next"
+              aria-label="Следующий слайд"
+              title="Следующий слайд"
+            ></button>
           </div>
         </div>
       </section>
-      <section id="chart" class="section chart">
+      <section id="chart" class="section chart" aria-labelledby="chart-title">
         <div class="section_wrapper">
-          <h2 class="section_title">Сэкономили нашим клиентам</h2>
+          <h2 id="chart-title" class="section_title">Сэкономили нашим клиентам</h2>
           <div class="chart_years">
-            <button id="chart-25" class="chart_year-btn active">2025</button>
-            <button id="chart-26" class="chart_year-btn">2026</button>
+            <button id="chart-25" class="chart_year-btn active" title="диаграмма 2025 год">
+              2025
+            </button>
+            <button id="chart-26" class="chart_year-btn" title="диаграмма 2026 год">2026</button>
           </div>
           <div class="chart_wrapper">
-            <canvas id="salesChart" width="800" height="400"></canvas>
+            <canvas
+              id="salesChart"
+              width="800"
+              height="400"
+              role="img"
+              aria-describedby="chartTooltip"
+            ></canvas>
             <div id="chartTooltip" class="chart_tooltip">
               <p>
                 Компания платит штатному специалисту полную стоимость в&nbsp;среднем
@@ -269,14 +317,19 @@
           </div>
         </div>
       </section>
-      <section id="work" class="section work">
+      <section id="work" class="section work" aria-labelledby="work-title">
         <div class="section_wrapper">
-          <h2 class="section_title">Как мы работаем</h2>
+          <h2 id="work-title" class="section_title">Как мы работаем</h2>
           <p class="section_subtitle">Простой и прозрачный процесс решения ваших задач</p>
           <div class="work_conteiner">
             <div class="work_card">
               <div class="work_img-conteiner">
-                <img class="work_img" src="/veles/assets/headset.png" alt="">
+                <img
+                  class="work_img"
+                  src="/veles/assets/images/headset.webp"
+                  alt="headset"
+                  loading="lazy"
+                >
               </div>
               <h3 class="work_title">Опишите проблему</h3>
               <p class="work_desc">
@@ -285,21 +338,31 @@
             </div>
             <div class="work_card">
               <div class="work_img-conteiner">
-                <img class="work_img" src="/veles/assets/glass.png" alt="">
+                <img class="work_img" src="/veles/assets/images/glass.webp" alt="glass" loading="lazy">
               </div>
               <h3 class="work_title">Мы анализируем</h3>
               <p class="work_desc">Изучаем ситуацию и&nbsp;предлагаем оптимальное решение</p>
             </div>
             <div class="work_card">
               <div class="work_img-conteiner">
-                <img class="work_img" src="/veles/assets/wrench-crossed-with.png" alt="">
+                <img
+                  class="work_img"
+                  src="/veles/assets/images/wrench-crossed.webp"
+                  alt="tool"
+                  loading="lazy"
+                >
               </div>
               <h3 class="work_title">Исправляем</h3>
               <p class="work_desc">Быстро устраняем проблему и&nbsp;тестируем результат</p>
             </div>
             <div class="work_card">
               <div class="work_img-conteiner">
-                <img class="work_img" src="/veles/assets/key-smooth.png" alt="">
+                <img
+                  class="work_img"
+                  src="/veles/assets/images/key-smooth.webp"
+                  alt="key lock"
+                  loading="lazy"
+                >
               </div>
               <h3 class="work_title">Поддерживаем</h3>
               <p class="work_desc">
@@ -311,9 +374,11 @@
           <p class="work_highlight">Главное — чтобы система работала</p>
         </div>
       </section>
-      <section id="solution" class="section solution">
+      <section id="solution" class="section solution" aria-labelledby="solution-title">
         <div class="section_wrapper">
-          <h2 class="section_title">Решаем задачи, а&nbsp;не&nbsp;создаём их</h2>
+          <h2 id="solution-title" class="section_title">
+            Решаем задачи, а&nbsp;не&nbsp;создаём их
+          </h2>
           <p class="section_subtitle">Реальные кейсы из нашей практики</p>
           <div class="solution_conteiner">
             <div id="swiper2" class="swiper">
@@ -372,37 +437,86 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-navigation">
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-pagination"></div>
-              <div class="swiper-button-next"></div>
+            <div class="swiper-navigation" role="group" aria-label="Навигация по слайдам">
+              <button
+                type="button"
+                class="swiper-button-prev"
+                aria-label="Предыдущий слайд"
+                title="Предыдущий слайд"
+              ></button>
+              <div
+                class="swiper-pagination"
+                role="status"
+                aria-live="polite"
+                aria-label="Прогресс слайдера"
+              ></div>
+              <button
+                type="button"
+                class="swiper-button-next"
+                aria-label="Следующий слайд"
+                title="Следующий слайд"
+              ></button>
             </div>
           </div>
         </div>
       </section>
-      <section id="request" class="section request">
+      <section
+        id="request"
+        class="section request"
+        aria-labelledby="request-title request-subtitle"
+      >
         <div class="section_wrapper request_wrapper">
-          <h2 class="request_title">Мы рядом, когда 1С подводит</h2>
-          <h3 class="request_subtitle">Напишите нам — решим задачу вместе</h3>
-          <p class="request_desc">
+          <h2 id="request-title" class="request_title">Мы рядом, когда 1С подводит</h2>
+          <h3 id="request-subtitle" class="request_subtitle">Напишите нам — решим задачу вместе</h3>
+          <p id="request-description" class="request_desc">
             Оставьте заявку и мы свяжемся с вами в течении дня и предложим решение
           </p>
           <div class="request_conteiner">
-            <form class="request_form form">
+            <form
+              class="request_form form"
+              aria-labelledby="request-title request-subtitle"
+              aria-describedby="request-description"
+              dataset="/api/contact"
+              novalidate
+            >
               <div class="form_conteiner">
                 <label class="form_label" for="name">Контактное лицо</label>
-                <input id="name" class="form_input" placeholder="Введите имя">
-                <p class="form_error">erewr</p>
+                <input
+                  id="name"
+                  class="form_input"
+                  type="text"
+                  placeholder="Введите имя"
+                  required
+                  aria-required="true"
+                  aria-describedby="name-error"
+                >
+                <p id="name-error" class="form_error" aria-live="polite"></p>
               </div>
               <div class="form_conteiner">
                 <label class="form_label" for="email">Электронный адрес</label>
-                <input id="email" class="form_input" placeholder="1Сexample@mail.ru">
-                <p class="form_error"></p>
+                <input
+                  id="email"
+                  class="form_input"
+                  type="email"
+                  placeholder="1Сexample@mail.ru"
+                  required
+                  aria-required="true"
+                  aria-describedby="email-error"
+                >
+                <p id="email-error" class="form_error" aria-live="polite"></p>
               </div>
               <div class="form_conteiner">
                 <label class="form_label" for="phone">Контактный телефон</label>
-                <input id="phone" class="form_input" type="tel" placeholder="+7 (___) ___-__-__">
-                <p class="form_error"></p>
+                <input
+                  id="phone"
+                  class="form_input"
+                  type="tel"
+                  placeholder="+7 (___) ___-__-__"
+                  required
+                  aria-required="true"
+                  aria-describedby="phone-error"
+                >
+                <p id="phone-error" class="form_error" aria-live="polite"></p>
               </div>
               <div class="form_conteiner form_conteiner--textarea">
                 <label class="form_label" for="text">Подробное описание</label>
@@ -410,19 +524,27 @@
                   id="text"
                   class="form_input form_textarea"
                   placeholder="Опишите проблему, последовательность действий, которая к ней приводит, текст ошибки (если есть). Для доработки — опишите задачу и требуемый результат."
+                  aria-describedby="text-error"
                 ></textarea>
-                <p class="form_error"></p>
+                <p id="text-error" class="form_error" aria-live="polite"></p>
               </div>
               <div class="form_conteiner form_conteiner--consent">
                 <label class="form_label" for="consent">
-                  <input id="consent" type="checkbox" class="form_checkbox">
+                  <input
+                    id="consent"
+                    type="checkbox"
+                    class="form_checkbox"
+                    required
+                    aria-required="true"
+                    aria-describedby="consent-error"
+                  >
                   <span class="form_checkbox_checkmark"></span>
                   <p>
                     Я согласен на обработку персональных данных и принимаю условия
                     <a class="form_link text-link" href="/consent">Политики конфиденциальности</a>
                   </p>
                 </label>
-                <p class="form_error"></p>
+                <p id="consent-error" class="form_error" aria-live="polite"></p>
               </div>
               <div class="form_btn-conteiner">
                 <button type="submit" class="btn btn--mail btn--primary">Оставить заявку</button>
@@ -434,7 +556,7 @@
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
   <a class="home_btn" href="#"></a>
   <div class="section_wrapper footer_wrapper">
     <div class="footer_logo-conteiner">
@@ -452,7 +574,7 @@
         систем&nbsp;1С
       </p>
     </div>
-    <nav class="footer_nav footer_navigation">
+    <nav class="footer_nav footer_navigation" aria-label="Дополнительная навигация по разделам">
       <h3 class="footer_title">Навигация</h3>
       <ul class="footer_list">
         <li class="footer_item">
@@ -472,7 +594,7 @@
         </li>
       </ul>
     </nav>
-    <nav class="footer_nav footer_more">
+    <nav class="footer_nav footer_more" aria-label="Ссылки для подробной информации">
       <h3 class="footer_title">Узнать больше</h3>
       <ul class="footer_list">
         <li class="footer_item">
@@ -483,7 +605,7 @@
         </li>
       </ul>
     </nav>
-    <nav class="footer_nav footer_pravo">
+    <nav class="footer_nav footer_pravo" aria-label="Правовая информация">
       <h3 class="footer_title">Правовая информация</h3>
       <ul class="footer_list">
         <li class="footer_item">
@@ -517,14 +639,14 @@
 
     <div class="modal_overlay">
   <div class="modal">
-    <button class="modal_close-btn" type="button"></button>
+    <button class="modal_close-btn" type="button" aria-label="close"></button>
     <div class="modal_img-conteiner">
       <picture>
-        <source media="(min-width:1024px)" srcset="/veles/assets/hand-holding-a-star.png">
-        <source media="(min-width:748px)" srcset="/veles/assets/hand-holding-a-star-tablet.png">
+        <source media="(min-width:1024px)" srcset="/veles/assets/images/hand-with-star.webp">
+        <source media="(min-width:748px)" srcset="/veles/assets/images/hand-with-star-tablet.webp">
         <img
           class="modal_img"
-          src="/veles/assets/hand-holding-a-star-mob.png"
+          src="/veles/assets/images/hand-with-star-mob.webp"
           alt="success image"
           loading="lazy"
         >
@@ -534,7 +656,7 @@
     <p class="modal_desc">
       В течении дня с вами свяжется наш специалист для уточнения деталей и согласования плана работ
     </p>
-    <button class="btn btn--primary" type="button">Понятно</button>
+    <button id="okBtn" class="btn btn--primary" type="button" aria-label="ok">Понятно</button>
   </div>
 </div>
 
