@@ -4,8 +4,6 @@ import "./scripts/slider.js";
 import "./scripts/form.js";
 import { createSalesChart } from "./scripts/chart-component.js";
 
-console.log("is started");
-
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -26,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btn25 = document.getElementById("chart-25");
   const btn26 = document.getElementById("chart-26");
   const tooltip = document.getElementById("chartTooltip");
+  let chart;
 
   const labels = [
     "январь",
@@ -51,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
       labels: isMobile ? labels.slice(6, 12) : labels,
       values: isMobile ? values25.slice(6, 12) : values25,
     });
-    console.log("Chart created:", chart);
 
     btn25.addEventListener("click", () => {
       btn26.classList.remove("active");

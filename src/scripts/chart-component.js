@@ -7,21 +7,10 @@ import {
   LineController,
   LineElement,
   PointElement,
-  Title,
-  Tooltip,
 } from "chart.js";
 
 // Регистрируем компоненты
-Chart.register(
-  CategoryScale,
-  LinearScale,
-  LineController,
-  LineElement,
-  PointElement,
-  Title,
-  Tooltip,
-  Filler,
-);
+Chart.register(CategoryScale, LinearScale, LineController, LineElement, PointElement, Filler);
 
 // Создаем и экспортируем функцию для создания графика
 export function createSalesChart(canvasId, data) {
@@ -65,14 +54,6 @@ export function createSalesChart(canvasId, data) {
     options: {
       responsive: true,
       maintainAspectRatio: false, // Важно: отключаем сохранение пропорций
-      plugins: {
-        legend: {
-          display: false,
-        },
-        tooltip: {
-          enabled: false, // Устанавливаем в false для отключения
-        },
-      },
       scales: {
         x: {
           grid: {

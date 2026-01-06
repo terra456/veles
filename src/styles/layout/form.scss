@@ -52,16 +52,18 @@
       color: var(--body-text-100);
     }
 
-    &:focus {
-      border: 1px solid var(--blue-500);
-      outline: none;
-      color: var(--text-dark-500);
-    }
-
     &:valid {
       border: 1px solid var(--dark-blue-90060, rgb(3 15 37 / 60%));
       outline: 1px solid var(--dark-blue-90060, rgb(3 15 37 / 60%));
       color: var(--text-dark-500, #162035);
+    }
+
+    &:focus,
+    &:focus:valid,
+    &:focus:invalid {
+      border: 1px solid var(--blue-500);
+      outline: none;
+      color: var(--text-dark-500);
     }
 
     &[aria-invalid="true"] {

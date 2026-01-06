@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       0: /[0-9]/,
     },
   };
-  const _mask = IMask(element, maskOptions);
+  IMask(element, maskOptions);
 
   const fields = {
     name: form.querySelector("#name"),
@@ -145,8 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
       phone: fields.phone.value.trim(),
       text: fields.text.value.trim(),
     };
-
-    console.log(payload);
 
     if (!ok) return;
 
