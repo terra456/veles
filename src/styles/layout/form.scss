@@ -41,7 +41,6 @@
     border-radius: 10px;
     border: 1px solid var(--body-text-100);
     background: transparent;
-    background-color: transparent;
     outline: none;
 
     @media (width < $to-mobile-width) {
@@ -52,20 +51,28 @@
       color: var(--body-text-100);
     }
 
-    &:valid {
+    // Стиль для заполненных полей без ошибок
+    &.has-value:not([aria-invalid="true"]) {
       border: 1px solid var(--dark-blue-90060, rgb(3 15 37 / 60%));
       outline: 1px solid var(--dark-blue-90060, rgb(3 15 37 / 60%));
       color: var(--text-dark-500);
     }
 
-    &:focus,
-    &:focus:valid,
-    &:focus:invalid {
+    // Стиль для фокуса
+    &:focus {
       border: 1px solid var(--blue-500);
       outline: none;
       color: var(--text-dark-500);
     }
 
+    // Стиль для фокуса на заполненном поле
+    &.has-value:focus:not([aria-invalid="true"]) {
+      border: 1px solid var(--blue-500);
+      outline: none;
+      color: var(--text-dark-500);
+    }
+
+    // Стиль для ошибок (оставляем как было)
     &[aria-invalid="true"] {
       border: 1px solid var(--red-500);
       outline: none;
@@ -109,6 +116,12 @@
 
   &_textarea {
     height: 136px;
+
+    &.has-value:not([aria-invalid="true"]) {
+      border: 1px solid var(--dark-blue-90060, rgb(3 15 37 / 60%));
+      outline: 1px solid var(--dark-blue-90060, rgb(3 15 37 / 60%));
+      color: var(--text-dark-500);
+    }
 
     @media (width < $to-mobile-width) {
       height: 110px;
@@ -161,7 +174,6 @@
       border-radius: 4px;
       border: 2px solid var(--body-text-100);
       background: transparent;
-      background-color: transparent;
       transition: all 0.1s ease;
     }
 

@@ -4,7 +4,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".request_form");
   if (!form) return;
 
-  const element = document.getElementById("phone");
+  // Функция для проверки, заполнено ли поле полностью
+  function isFieldFilled(field) {
+    if (!field.value.trim()) return false;
+
+    // Для телефона: проверяем, что введены все цифры (без учета маски)
+    if (field.id === "phone") {
+      const digits = field.value.replace(/\D/g, "");
+      return digits.length >= 11; // +7 и 10 цифр
+    }
+
+    // Для остальных полей
+    return field.value.trim().length > 0;
+  }
+
+  // Функция для обновления состояния поля
+  function updateFieldState(field) {
+    const isFilled = isFieldFilled(field);
+    const hasError =
+      field.hasAttribute("aria-invalid") && field.getAttribute("aria-invalid") === "true";
+
+    // Всегда сначала удаляем оба класса
+    field.classList.remove("has-value", "empty");
+
+    // Затем добавляем нужный класс
+    if (isFilled && !hasError) {
+      field.classList.add("has-value");
+    } else {
+      field.classList.add("empty");
+    }
+  }
+
+  const phoneElement = document.getElementById("phone");
   const maskOptions = {
     // Базовый номер + опциональное продолжение (доп. номер и т.п.)
     mask: "+{7}(000)000-00-00[ 0000000]",
@@ -14,13 +45,23 @@ document.addEventListener("DOMContentLoaded", () => {
       // Можно определить свои символы (0 - цифры)
       0: /[0-9]/,
     },
+    // События маски
+    onComplete: () => {
+      updateFieldState(phoneElement);
+    },
+    onAccept: () => {
+      updateFieldState(phoneElement);
+    },
+    onBlur: () => {
+      updateFieldState(phoneElement);
+    },
   };
-  IMask(element, maskOptions);
+  const phoneMask = IMask(phoneElement, maskOptions);
 
   const fields = {
     name: form.querySelector("#name"),
     email: form.querySelector("#email"),
-    phone: form.querySelector("#phone"),
+    phone: phoneElement,
     text: form.querySelector("#text"),
     consent: form.querySelector("#consent"),
   };
@@ -46,8 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
     err.textContent = message;
     err.classList.add("show");
     err.setAttribute("role", "alert");
-    err.setAttribute("aria-live", "polite");
+    err.setAttribute("aria-live", "assertive");
     el.setAttribute("aria-invalid", "true");
+    el.classList.remove("has-value");
+
     if (err.id) {
       el.setAttribute("aria-describedby", err.id);
     }
@@ -63,6 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     el.removeAttribute("aria-invalid");
     el.removeAttribute("aria-describedby");
+    // Обновляем состояние после очистки ошибки
+    updateFieldState(el);
   }
 
   function validateName() {
@@ -96,23 +141,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function validatePhone() {
-    const v = fields.phone.value.trim();
+    const v = fields.phone.value;
     const digits = v.replace(/\D/g, "");
-    const minDigits = 11; // +7 и ещё 10 цифр
-    //const maxDigits = 15; // запас на добавочный номер
 
-    if (!digits.length) {
+    if (!digits) {
       showError(fields.phone, msgs.required);
       return false;
     }
 
-    if (digits.length < minDigits) {
-      showError(fields.phone, `Номер слишком короткий.`);
+    if (digits.length < 11) {
+      showError(fields.phone, `Введите 10 цифр номера после +7`);
       return false;
     }
 
-    if (digits.length > minDigits) {
-      showError(fields.phone, `Номер слишком длинный.`);
+    if (digits.length > 11) {
+      showError(fields.phone, `Слишком длинный номер`);
       return false;
     }
 
@@ -144,12 +187,30 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // real-time clearing и отключение стандартного UI валидации браузера
-  Object.values(fields).forEach((f) => {
-    if (!f) return;
-    const ev = f.type === "checkbox" ? "change" : "input";
-    f.addEventListener(ev, () => clearError(f));
-    // подавляем стандартное всплывающее сообщение браузера
-    f.addEventListener("invalid", (e) => e.preventDefault());
+  Object.values(fields).forEach((field) => {
+    if (!field) return;
+    const ev = field.type === "checkbox" ? "change" : "input";
+    field.addEventListener(ev, () => {
+      clearError(field);
+      updateFieldState(field);
+    });
+    // Слушатель для потери фокуса
+    if (field.type !== "checkbox") {
+      field.addEventListener("blur", () => {
+        updateFieldState(field);
+      });
+    }
+
+    // Слушатель для фокуса
+    field.addEventListener("focus", () => {
+      field.classList.remove("has-value", "empty");
+    });
+
+    // Подавляем стандартное UI валидации браузера
+    field.addEventListener("invalid", (e) => e.preventDefault());
+
+    // Инициализируем начальное состояние
+    updateFieldState(field);
   });
 
   form.addEventListener("submit", (e) => {
@@ -161,6 +222,9 @@ document.addEventListener("DOMContentLoaded", () => {
       validateText(),
       validateConsent(),
     ].every(Boolean);
+
+    if (!ok) return;
+
     // prepare payload
     const payload = {
       name: fields.name.value.trim(),
@@ -168,8 +232,6 @@ document.addEventListener("DOMContentLoaded", () => {
       phone: fields.phone.value.trim(),
       text: fields.text.value.trim(),
     };
-
-    if (!ok) return;
 
     const submitBtn = form.querySelector('[type="submit"]');
     const originalBtnText = submitBtn ? submitBtn.textContent : null;
@@ -220,6 +282,31 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // Функция для полного сброса формы
+    function resetFormState() {
+      // Сбрасываем форму
+      form.reset();
+
+      // Сбрасываем маску телефона
+      if (phoneMask) {
+        phoneMask.updateValue();
+      }
+
+      // Сбрасываем все классы полей
+      Object.values(fields).forEach((field) => {
+        if (field) {
+          field.classList.remove("has-value", "empty");
+          field.classList.add("empty"); // По умолчанию поле пустое
+          clearError(field);
+        }
+      });
+      // Сбрасываем чекбокс состояния
+      if (fields.consent) {
+        fields.consent.classList.remove("has-value", "empty");
+        fields.consent.classList.add("empty");
+      }
+    }
+
     // If `data-endpoint` provided on the form — POST JSON there
     const endpoint = form.dataset.endpoint;
     const toEmail = form.dataset.to; // fallback: mailto recipient
@@ -250,6 +337,9 @@ document.addEventListener("DOMContentLoaded", () => {
           form.reset();
           openModal();
         }
+        // Сбрасываем состояние формы перед показом модального окна
+        resetFormState();
+        // openModal();
       } catch (err) {
         console.error("Submit error", err);
       } finally {

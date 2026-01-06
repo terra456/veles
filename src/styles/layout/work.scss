@@ -30,15 +30,6 @@
     width: 180px;
     height: 180px;
     margin-bottom: 24px;
-    background: radial-gradient(
-      54.93% 44.57% at 49.85% 30.16%,
-      #ff383c 0%,
-      rgb(255 255 255 / 0%) 48.78%
-    );
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: all 500ms;
 
     @media (width < $to-mobile-width) {
       margin-bottom: 16px;
@@ -66,10 +57,6 @@
     @media (width < $to-mobile-width) {
       width: 100%;
       padding-top: 8px;
-    }
-
-    &:hover > .work_img-conteiner {
-      background: none;
     }
   }
 

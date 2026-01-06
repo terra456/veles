@@ -201,4 +201,24 @@
 
   /* for icon  main page */
   box-shadow: var(--icon-shadow);
+  transition: all 300ms ease;
+
+  &:hover,
+  &:active {
+    background-size:
+      24px 24px,
+      contain;
+  }
+
+  @media (width < $to-mobile-width) {
+    width: 32px;
+    height: 48px;
+
+    &:hover,
+    &:active {
+      background-size:
+        16px 16px,
+        contain;
+    }
+  }
 }

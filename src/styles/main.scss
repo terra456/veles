@@ -1,30 +1,29 @@
-// Импорт миксинов (SASS)
-@use "mixins/index" as *;
-
 // Импорт базовых стилей
 @use "base/root"; // CSS переменные
 @use "base/reset";
 
+// Импорт миксинов (SASS)
+@use "mixins/index" as *;
+
 // Импорт компонентов
 @use "components/index";
+
+// Импорт layout (только используемые)
 @use "layout/section";
 @use "layout/about";
-@use "layout/advantage";
-@use "layout/case";
 @use "layout/chart";
 @use "layout/first";
 @use "layout/footer";
 @use "layout/form";
 @use "layout/header";
-@use "layout/news";
 @use "layout/modal";
 @use "layout/review";
 @use "layout/request";
 @use "layout/solution";
-@use "layout/stage";
-@use "layout/success";
 @use "layout/swiper";
 @use "layout/work";
+
+// Импорт шрифтов
 @use "fonts/tektur" as tektur;
 @use "fonts/inter" as inter;
 
@@ -36,10 +35,6 @@ body {
   color: var(--body-text-200);
   min-height: 100vh;
   overflow-y: scroll;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 main {

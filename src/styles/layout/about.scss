@@ -61,7 +61,7 @@
     }
 
     &:hover {
-      box-shadow: var(--icon-shadow);
+      box-shadow: 0 4px 24px 0 rgb(13 29 61 / 30%);
 
       & .about_title {
         color: var(--blue-500);
