@@ -96,9 +96,20 @@
     }
   }
 
-  &_wrapper:hover .chart_tooltip,
+  &_wrapper:hover .chart_tooltip {
+    display: flex;
+  }
+
   &_tooltip.open {
     display: flex;
+  }
+
+  &_close-btn {
+    display: none;
+
+    &.show {
+      display: block;
+    }
   }
 }
 

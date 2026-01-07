@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // allow closing by close button
     if (overlay) {
-      const closeBtn = overlay.querySelector(".modal_close-btn");
+      const closeBtn = overlay.querySelector("#closeModal");
       const okBtn = overlay.querySelector("#okBtn");
       if (closeBtn) closeBtn.addEventListener("click", closeModal);
       if (okBtn) okBtn.addEventListener("click", closeModal);

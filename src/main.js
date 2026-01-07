@@ -109,7 +109,12 @@ if (chartSection) {
       }
 
       if (isMobile && canvasWrapper && tooltip) {
+        const closeBtn = tooltip.querySelector("#closeTooltip");
         canvasWrapper.addEventListener("click", () => {
+          tooltip.classList.toggle("open");
+          closeBtn.classList.add("show");
+        });
+        closeBtn.addEventListener("click", () => {
           tooltip.classList.toggle("open");
         });
       }
