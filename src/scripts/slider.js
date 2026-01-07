@@ -12,7 +12,6 @@ document.querySelectorAll(".swiper").forEach((swiperEl) => {
     modules: [Navigation, Pagination],
     direction: "horizontal",
     slidesPerView: 1,
-    spaceBetween: 20,
     height: "auto",
     pagination: {
       el: section?.querySelector(".swiper-pagination"),
@@ -27,6 +26,7 @@ document.querySelectorAll(".swiper").forEach((swiperEl) => {
   // Специфичные настройки для разных секций
   if (sectionId === "reviews") {
     Object.assign(baseConfig, {
+      spaceBetween: 20,
       breakpoints: {
         1030: {
           slidesPerView: 2,
@@ -36,6 +36,7 @@ document.querySelectorAll(".swiper").forEach((swiperEl) => {
     });
   } else if (sectionId === "solution") {
     Object.assign(baseConfig, {
+      spaceBetween: 50,
       speed: 1000,
     });
   }

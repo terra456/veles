@@ -3,6 +3,46 @@
   <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/first-bg-desk-1.webp"
+      type="image/webp"
+      fetchpriority="high"
+      imagesrcset="/assets/images/first-bg-desk-1.webp 1920w,
+                   /assets/images/first-bg-tablet-1.webp 1024w,
+                   /assets/images/first-bg-mobile-1.webp 748w"
+      imagesizes="100vw"
+    >
+    <link
+      rel="preload"
+      href="/assets/fonts/Tektur/Tektur-ExtraBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    >
+    <link
+      rel="preload"
+      href="/assets/fonts/Tektur/Tektur-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    >
+    <link
+      rel="preload"
+      href="/assets/fonts/Inter/Inter-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    >
+    <link
+      rel="preload"
+      href="/assets/fonts/Inter/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    >
+    <link rel="preload" href="/assets/main.css" as="style">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>veles-landing</title>
   </head>
@@ -153,6 +193,7 @@
                       class="reviews_logo"
                       src="/assets/images/indushkin.webp"
                       alt="Логотип Индюшкин"
+                      loading="lazy"
                     >
                     <h3 class="reviews_title">ООО СОЮЗПРОМПТИЦА</h3>
                     <p class="reviews_desc">
@@ -173,6 +214,7 @@
                       class="reviews_logo"
                       src="/assets/images/indeal.webp"
                       alt="Логотип Индеаль"
+                      loading="lazy"
                     >
                     <h3 class="reviews_title">ООО АГРО-ПЛЮС</h3>
                     <p class="reviews_desc">
@@ -193,6 +235,7 @@
                       class="reviews_logo"
                       src="/assets/images/indushkin.webp"
                       alt="Логотип Индюшкин"
+                      loading="lazy"
                     >
                     <h3 class="reviews_title">Это короткий отзыв</h3>
                     <p class="reviews_desc">
@@ -517,6 +560,8 @@
 
     <load src="partials/footer.html"/>
     <load src="partials/modal.html"/>
-    <script type="module" src="/main.js"></script>
+
+    <link rel="stylesheet" href="/assets/main.css" media="print" onload="this.media = 'all'">
+    <script type="module" src="/main.js" defer></script>
   </body>
 </html>

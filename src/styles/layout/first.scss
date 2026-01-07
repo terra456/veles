@@ -28,22 +28,20 @@
   &_bg {
     padding-bottom: 0;
     background-repeat: no-repeat;
-    background-image: url("/assets/images/first-bg-desk.webp");
+    background-image: url("/assets/images/first-bg-desk-1.webp");
+    background-size: contain;
     background-position: right 10px top;
 
     @media (width < $minidesc-width) {
-      background-size: contain;
       background-position: left 95% top;
     }
 
     @media (width < 1150px) {
-      background-size: contain;
       background-position: right -15% top;
     }
 
     @media (width < $to-tablet-width) {
-      background-image: url("/assets/images/first-bg-tablet.webp");
-      background-size: contain;
+      background-image: url("/assets/images/first-bg-tablet-1.webp");
       background-position: right 5% top;
     }
 
@@ -52,7 +50,7 @@
     }
 
     @media (width < $to-mobile-width) {
-      background-image: url("/assets/images/first-bg-mobile.webp");
+      background-image: url("/assets/images/first-bg-mobile-1.webp");
       background-size: 340px;
       background-position: right 0 top 15px;
     }
