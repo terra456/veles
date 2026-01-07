@@ -1,9 +1,47 @@
 <!doctype html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/vite.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      rel="preload"
+      as="image"
+      href="/veles/assets/images/first-bg-desk-1.webp"
+      type="image/webp"
+      fetchpriority="high"
+      imagesrcset="/veles/assets/images/first-bg-desk-1.webp 1920w, /veles/assets/images/first-bg-tablet-1.webp 1024w, /veles/assets/images/first-bg-mobile-1.webp 748w"
+      imagesizes="100vw"
+    />
+    <link
+      rel="preload"
+      href="/veles/assets/fonts/Tektur/Tektur-ExtraBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/veles/assets/fonts/Tektur/Tektur-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/veles/assets/fonts/Inter/Inter-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/veles/assets/fonts/Inter/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/veles/assets/main.css" as="style" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>veles-landing</title>
     <script type="module" crossorigin src="/veles/assets/main.js"></script>
     <link rel="stylesheet" crossorigin href="/veles/assets/main.css">
@@ -77,63 +115,43 @@
               <ul class="first_list">
                 <li class="first_item card">
                   <div class="card_icon base"></div>
-                  <div>
-                    <strong>Онлайн — </strong>команда готова помочь
-                  </div>
+                  <div><strong>Онлайн — </strong>команда готова помочь</div>
                 </li>
                 <li class="first_item card">
                   <div class="card_icon check"></div>
-                  <div>
-                    Помогли <strong>решить </strong>проблемы с регистрами
-                  </div>
+                  <div>Помогли <strong>решить </strong>проблемы с регистрами</div>
                 </li>
                 <li class="first_item card">
                   <div class="card_icon check"></div>
-                  <div>
-                    Закрыли квартал <strong>успешно </strong>
-                  </div>
+                  <div>Закрыли квартал <strong>успешно </strong></div>
                 </li>
                 <li class="first_item card">
                   <div class="card_icon refresh"></div>
-                  <div>
-                    <strong>Успешно </strong>обновили 1С
-                  </div>
+                  <div><strong>Успешно </strong>обновили 1С</div>
                 </li>
                 <li class="first_item card">
                   <div class="card_icon check"></div>
-                  <div>
-                    <strong>Исправили 500+ </strong>ошибок
-                  </div>
+                  <div><strong>Исправили 500+ </strong>ошибок</div>
                 </li>
                 <li class="first_item card">
                   <div class="card_icon check"></div>
-                  <div>
-                    <strong>Проанализировали 1000+ </strong>операций
-                  </div>
+                  <div><strong>Проанализировали 1000+ </strong>операций</div>
                 </li>
                 <li class="first_item card">
                   <div class="card_icon check"></div>
-                  <div>
-                    Отчётность <strong>успешно </strong>сдана в&nbsp;банк
-                  </div>
+                  <div>Отчётность <strong>успешно </strong>сдана в&nbsp;банк</div>
                 </li>
                 <li class="first_item card">
                   <div class="card_icon gear"></div>
-                  <div>
-                    <strong>Автоматизировали </strong>сложный процесс
-                  </div>
+                  <div><strong>Автоматизировали </strong>сложный процесс</div>
                 </li>
                 <li class="first_item card">
                   <div class="card_icon gear"></div>
-                  <div>
-                    <strong>Упростили </strong>работу бухгалтерии
-                  </div>
+                  <div><strong>Упростили </strong>работу бухгалтерии</div>
                 </li>
                 <li class="first_item card">
                   <div class="card_icon gear"></div>
-                  <div>
-                    <strong>Автоматизировали </strong>рутину
-                  </div>
+                  <div><strong>Автоматизировали </strong>рутину</div>
                 </li>
               </ul>
             </div>
@@ -199,7 +217,8 @@
                       class="reviews_logo"
                       src="/veles/assets/images/indushkin.webp"
                       alt="Логотип Индюшкин"
-                    >
+                      loading="lazy"
+                    />
                     <h3 class="reviews_title">ООО СОЮЗПРОМПТИЦА</h3>
                     <p class="reviews_desc">
                       Мы обратились к&nbsp;ребятам после серии неудачных попыток решить проблему
@@ -219,7 +238,8 @@
                       class="reviews_logo"
                       src="/veles/assets/images/indeal.webp"
                       alt="Логотип Индеаль"
-                    >
+                      loading="lazy"
+                    />
                     <h3 class="reviews_title">ООО АГРО-ПЛЮС</h3>
                     <p class="reviews_desc">
                       Для нас важна стабильность: любой простой в&nbsp;1С сразу отражается
@@ -239,7 +259,8 @@
                       class="reviews_logo"
                       src="/veles/assets/images/indushkin.webp"
                       alt="Логотип Индюшкин"
-                    >
+                      loading="lazy"
+                    />
                     <h3 class="reviews_title">Это короткий отзыв</h3>
                     <p class="reviews_desc">
                       Мы обратились к&nbsp;ребятам после серии неудачных попыток решить проблему
@@ -307,8 +328,7 @@
               </p>
               <p>
                 Таким образом, компания платит ~ <span class="chart_accent">7 865&nbsp;</span>рублей
-                за каждый час реальной разработки (<span class="chart_accent"
-                  >1 887 600&nbsp;</span
+                за каждый час реальной разработки (<span class="chart_accent">1 887 600&nbsp;</span
                 >руб. / 240&nbsp;ч).
               </p>
               <p>
@@ -332,7 +352,7 @@
                   src="/veles/assets/images/headset.webp"
                   alt="headset"
                   loading="lazy"
-                >
+                />
               </div>
               <h3 class="work_title">Опишите проблему</h3>
               <p class="work_desc">
@@ -341,7 +361,7 @@
             </div>
             <div class="work_card">
               <div class="work_img-conteiner">
-                <img class="work_img" src="/veles/assets/images/glass.webp" alt="glass" loading="lazy">
+                <img class="work_img" src="/veles/assets/images/glass.webp" alt="glass" loading="lazy" />
               </div>
               <h3 class="work_title">Мы анализируем</h3>
               <p class="work_desc">Изучаем ситуацию и&nbsp;предлагаем оптимальное решение</p>
@@ -353,7 +373,7 @@
                   src="/veles/assets/images/wrench-crossed.webp"
                   alt="tool"
                   loading="lazy"
-                >
+                />
               </div>
               <h3 class="work_title">Исправляем</h3>
               <p class="work_desc">Быстро устраняем проблему и&nbsp;тестируем результат</p>
@@ -365,7 +385,7 @@
                   src="/veles/assets/images/key-smooth.webp"
                   alt="key lock"
                   loading="lazy"
-                >
+                />
               </div>
               <h3 class="work_title">Поддерживаем</h3>
               <p class="work_desc">
@@ -492,7 +512,7 @@
                   required
                   aria-required="true"
                   aria-describedby="name-error"
-                >
+                />
                 <p id="name-error" class="form_error" aria-live="polite"></p>
               </div>
               <div class="form_conteiner">
@@ -505,7 +525,7 @@
                   required
                   aria-required="true"
                   aria-describedby="email-error"
-                >
+                />
                 <p id="email-error" class="form_error" aria-live="polite"></p>
               </div>
               <div class="form_conteiner">
@@ -518,7 +538,7 @@
                   required
                   aria-required="true"
                   aria-describedby="phone-error"
-                >
+                />
                 <p id="phone-error" class="form_error" aria-live="polite"></p>
               </div>
               <div class="form_conteiner form_conteiner--textarea">
@@ -542,7 +562,7 @@
                     required
                     aria-required="true"
                     aria-describedby="consent-error"
-                  >
+                  />
                   <span class="form_checkbox_checkmark"></span>
                   <p>
                     Я согласен на обработку персональных данных и принимаю условия
@@ -632,6 +652,7 @@
           alt="Насобес.рф"
           width="120px"
           height="23px"
+          loading="lazy"
         >
       </a>
     </div>
@@ -665,5 +686,7 @@
   </div>
 </div>
 
+
+    <link rel="stylesheet" href="/assets/main.css" media="print" onload="this.media = 'all'" />
   </body>
 </html>
