@@ -5,8 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>veles-landing</title>
-    <script type="module" crossorigin src="/veles/assets/main-BANGK-Wd.js"></script>
-    <link rel="stylesheet" crossorigin href="/veles/assets/main-DzwD48n7.css">
+    <script type="module" crossorigin src="/veles/assets/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/veles/assets/main.css">
   </head>
   <body>
     <header class="header" role="banner">
@@ -36,9 +36,9 @@
       <!--<li class="header_item">
         <a class="header_link link-text" href="./#">Статьи</a>
       </li>-->
-      <li class="header_item">
+      <!-- <li class="header_item">
         <a class="header_link link-text" href="./#">Команда</a>
-      </li>
+      </li> -->
     </ul>
   </nav>
   <button
@@ -157,7 +157,7 @@
             <div class="about_card support">
               <h3 class="about_title">Поддержка 1С</h3>
               <p class="about_desc">
-                От&nbsp;оперативного устранения ошибок и&nbsp;консультаций пользователей
+                От оперативного устранения ошибок и&nbsp;консультаций пользователей
                 до&nbsp;безопасного обновления доработанных конфигураций с&nbsp;сохранением всех
                 ваших доработок
               </p>
@@ -204,11 +204,10 @@
                     <p class="reviews_desc">
                       Мы обратились к&nbsp;ребятам после серии неудачных попыток решить проблему
                       с&nbsp;закрытием месяца. Предыдущий подрядчик только разводил руками.
-                      Здесь&nbsp;же&nbsp;всё сделали быстро, спокойно и&nbsp;без лишних разговоров.
-                      Особенно понравилось, что объясняют простым языком и&nbsp;честно говорят, что
+                      Здесь&nbsp;же всё сделали быстро, спокойно и без лишних разговоров. Особенно
+                      понравилось, что объясняют простым языком и&nbsp;честно говорят, что
                       действительно нужно, а&nbsp;что&nbsp;— нет. Сейчас работаем с&nbsp;ними
-                      на&nbsp;постоянной основе, и&nbsp;вопросов к&nbsp;1С&nbsp;стало в&nbsp;разы
-                      меньше
+                      на&nbsp;постоянной основе, и&nbsp;вопросов к&nbsp;1С стало в&nbsp;разы меньше
                     </p>
                     <p class="reviews_name">Ратмир Ремирович Абдрашитов</p>
                     <p class="reviews_profession">Операционный директор</p>
@@ -223,13 +222,12 @@
                     >
                     <h3 class="reviews_title">ООО АГРО-ПЛЮС</h3>
                     <p class="reviews_desc">
-                      Для нас важна стабильность: любой простой в&nbsp;1С&nbsp;сразу отражается
+                      Для нас важна стабильность: любой простой в&nbsp;1С сразу отражается
                       на&nbsp;работе отдела. Команда показала себя очень надёжной&nbsp;— реагируют
                       быстро, всегда на&nbsp;связи, и&nbsp;действительно доводят задачу
                       до&nbsp;результата. Отдельно ценю прозрачную оплату: видишь, за&nbsp;что
-                      платишь, никакого «дополнительно выставим счёт». Это редкость.
-                      Мы&nbsp;наконец-то&nbsp;перестали переживать за&nbsp;обновления
-                      и&nbsp;доработки.
+                      платишь, никакого «дополнительно выставим счёт». Это редкость. Мы наконец-то
+                      перестали переживать за&nbsp;обновления и&nbsp;доработки.
                     </p>
                     <p class="reviews_name">Пивченко Евгений Игоревич</p>
                     <p class="reviews_profession">Операционный директор</p>
@@ -246,7 +244,7 @@
                     <p class="reviews_desc">
                       Мы обратились к&nbsp;ребятам после серии неудачных попыток решить проблему
                       с&nbsp;закрытием месяца. Предыдущий подрядчик только разводил руками.
-                      Здесь&nbsp;же&nbsp;всё сделали быстро.
+                      Здесь&nbsp;же всё сделали быстро.
                     </p>
                     <p class="reviews_name">Ратмир Ремирович Абдрашитов</p>
                     <p class="reviews_profession">Операционный директор</p>
@@ -295,23 +293,28 @@
               aria-describedby="chartTooltip"
             ></canvas>
             <div id="chartTooltip" class="chart_tooltip">
+              <button
+                id="closeTooltip"
+                class="modal_close-btn chart_close-btn"
+                type="button"
+                aria-label="close"
+              ></button>
               <p>
                 Компания платит штатному специалисту полную стоимость в&nbsp;среднем
-                <span class="chart_accent">1 887 600 </span>рублей за&nbsp;3 месяца. Однако
-                из&nbsp;480 рабочих часов* (60 дней × 8 часов) непосредственно разработке посвящено
-                только около 50% времени&nbsp;— примерно 240 часов.
+                <span class="chart_accent">1 887 600&nbsp;</span>рублей за 3&nbsp;месяца. Однако
+                из&nbsp;480&nbsp;рабочих часов* (60&nbsp;дней × 8&nbsp;часов) непосредственно
+                разработке посвящено только около 50% времени&nbsp;— примерно 240&nbsp;часов.
               </p>
               <p>
-                Таким образом, компания платит ~ <span class="chart_accent"></span>7 865 рублей
-                за&nbsp;каждый час реальной разработки (<span class="chart_accent"
+                Таким образом, компания платит ~ <span class="chart_accent">7 865&nbsp;</span>рублей
+                за каждый час реальной разработки (<span class="chart_accent"
                   >1 887 600&nbsp;</span
                 >руб. / 240&nbsp;ч).
               </p>
               <p>
-                Мы&nbsp;же&nbsp;берем <span class="chart_accent">4 256&nbsp;</span>руб./час
-                и&nbsp;тратим время исключительно на&nbsp;продуктивную работу. Вы&nbsp;платите
-                за&nbsp;100% полезного времени, а&nbsp;не&nbsp;за&nbsp;совещания
-                и&nbsp;административные задачи.
+                Мы&nbsp;же берем <span class="chart_accent">4 256&nbsp;</span>руб./час и&nbsp;тратим
+                время исключительно на продуктивную работу. Вы платите за&nbsp;100% полезного
+                времени, а&nbsp;не за совещания и&nbsp;административные задачи.
               </p>
             </div>
           </div>
@@ -397,7 +400,7 @@
                     </div>
                     <div class="solution_item">
                       <div class="status result">Результат</div>
-                      <p class="solution_desc">Скорость работы увеличилась в&nbsp;5 раз</p>
+                      <p class="solution_desc">Скорость работы увеличилась в&nbsp;5&nbsp;раз</p>
                     </div>
                   </div>
                 </div>
@@ -409,7 +412,7 @@
                     </div>
                     <div class="solution_item">
                       <div class="status decision">Решение</div>
-                      <p class="solution_desc">Адаптировали API под новую версию за 4 часа</p>
+                      <p class="solution_desc">Адаптировали API под новую версию за 4&nbsp;часа</p>
                     </div>
                     <div class="solution_item">
                       <div class="status result">Результат</div>
@@ -524,6 +527,8 @@
                   id="text"
                   class="form_input form_textarea"
                   placeholder="Опишите проблему, последовательность действий, которая к ней приводит, текст ошибки (если есть). Для доработки — опишите задачу и требуемый результат."
+                  required
+                  aria-required="true"
                   aria-describedby="text-error"
                 ></textarea>
                 <p id="text-error" class="form_error" aria-live="polite"></p>
@@ -589,9 +594,9 @@
         <li class="footer_item">
           <a class="footer_link link-text" href="./#solution">Кейсы</a>
         </li>
-        <li class="footer_item">
+        <!-- <li class="footer_item">
           <a class="footer_link link-text" href="./#">Команда</a>
-        </li>
+        </li> -->
       </ul>
     </nav>
     <nav class="footer_nav footer_more" aria-label="Ссылки для подробной информации">
@@ -600,9 +605,9 @@
         <li class="footer_item">
           <a class="footer_link link-text" href="./#reviews">Отзывы</a>
         </li>
-        <li class="footer_item">
+        <!-- <li class="footer_item">
           <a class="footer_link link-text" href="./#">Статьи</a>
-        </li>
+        </li> -->
       </ul>
     </nav>
     <nav class="footer_nav footer_pravo" aria-label="Правовая информация">
@@ -639,7 +644,7 @@
 
     <div class="modal_overlay">
   <div class="modal">
-    <button class="modal_close-btn" type="button" aria-label="close"></button>
+    <button id="closeModal" class="modal_close-btn" type="button" aria-label="close"></button>
     <div class="modal_img-conteiner">
       <picture>
         <source media="(min-width:1024px)" srcset="/veles/assets/images/hand-with-star.webp">
