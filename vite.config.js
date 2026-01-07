@@ -10,15 +10,21 @@ export default defineConfig({
   publicDir: resolve(__dirname, "src/public"),
   build: {
     outDir: "../dist", // Результат в папку dist
+    sourcemap: false,
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
         // news: resolve(__dirname, "src/news.html"),
       },
       output: {
-        manualChunks: undefined,
+        entryFileNames: "assets/[name].js",
+        chunkFileNames: "assets/[name].js",
+        assetFileNames: "assets/[name].[ext]",
       },
     },
+    // Включаем brotli сжатие для больших файлов
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 500,
   },
   plugins: [injectHTML()],
 });
