@@ -21,6 +21,20 @@ if (aboutCards) {
   aboutObserver.observe(aboutCards);
 }
 
+const cookieConsent = localStorage.getItem("cookie-consent");
+
+if (cookieConsent !== "true") {
+  const cookie = document.getElementById("cookie");
+  const cookieBtn = cookie.querySelector("#cookieBtn");
+  cookie.classList.add("show");
+  const closeCookieHandler = () => {
+    cookie.classList.remove("show");
+    localStorage.setItem("cookie-consent", true);
+    cookieBtn.removeEventListener("click", closeCookieHandler);
+  };
+  cookieBtn.addEventListener("click", closeCookieHandler);
+}
+
 // Ленивая загрузка слайдеров (Swiper) — только когда пользователь доскроллит до секций
 let slidersLoaded = false;
 const sliderElements = document.querySelectorAll(".swiper");

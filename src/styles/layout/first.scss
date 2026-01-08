@@ -132,8 +132,9 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
-    line-height: normal;
+    line-height: 110%;
     margin-bottom: 1px;
+    white-space: nowrap;
 
     @media (width < $to-tablet-width) {
       font-size: 24px;

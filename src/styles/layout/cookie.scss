@@ -1,0 +1,39 @@
+@use "../mixins/index" as *;
+@use "../base/variables" as *;
+
+.cookie {
+  &_banner {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 20;
+    padding: 24px 36px;
+    max-width: calc(100vw - 80px);
+    display: none;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 16px;
+    border-radius: 10px;
+    background-color: var(--blue-100);
+    box-shadow: var(--card-shadow);
+
+    &.show {
+      display: flex;
+    }
+
+    @media (width < $to-mobile-width) {
+      bottom: 16px;
+      right: 16px;
+      max-width: calc(100vw - 32px);
+      flex-direction: column;
+    }
+  }
+
+  &_desc {
+    @include body-18-regular;
+
+    @media (width < $to-mobile-width) {
+      font-size: 16px;
+    }
+  }
+}
