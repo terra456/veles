@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/veles/assets/favicon.svg" />
     <link
       rel="preload"
       as="image"
@@ -40,9 +40,17 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="preload" href="/veles/assets/main.css" as="style" />
+    <link rel="preload" href="/assets/main.css" as="style" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>veles-landing</title>
+    <title>Поддержка и сопровождение 1С. Техническая поддержка, доработка, обновление</title>
+    <meta
+      name="description"
+      content="Гибкая команда экспертов по 1С. Оперативное устранение сбоев, доработка конфигураций, помощь с закрытием месяца и отчётностью. Персональный подход. Платите только за время решения задачи."
+    />
+    <meta
+      name="keywords"
+      content="поддержка и сопровождение 1С, техническая поддержка, команда экспертов по 1С, устранение сбоев, доработка конфигураций, помощь с закрытием месяца и отчётностью, Велес, Велес-тех"
+    />
     <script type="module" crossorigin src="/veles/assets/main.js"></script>
     <link rel="stylesheet" crossorigin href="/veles/assets/main.css">
   </head>
@@ -108,7 +116,7 @@
                 <a class="btn btn--mail btn--secondary" href="#request">Оставить заявку</a>
               </div>
               <p class="first_cost">
-                Стоимость часа услуг <span class="first_price"> 4 256 ₽</span>
+                Стоимость часа услуг&nbsp;<span class="first_price"> 4 256 ₽</span>
               </p>
             </div>
             <div class="first_cards">
@@ -579,6 +587,10 @@
           </div>
         </div>
       </section>
+      <div id="cookie" class="cookie_banner">
+        <p class="cookie_desc">Мы используем файлы cookie&nbsp;🍪, чтобы сайт работал стабильно</p>
+        <button id="cookieBtn" type="button" class="cookie_btn btn btn--primary">Хорошо</button>
+      </div>
     </main>
 
     <footer class="footer" role="contentinfo">
@@ -592,7 +604,7 @@
           alt="Велес-тех 1С"
           width="227px"
           height="23px"
-        >
+        />
       </a>
       <p class="footer_desc">
         Гибкая команда экспертов по&nbsp;технической поддержке, обновлению и&nbsp;доработке
@@ -653,7 +665,7 @@
           width="120px"
           height="23px"
           loading="lazy"
-        >
+        />
       </a>
     </div>
     <div class="footer_copyright copyright">
@@ -687,6 +699,12 @@
 </div>
 
 
-    <link rel="stylesheet" href="/assets/main.css" media="print" onload="this.media = 'all'" />
+    <link
+      rel="stylesheet"
+      href="/assets/main.css"
+      media="print"
+      onload="this.media = 'all'"
+      type="text/css"
+    />
   </body>
 </html>
