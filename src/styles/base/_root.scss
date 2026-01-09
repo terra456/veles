@@ -1,6 +1,9 @@
 @use "./variables" as *;
 
 :root {
+  --font-heading: "Tektur", "Arial Black", impact, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+
   // Цветовая палитра (из макета)
   --blue-500: #2e6ce6;
   --blue-100: #eaf1ff;

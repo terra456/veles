@@ -21,6 +21,15 @@ if (aboutCards) {
   aboutObserver.observe(aboutCards);
 }
 
+//скрытие кнопки наверх
+window.onscroll = () => {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    document.getElementById("scrollToTopBtn").classList.add("show");
+  } else {
+    document.getElementById("scrollToTopBtn").classList.remove("show");
+  }
+};
+
 const cookieConsent = localStorage.getItem("cookie-consent");
 
 if (cookieConsent !== "true") {

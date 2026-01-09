@@ -63,10 +63,6 @@
     &:hover {
       background-position: 100% 0%;
 
-      &::before {
-        background-color: var(--white);
-      }
-
       &::after {
         content: "";
         position: absolute;
@@ -91,10 +87,24 @@
     &:hover {
       color: var(--white);
       background: var(--accent-orange);
+    }
+  }
 
-      &::before {
-        background-color: var(--white);
-      }
+  &--tg::before {
+    left: calc(50% - 100px);
+    mask-image: url("/assets/icon/tg.svg");
+
+    @media (width < $to-mobile-width) {
+      left: calc(50% - 90px);
+    }
+  }
+
+  &--mail::before {
+    left: calc(50% - 84px);
+    mask-image: url("/assets/icon/mail.svg");
+
+    @media (width < $to-mobile-width) {
+      left: calc(50% - 75px);
     }
   }
 
@@ -122,23 +132,9 @@
         left: 18px;
       }
     }
-  }
 
-  &--tg::before {
-    left: calc(50% - 100px);
-    mask-image: url("/assets/icon/tg.svg");
-
-    @media (width < $to-mobile-width) {
-      left: calc(50% - 90px);
-    }
-  }
-
-  &--mail::before {
-    left: calc(50% - 84px);
-    mask-image: url("/assets/icon/mail.svg");
-
-    @media (width < $to-mobile-width) {
-      left: calc(50% - 75px);
+    &:hover::before {
+      background-color: var(--white);
     }
   }
 

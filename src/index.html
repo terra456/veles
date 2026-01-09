@@ -237,24 +237,6 @@
                     <p class="reviews_profession">Операционный директор</p>
                   </div>
                 </div>
-                <div class="swiper-slide">
-                  <div class="reviews_slide">
-                    <img
-                      class="reviews_logo"
-                      src="/assets/images/indushkin.webp"
-                      alt="Логотип Индюшкин"
-                      loading="lazy"
-                    >
-                    <h3 class="reviews_title">Это короткий отзыв</h3>
-                    <p class="reviews_desc">
-                      Мы обратились к&nbsp;ребятам после серии неудачных попыток решить проблему
-                      с&nbsp;закрытием месяца. Предыдущий подрядчик только разводил руками.
-                      Здесь&nbsp;же всё сделали быстро.
-                    </p>
-                    <p class="reviews_name">Ратмир Ремирович Абдрашитов</p>
-                    <p class="reviews_profession">Операционный директор</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -551,7 +533,7 @@
                   <span class="form_checkbox_checkmark"></span>
                   <p>
                     Я согласен на обработку персональных данных и принимаю условия
-                    <a class="form_link text-link" href="/veles/pages/privacy.html" target="_blank"
+                    <a class="form_link link-text" href="/veles/pages/privacy.html" target="_blank"
                       >Политики конфиденциальности</a
                     >
                   </p>
@@ -559,23 +541,23 @@
                 <p id="consent-error" class="form_error" aria-live="polite"></p>
               </div>
               <div class="form_btn-conteiner">
-                <button type="submit" class="btn btn--mail btn--primary">Оставить заявку</button>
+                <button
+                  type="submit"
+                  class="btn btn--mail btn--primary"
+                  aria-label="Отправить заявку"
+                  title="Отправить заявку"
+                >
+                  Оставить заявку
+                </button>
                 <a class="btn btn--tg btn--secondary" href="#tg">Написать в телеграм</a>
               </div>
             </form>
           </div>
         </div>
       </section>
-      <div id="cookie" class="cookie_banner">
-        <p class="cookie_desc">
-          Мы используем файлы
-          <a class="text-link" href="/veles/pages/cookie.html" target="_blank">cookie</a>&nbsp;🍪,
-          чтобы сайт работал стабильно
-        </p>
-        <button id="cookieBtn" type="button" class="cookie_btn btn btn--primary">Хорошо</button>
-      </div>
     </main>
 
+    <load src="partials/cookie-banner.html"/>
     <load src="partials/footer.html"/>
     <load src="partials/modal.html"/>
 

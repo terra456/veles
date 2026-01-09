@@ -1,9 +1,19 @@
-.link-text {
+.link-nav {
   color: gray;
 
   &:hover,
   &:focus,
   &:active {
     color: var(--blue-500);
+  }
+}
+
+.link-text {
+  color: var(--blue-500);
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
   }
 }
