@@ -14,8 +14,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
-        nested: resolve(__dirname, "src/nested/index.html"),
-        // news: resolve(__dirname, "src/news.html"),
+        privacy: resolve(__dirname, "src/pages/privacy.html"),
+        cookie: resolve(__dirname, "src/pages/cookie.html"),
+        terms: resolve(__dirname, "src/pages/terms.html"),
       },
       output: {
         entryFileNames: "assets/[name].js",

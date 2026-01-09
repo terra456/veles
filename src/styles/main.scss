@@ -24,6 +24,11 @@
 @use "layout/swiper";
 @use "layout/work";
 
+// Страницы
+@use "./pages/consent";
+
+// ... другие страницы
+
 // Импорт шрифтов
 @use "fonts/tektur" as tektur;
 @use "fonts/inter" as inter;

@@ -11,7 +11,8 @@
     "format": "biome format --write . && prettier --write \"**/*.{scss,sass}\"",
     "lint": "biome lint . && stylelint --ignore-pattern 'public/**' \"**/*.{scss,sass}\"",
     "fix": "biome check --fix . && stylelint --fix --ignore-pattern 'public/**' \"**/*.{scss,sass}\" && prettier --write \"**/*.{scss,sass}\"",
-    "ci": "biome ci ."
+    "ci": "biome ci .",
+    "create-page": "node src/scripts/create-page.js"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

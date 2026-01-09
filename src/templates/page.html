@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Предзагрузка ресурсов -->
+    <link
+      rel="preload"
+      href="/assets/fonts/Tektur/Tektur-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    >
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$ { pageTitle} - Велес: Поддержка и сопровождение 1С</title>
+    <meta name="description" content="${pageDescription}">
+
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="/assets/main.css" media="print" onload="this.media = 'all'">
+    <!-- Стили страницы -->
+    <link rel="stylesheet" href="/assets/${pageName}.css" media="print" onload="this.media = 'all'">
+  </head>
+  <body data-page="${pageName}">
+    <load src="partials/header.html"/>
+
+    <main role="main">$ { pageContent}</main>
+
+    <load src="partials/footer.html"/>
+
+    <!-- Общий JS -->
+    <script type="module" src="/main.js" defer></script>
+    <!-- JS страницы -->
+    <script type="module" src="/assets/${pageName}.js" defer></script>
+  </body>
+</html>
