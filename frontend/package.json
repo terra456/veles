@@ -1,0 +1,29 @@
+{
+  "name": "veles-landing",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write \"**/*.{scss,sass}\"",
+    "lint": "stylelint --ignore-pattern 'public/**' \"**/*.{scss,sass}\"",
+    "fix": "stylelint --fix --ignore-pattern 'public/**' \"**/*.{scss,sass}\" && prettier --write \"**/*.{scss,sass}\"",
+    "create-page": "node src/scripts/create-page.js"
+  },
+  "devDependencies": {
+    "sass": "^1.94.2",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "stylelint-order": "^7.0.0",
+    "stylelint-scss": "^6.13.0",
+    "vite": "^7.2.4",
+    "vite-plugin-html-inject": "^1.1.2"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "imask": "^7.6.1",
+    "swiper": "^12.0.3"
+  }
+}

@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+.next/
+*.log
+.git/
+.husky/
+coverage/
+*.min.*
+**/public/assets/fonts/**
+**/*.woff
+**/*.woff2
+**/*.ttf
+**/*.otf
+**/*.eot
+**/*.svg
+frontend/src/public/assets/fonts/
