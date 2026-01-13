@@ -15,9 +15,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
-        privacy: resolve(__dirname, "src/pages/privacy.html"),
-        cookie: resolve(__dirname, "src/pages/cookie.html"),
-        terms: resolve(__dirname, "src/pages/terms.html"),
+        privacy: resolve(__dirname, "src/privacy-policy.html"),
+        cookie: resolve(__dirname, "src/cookie-policy.html"),
+        terms: resolve(__dirname, "src/data-processing.html"),
       },
       output: {
         entryFileNames: "assets/[name].js",
@@ -30,4 +30,11 @@ export default defineConfig({
     chunkSizeWarningLimit: 500,
   },
   plugins: [injectHTML()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler", // или 'modern'
+      },
+    },
+  },
 });

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/main.css" type="text/css">
     <link
       rel="preload"
       as="image"
@@ -42,7 +43,6 @@
       type="font/woff2"
       crossorigin
     >
-    <link rel="preload" href="/assets/main.css" as="style" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поддержка и сопровождение 1С. Техническая поддержка, доработка, обновление</title>
     <meta
@@ -535,7 +535,7 @@
                   <span class="form_checkbox_checkmark"></span>
                   <p>
                     Я согласен на обработку персональных данных и принимаю условия
-                    <a class="form_link link-text" href="/pages/privacy.html"
+                    <a class="form_link link-text" href="/privacy-policy.html"
                       >Политики конфиденциальности</a
                     >
                   </p>
@@ -565,13 +565,7 @@
     <load src="partials/footer.html"/>
     <load src="partials/modal.html"/>
 
-    <link
-      rel="stylesheet"
-      href="/assets/main.css"
-      media="print"
-      onload="this.media = 'all'"
-      type="text/css"
-    >
     <script type="module" src="/main.js" defer></script>
+    <script type="module" src="/scripts/home.js" defer></script>
   </body>
 </html>
