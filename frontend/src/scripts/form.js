@@ -307,39 +307,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // If `data-endpoint` provided on the form — POST JSON there
-    const endpoint = form.dataset.endpoint;
-    const toEmail = form.dataset.to; // fallback: mailto recipient
-
     (async () => {
       try {
-        if (endpoint) {
-          const res = await fetch(endpoint, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          });
-          if (!res.ok) throw new Error("Network response was not ok");
-          form.reset();
-          openModal();
-        } else if (toEmail) {
-          // mailto fallback — opens user's mail client
-          const subject = encodeURIComponent("Заявка с сайта");
-          const body = encodeURIComponent(
-            `Имя: ${payload.name}\nEmail: ${payload.email}\nТелефон: ${payload.phone}\n\n${payload.text}`,
-          );
-          window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
-          // still show modal as confirmation
-          form.reset();
-          openModal();
-        } else {
-          // No endpoint configured — just show modal as local confirmation
-          form.reset();
-          openModal();
-        }
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error("Network response was not ok");
         // Сбрасываем состояние формы перед показом модального окна
         resetFormState();
-        // openModal();
+        openModal();
       } catch (err) {
         console.error("Submit error", err);
       } finally {
