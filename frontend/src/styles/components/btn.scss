@@ -120,17 +120,12 @@
     &::before {
       content: "";
       position: absolute;
-      left: 17px;
       top: calc(50% - 17px / 2);
       width: 20px;
       height: 17px;
       mask-repeat: no-repeat;
       mask-size: contain;
       mask-position: center;
-
-      @media (width < $to-tablet-width) {
-        left: 18px;
-      }
     }
 
     &:hover::before {

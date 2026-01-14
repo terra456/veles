@@ -18,6 +18,7 @@ export default defineConfig({
         privacy: resolve(__dirname, "src/privacy-policy.html"),
         cookie: resolve(__dirname, "src/cookie-policy.html"),
         terms: resolve(__dirname, "src/data-processing.html"),
+        notfound: resolve(__dirname, "src/404.html"),
       },
       output: {
         entryFileNames: "assets/[name].js",
@@ -30,11 +31,4 @@ export default defineConfig({
     chunkSizeWarningLimit: 500,
   },
   plugins: [injectHTML()],
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: "modern-compiler", // или 'modern'
-      },
-    },
-  },
 });

@@ -4,6 +4,8 @@
 .consent {
   @include body-16-regular;
 
+  color: var(--body-text-200);
+
   @media (width < $to-mobile-width) {
     font-size: 12px;
   }

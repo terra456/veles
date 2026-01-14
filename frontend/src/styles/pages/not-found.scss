@@ -1,0 +1,18 @@
+.not-found {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  &_title {
+    font-family: var(--font-heading);
+    font-size: 120px;
+    color: var(--blue-500);
+  }
+
+  &.section_title {
+    padding-bottom: 0;
+  }
+}

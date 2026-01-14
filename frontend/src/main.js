@@ -1,4 +1,5 @@
 import "./scripts/header-menu.js";
+import "./styles/main.scss";
 
 // Анимация появления блоков "О нас"
 const aboutObserver = new IntersectionObserver(

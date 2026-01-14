@@ -25,9 +25,8 @@
 @use "layout/work";
 
 // Страницы
-@use "./pages/consent";
-
-// ... другие страницы
+@use "pages/consent";
+@use "pages/not-found";
 
 // Импорт шрифтов
 @use "fonts/tektur" as tektur;
@@ -35,6 +34,8 @@
 
 // Глобальные стили
 body {
+  display: flex;
+  flex-direction: column;
   font-family: Inter, sans-serif;
   font-size: 18px;
   line-height: normal;
@@ -44,5 +45,6 @@ body {
 }
 
 main {
+  flex-grow: 1;
   overflow: hidden;
 }

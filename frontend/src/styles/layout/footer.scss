@@ -218,6 +218,8 @@
   }
 
   @media (width < $to-mobile-width) {
+    bottom: 16px;
+    right: 16px;
     width: 32px;
     height: 48px;
 
