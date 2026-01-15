@@ -11,6 +11,8 @@ lerna-debug.log*
 packages/*/node_modules
 !packages/*/node_modules/.bin
 
+.env
+
 dist/
 dist-ssr
 *.local
