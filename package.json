@@ -22,7 +22,8 @@
     "fix:styles": "stylelint --fix \"**/*.{scss,sass}\" --ignore-path .gitignore",
     "format": "biome format --write .",
     "prepare": "husky install",
-    "ci": "biome ci ."
+    "ci": "biome ci .",
+    "deploy": "npm run install:all && npm run build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue,mjs,cjs}": [
